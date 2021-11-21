@@ -1,0 +1,342 @@
+#welcome{
+    background: url(../img/teacher.jpg) no-repeat right 50% bottom 80%;
+    background-size: cover;
+    min-height: 86vh;    
+    width: 100vw;
+}
+
+#welcome .container-fluid .row  h2{
+    /* APPRENEZ LE FRANÇAIS AVEC NOUS ! */
+    font-size: 2.7vw;
+    margin-left: 5vw;
+    margin-top: 15vh;   
+}
+
+#welcome .container-fluid .row  h3{
+    /* COURS GRATUITS */
+    color: #1A8CFF;
+    font-size: 2.5vw;
+    margin-left: 20vw;
+    margin-top: 15vh;
+}
+
+#welcome .courses_buttons button{
+    font-size: 3vh;
+    margin-top: 10vh;
+    min-width: 20vw;
+}
+
+#welcome .courses_buttons .button_debutant{
+    background-color: #0066CC;
+    border-color: #0066CC;
+}
+
+#welcome .courses_buttons .button_intermediaire{
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+#welcome .courses_buttons .button_avance{
+    background-color: #FF0000;
+    border-color: #FF0000;
+}
+
+@media (max-width: 1200px) {
+
+    #welcome{
+        background-size: 80vh;
+        background-position: top;
+        background-size: cover;
+        display: block;
+        min-height: 50vh;
+        max-height: 70vh;
+        text-align: center;
+    }
+
+    #welcome .container-fluid .row  h2{
+        /* APPRENEZ LE FRANÇAIS AVEC NOUS ! */
+        font-size: 3vw;
+        margin-top: 3vh;
+        width: 80vw;
+    }
+
+    #welcome .container-fluid .row{
+        justify-content: center;
+    }
+
+    #welcome .container-fluid .row  h3{
+        /* COURS GRATUITS */
+        font-size: 3vw;
+        margin: auto;
+        margin-top: 30vh;
+    }
+
+    #welcome .courses_buttons{
+        justify-content: center;
+    }
+
+    #welcome .courses_buttons button{
+        font-size: 2vh;
+        margin-bottom: 7vh;
+    }
+}
+
+/* iPad */
+@media screen and (max-width: 768px) {
+
+    #welcome{
+        background: no-repeat 0 0 cover;
+        text-align: center;
+        min-height: 50vh;
+        padding: 1vh;
+    }
+
+    #welcome .container-fluid .row  h2{
+        /* APPRENEZ LE FRANÇAIS AVEC NOUS ! */
+        font-size: 4vw;
+        margin: auto;
+    }
+
+    #welcome .container-fluid .row  h3{
+        /* COURS GRATUITS */
+        font-size: 3.5vw;
+        margin: auto;
+        margin-top: 20vh;
+    }
+
+    #welcome .courses_buttons{
+        width: 100vw;
+        margin: auto;
+    }
+
+    #welcome .courses_buttons button{
+        font-size: 2.8vw;
+        margin-top: 3vh;
+        width: 25vw;
+    }
+}
+
+@media (max-width: 576px) {
+
+    #welcome{
+        background-size: 80vh;
+        background-position: right 35% bottom 90%;
+        background-size: cover;
+        display: block;
+        min-height: 0;
+        max-height: 80vh;
+        padding: 1vh;
+    }
+
+    #welcome .container-fluid .row  h2{
+        /* APPRENEZ LE FRANÇAIS AVEC NOUS ! */
+        font-size: 4vw;
+        margin-top: 0.5vh;
+    }
+
+    #welcome .container-fluid .row  h3{
+        /* COURS GRATUITS */
+        font-size: 3.5vw;
+        margin-top: 15vh;
+        margin-bottom: 1vh;
+    }
+
+    #welcome .courses_buttons{
+        flex-direction: column;
+        width: 25vw;
+    }
+
+    #welcome .courses_buttons button{
+        font-size: 2.5vw;
+        margin: 0;
+    }
+}
+
+#introduction{
+    padding: 3vh;
+    background-color: #E6FFFF;
+    height: 70vh;
+}
+
+#introduction .introduction_titles{
+    text-align: center;
+    color: #737373;
+}
+
+#introduction .introduction_titles h2{
+    font-size: 3vw;
+    margin-top: 3vh;
+}
+
+.introduction_icons{
+    padding: inherit;
+}
+
+.introduction_icons h3{
+    margin: 1vh;
+    padding: inherit;
+    color: #1A8CFF;
+    font-size: 2vw;
+}
+
+@media (max-width: 1200px) {
+    
+    #introduction .introduction_titles h2{
+        font-size: 4vw;
+        margin-top: 0;
+    }
+
+    #introduction .introduction_titles h3{
+        font-size: 2.5vw;
+    }
+
+    .introduction_icons h3{
+        font-size: 2vw;
+    }
+
+
+}
+
+/* iPad */
+@media screen and (max-width: 768px) {
+
+    #introduction{
+        height: 100vh;
+    }
+
+
+    .introduction_icons h3{
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 576px){
+    #introduction{
+        height: 90vh;
+    }
+}
+
+#temoignages{
+    padding: 3vh;
+    height: 80vh;
+}
+
+#temoignages h2{
+    color: #1A8CFF;
+    font-size: 3.5vw;
+}
+
+#temoignages h3{
+    color: #1A8CFF;
+}
+
+#temoignages .student-comment{
+    background-color: #E6FFFF;
+}
+
+#temoignages .student-image{
+    height: 30vh;
+    width: 18vw;
+}
+
+#temoignages .student1{
+    background: url(../img/student1.jpg);
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center; 
+}
+
+#temoignages .student2{
+    background: url(../img/student2.jpg);
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center; 
+}
+
+#temoignages .student3{
+    background: url(../img/student3.jpg);
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center; 
+}
+
+#temoignages .student4{
+    background: url(../img/student4.jpg);
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center; 
+}
+
+@media (max-width: 1200px) {
+    
+    #temoignages{
+        height: 80vh;
+    }
+
+    #temoignages h3{
+        font-size: 2vw;
+    }
+
+    #temoignages .student-image{
+        height: 18vh;
+        width: 18vw;
+    }
+
+    #temoignages p{
+        font-size: 1.5vw;
+    }
+}
+
+/* iPad */
+@media screen and (max-width: 768px) {
+
+    #temoignages{
+        height: auto!important;
+    }
+
+    #temoignages .mobile-picture{
+        justify-content: center !important;
+    }
+
+
+    #temoignages p{
+        font-size: 2vw;
+    }
+
+}
+
+@media (max-width: 576px) {
+    #temoignages{
+        height: 100vh;
+    }
+
+    #temoignages h2{
+        text-align: center;
+        font-size: 6vw;
+    }
+
+    #temoignages .student-comment{
+        height: 40vh;
+    }
+
+    #temoignages .mobile-picture{
+        justify-content: center !important;
+    }
+
+    #temoignages .student-image{
+        height: 10vh;
+        width: 18vw;
+    }
+
+    #temoignages h3{
+        font-size: 3.5vw;
+        margin-top: 1vh;
+    }
+
+    #temoignages p{
+        font-size: 3vw;
+        text-align: center;
+    }
+
+
+}

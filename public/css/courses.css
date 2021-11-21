@@ -1,0 +1,111 @@
+#beginner h2, #intermediate h2, #advanced h2{
+    color: #1A8CFF;
+    font-size: 4vw;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    font-weight: 700;
+}
+
+#beginner h3, #intermediate h3, #advanced h3{
+    color: #1A8CFF;
+    font-size: 2.7vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-weight: 700;
+}
+
+#beginner h4, audio,
+#intermediate h4, audio,
+#advanced h4, audio {
+    color: #1A8CFF;
+    font-size: 2.5vw;
+    font-weight: 700;
+}
+
+#beginner p,
+#intermediate p{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+#button-exercices{
+    background-color: #E6FFFF;
+    
+}
+
+#button-exercices button{
+    background-color: #0066CC;
+    color: #fff;
+    font-size: 2vw;
+    margin-top: 3vh;
+    min-width: 15vw;
+}
+
+#button-exercices p{
+    text-align: center;
+    font-size: 2vw;
+    color: #1A8CFF;
+}
+
+
+@media (max-width: 1200px) {
+
+    #beginner h3,
+    #intermediate h3,
+    #advanced h3{
+        font-size: 3.5vw;
+    }
+
+    #beginner h4,
+    #intermediate h4,
+    #advanced h4{
+        margin: 5vh;
+    } 
+
+}
+
+@media screen and (max-width: 768px) {
+
+    #beginner h3, h4,
+    #intermediate h3, h4,
+    #advanced h3, h4{
+        text-align: center;
+    }
+
+    #beginner h4,
+    #intermediate h4,
+    #advanced h4{
+        margin: 0;
+        padding-bottom: 2vh;
+    }
+}
+
+@media (max-width: 576px){
+
+    #beginner h2,
+    #intermediate h2,
+    #advanced h2{ 
+        font-size: 5vw;
+        margin-bottom: 0;
+    }
+
+    #beginner h3,
+    #intermediate h3,
+    #advanced h3{ 
+        font-size: 5vw;
+    }
+
+    #beginner h4,
+    #intermediate h4,
+    #advanced h4{ 
+        font-size: 4vw;
+    }
+
+    #button-exercices button{
+        font-size: 4vw;
+    }
+    
+    #button-exercices p{
+        font-size: 4vw;
+    }
+}

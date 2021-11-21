@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Asap&family=Barlow+Condensed&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.sns-content, .links-content{
+    background-color: #E6FFFF !important;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none !important;
+}
+
+/* 他のh6はこれでいを変更しているけれどCONTACTの色を変更ができていない */
+h6.text-uppercase{
+    color: #1A8CFF !important;
+}
+
+.copy-right-content{
+    background-color: #C4C4C4;
+}

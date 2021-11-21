@@ -1,0 +1,28 @@
+#sign-in .sign-in-button{
+    background-color: #0066CC;
+    color: white;
+    text-align: center;
+}
+
+#sign-in .title{
+    text-align: center;
+}
+
+#login .title{
+    text-align: center;
+}
+
+#login .login-button{
+    background-color: #0066CC;
+    color: white;
+}
+
+#edit .edit-button{
+    background-color: #0066CC;
+    color: white;
+}
+
+#edit-password .edit-button{
+    background-color: #0066CC;
+    color: white;
+}

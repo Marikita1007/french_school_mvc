@@ -20,16 +20,27 @@ class StudentsManager extends Model
 
     public function insert($infos)
     {
-        $list_colonnes = implode(',', array_keys($infos));
-        $list_marquers = implode(',:', array_keys($infos));
-
-        $query = Model::getDataBase()->prepare("INSERT INTO students" . "($list_colonnes) VALUES (:$list_marquers)");
-
-        if($query->execute($infos)){
-            return Model::getDataBase()->lastInsertId();
-        }else{
+        $query = Model::getDataBase()->prepare("SELECT * FROM students WHERE email=:email");
+        $query->execute(array(
+            ':email' => $infos['email']
+        ));
+        $result = $query->rowCount();
+        if($result){
             return false;
         }
+        else{
+            $list_colonnes = implode(',', array_keys($infos));
+            $list_marquers = implode(',:', array_keys($infos));
+
+            $query = Model::getDataBase()->prepare("INSERT INTO students" . "($list_colonnes) VALUES (:$list_marquers)");
+
+            if($query->execute($infos)){
+                return Model::getDataBase()->lastInsertId();
+            }else{
+                return false;
+            }
+        }
+
     }
 
     public function selectOne($id_student)
@@ -49,8 +60,6 @@ class StudentsManager extends Model
             ':email' => $email
         ));
         $result = $query->fetch();
-        new \Debug($result);
-        die;
         return $result;
     }
 

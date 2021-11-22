@@ -56,9 +56,8 @@
                 </li>
                 <li class="nav-item">
                 <?php
-                var_dump($_SESSION);
-                if(isset($_SESSION['id_student']) && $_SESSION['id_student'] > 0){ ?>
-                    <a class="nav-link" href="<?= '?view=showStudent&op=show&id_student=' . $_SESSION['id_student'] ?>">MON COMPTE</a>
+                if(isset($_SESSION['student'])){ ?>
+                    <a class="nav-link" href="<?= '?view=showStudent&op=show' ?>">MON COMPTE</a>
                 <?php }else{
                     '?view=login'?>
                 <?php } ?>

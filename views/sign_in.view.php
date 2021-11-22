@@ -1,5 +1,5 @@
 <?php
-if(isset($errors)){
+if(isset($errors) && $errors != ""){
     echo "<div>" . $errors . "</div>";
 } ?>
 

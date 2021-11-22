@@ -75,7 +75,6 @@ class StudentsController
     }
 
     public function login(){
-
         $errors = array();
         $champs_vides = 0;
         foreach ($_POST as $key => $value) {
@@ -83,7 +82,7 @@ class StudentsController
             if (trim($_POST[$key]) == '') $champs_vides++;
             // j'incremente mon compteur de champs vides chaque fois que je detecte un champ non rempli
         }
-        if ($champs_vides > 0) {
+        if (!empty($champs_vides)) {
             $errors[] = 'Il manque ' . $champs_vides . ' information(s)';
             require ('views/login.view.php');
         }
@@ -95,8 +94,9 @@ class StudentsController
             }
 
             if($studentInfo){
-                unset($_SESSION);
-                $_SESSION = $studentInfo;
+                unset($_SESSION['student']);
+                $_SESSION['student'] = $studentInfo;
+                new \Debug($_SESSION);
                 require('views/studentAccount.view.php');
             }else{
                 $errors[] = "Votre saisie est incorrecte.";
@@ -107,14 +107,14 @@ class StudentsController
     }
 
     public function showData(){
-        if($_GET['op'] == 'show' && !empty($_GET['id_student']) && is_numeric($_GET['id_student'])){
-            $studentInfo = $this->db->selectOne($_GET['id_student']);
+        if($_GET['op'] == 'show' && !empty($_SESSION['student']->id_student) && is_numeric($_SESSION['student']->id_student)){
             require('views/studentAccount.view.php');
+        }else{
+            require ('views/login.view.php');
         }
     }
 
     public function editCheck(){
-        $studentInfo = $this->db->selectOne($_GET['id_student']);
         require ('views/edit_student.view.php');
     }
 
@@ -130,22 +130,30 @@ class StudentsController
             $champs_vides = 0;
             foreach ($_POST as $key => $value) {
                 $_POST[$key] = htmlspecialchars($value);
+                if($key == "password" || $key == "password2"){
+                    $_POST[$key] = md5($_POST[$key]);
+                }
                 if (trim($_POST[$key]) == '') $champs_vides++;
                 // j'incremente mon compteur de champs vides chaque fois que je detecte un champ non rempli
             }
             if ($champs_vides > 0) {
-                $errors[] = 'Il manque ' . $champs_vides . ' information(s)';
+                $errors[] = '<div class="alert alert-danger">Il manque ' . $champs_vides . ' information(s)</div>';
+            }
+
+            if(!isset($_POST['password']) || $_POST['password'] != $_POST['password2']){
+                $errors[] = '<div class="alert alert-danger">Le mot de passe ne correspond pas.</div>';
             }
 
             if (empty($errors)) {
-                // Cas de modif d'un employé existant
-                if($_GET['op'] == 'edit' && !empty($_GET['id_student']) && is_numeric($_GET['id_student'])){
-                    $studentInfo = $this->db->update($_GET['id_student'], $_POST);// je lance la méthode update du model
+                // Cas de modif d'un student existant
+                if($_GET['op'] == 'edit' && !empty($_SESSION['student']->id_student) && is_numeric($_SESSION['student']->id_student)){
+                    unset($_POST['password2']);
+                    $this->db->update($_SESSION['student']->id_student, $_POST);// je lance la méthode update du model
                 }
 
             }
         }
-        $studentInfo = $this->db->selectOne($_GET['id_student']);
+        $_SESSION['student'] = $this->db->selectOne($_SESSION['student']->id_student);
         require ('views/confirm_edited.view.php');
 
     }
@@ -186,14 +194,21 @@ class StudentsController
             $errors .= '<div class="alert alert-danger">Le mot de passe ne correspond pas.</div>';
         }
 
-        if(empty($errors="")){
+
+        if($errors == ""){
             $showPage = "";
             unset($_POST['password2']);
             $_POST['password'] = md5($_POST['password']);//password
             if($_GET['op'] == 'newStudent'){
                 $newStudentId = $this->db->insert($_POST);
-                $studentInfo = $this->db->selectOne($newStudentId);
-                require('views/register_confirm.view.php');
+                if($newStudentId > 0){
+                    $_SESSION['student'] = $this->db->selectOne($newStudentId);
+                    //new \Debug($_SESSION);
+                    require('views/register_confirm.view.php');
+                }else{
+                    $errors .= '<div class="alert alert-danger">Votre email est déjà utilisé.</div>';
+                    require ('views/sign_in.view.php');
+                }
             }
         }else{
             require ('views/sign_in.view.php');

@@ -62,14 +62,14 @@ class StudentsController
         header('location:?view=home');
     }
 
+    //!!!!!!何故か$_GET['id_student']が空
     public function deleteCheck(){
-        $studentInfo = $this->db->selectOne($_GET['id_student']);
         require ('views/verify_delete.view.php');
     }
 
     public function delete(){
-        if($_GET['op'] == 'delete' && !empty($_GET['id_student']) && is_numeric($_GET['id_student'])){
-            $this->db->deleteData($_GET['id_student']);
+        if($_GET['op'] == 'delete' && !empty($_SESSION['student']->id_student) && is_numeric($_SESSION['student']->id_student)){
+            $this->db->deleteData($_SESSION['student']->id_student);
         }
         require ('views/confirm_deleted.view.php');
     }
@@ -207,11 +207,11 @@ class StudentsController
                     require('views/register_confirm.view.php');
                 }else{
                     $errors .= '<div class="alert alert-danger">Votre email est déjà utilisé.</div>';
-                    require ('views/sign_in.view.php');
+                    require('views/sign_up.view.php');
                 }
             }
         }else{
-            require ('views/sign_in.view.php');
+            require('views/sign_up.view.php');
         }
 
     }

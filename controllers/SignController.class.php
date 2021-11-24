@@ -13,7 +13,7 @@ class SignController
                 $newStudent->register();
                 break;
             default :
-                require('views/sign_in.view.php');
+                require('views/sign_up.view.php');
                 break;
         }
     }

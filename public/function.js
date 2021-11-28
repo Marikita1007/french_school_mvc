@@ -31,3 +31,11 @@ window.addEventListener('scroll', function(){
 
 });
 
+// admin.view.php 
+//If user click toggle slidebar, it appears
+// $(document).ready(function () {
+//     $('#sidebarCollapse').on('click', function () {
+//         $('#sidebar').toggleClass('active');
+//     });
+// });
+

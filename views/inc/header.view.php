@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="public/css/courses.css">
     <link rel="stylesheet" href="public/css/form.css">
     <link rel="stylesheet" href="public/css/contact.css">
+    <link rel="stylesheet" href="public/css/admin.css">
 
     <title>Index</title>
 </head>
@@ -68,7 +69,7 @@
                 <?php } ?>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">COURS DE FRANÇAIS</a>
+                    <a class="nav-link dropdown-toggle toggle-controller" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">COURS DE FRANÇAIS</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="<?= '?view=beginner' ?>">DÉBUTANT</a>
                         <a class="dropdown-item" href="<?= '?view=intermediate' ?>">INTERMÉDIAIRE</a>

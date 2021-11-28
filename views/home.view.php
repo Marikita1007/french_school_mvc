@@ -33,7 +33,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="p-3 ">
                     <div class="d-flex justify-content-center">
-                        <i class="fas fa-book fa-7x"></i>
+                        <i class="test fas fa-book fa-7x"></i>
                     </div>
                     <div class="row">
                         <div class="col content-text">
@@ -45,7 +45,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="p-3 ">
                     <div class="d-flex justify-content-center">
-                        <i class="fas fa-graduation-cap fa-7x"></i>
+                        <i class="test fas fa-graduation-cap fa-7x"></i>
                     </div>
                     <div class="row">
                         <div class="col content-text">
@@ -57,7 +57,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="p-3 ">
                     <div class="d-flex justify-content-center">
-                        <i class="fas fa-users fa-7x"></i>
+                        <i class="test fas fa-users fa-7x"></i>
                     </div>
                     <div class="row">
                         <div class="col content-text">
@@ -135,7 +135,6 @@
             </div>
         </div>
     </div>
-
 </section>
 
 

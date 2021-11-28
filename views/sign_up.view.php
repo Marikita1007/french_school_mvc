@@ -8,7 +8,7 @@ if(isset($errors) && $errors != ""){
         <row>
             <div class="d-flex justify-content-center">
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    <form action="?view=sign&op=newStudent" method="POST">
+                    <form action="?view=sign&op=newMember" method="POST">
                         <fieldset>
                             <legend class="mt-2 title">S'INSCRIRE</legend>
                             <div class="form-group">
@@ -32,6 +32,7 @@ if(isset($errors) && $errors != ""){
                                 <input type="email" name="email" class="form-control" id="email" placeholder="Entrez votre email">
                                 <small id="email" class="form-text text-muted">Nous ne partagerons jamais votre email avec qui que ce soit.</small>
                             </div>
+                            <input type="hidden" name="status" id="status" value="0">
                             <br>
                             <div class="text-center">
                                 <button type="submit" class="btn sign-in-button mb-4">ENREGISTRER</button>

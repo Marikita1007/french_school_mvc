@@ -340,3 +340,19 @@
 
 
 }
+
+/* JavaScript Event back-to-top */
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    background-color: #1A8CFF;
+    border: 2px solid #FFFFFF;
+    width: 50px;
+    height: 40px;
+    font-size: 25px;
+    color: #FFFAF2;
+    text-align: center;
+    border-radius: 5%;
+    display: none;
+}

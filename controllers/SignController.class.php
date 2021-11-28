@@ -8,9 +8,9 @@ class SignController
 
         $view = $_GET['op'] ?? 'register';
         switch ($view) {
-            case 'newStudent' :
-                $newStudent = new StudentsController;
-                $newStudent->register();
+            case 'newMember' :
+                $newMember = new MembersController;
+                $newMember->register();
                 break;
             default :
                 require('views/sign_up.view.php');

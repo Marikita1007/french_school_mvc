@@ -1,16 +1,16 @@
 <?php
 namespace models;
 
-class Students
+class Members
 {
-    private $id_student;
+    private $id_member;
     private $prenom;
     private $nom;
     private $email;
     private $password;
 
-    public function __construct($id_student, $nom, $prenom, $email, $password){
-        $this->id_student=$id_student;
+    public function __construct($id_member, $nom, $prenom, $email, $password){
+        $this->id_member=$id_member;
         $this->prenom=$prenom;
         $this->nom=$nom;
         $this->email=$email;
@@ -20,17 +20,17 @@ class Students
     /**
      * @return mixed
      */
-    public function getIdStudent()
+    public function getIdMember()
     {
-        return $this->id_student;
+        return $this->id_member;
     }
 
     /**
-     * @param mixed $id_student
+     * @param mixed $id_member
      */
-    public function setIdStudent($id_student)
+    public function setIdMember($id_member)
     {
-        $this->id_student = $id_student;
+        $this->id_member = $id_member;
     }
 
     /**

@@ -11,7 +11,7 @@ if(!empty($errors)){
         <row>
             <div class="d-flex justify-content-center">
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    <form action="?view=showStudent&op=login" method="post">
+                    <form action="?view=showMember&op=login" method="post">
                         <fieldset>
                             <legend class="mt-2 title">CONNEXION</legend>
 

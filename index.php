@@ -42,9 +42,9 @@ switch ($view){
         $contact = new Controllers\ContactController;
         $contact->run();
         break;
-    case 'showStudent':
-        $student = new controllers\StudentsController;
-        $student->run();
+    case 'showMember':
+        $member = new controllers\MembersController;
+        $member->run();
         break;
     case 'myPage' :
         $myPage = new controllers\myPageController;

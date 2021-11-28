@@ -1,0 +1,15 @@
+.title-text{
+    color: #1A8CFF;
+    font-size: 3vw;
+}
+
+.contact-button{
+    background-color: #1A8CFF;
+    color: #fff;
+}
+
+.contact-button:hover{
+    background-color: #fff;
+    color: #1A8CFF;
+    border: 2px solid #1A8CFF;
+}

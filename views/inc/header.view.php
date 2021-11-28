@@ -11,6 +11,10 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
           integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <!--  animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Bootstrap -->
     <!-- popper.min.jsファイルを Bootstrap javascriptの前に含むことでドロップダウンバーを使うことができる -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,6 +27,7 @@
     <link rel="stylesheet" href="public/css/about.css">
     <link rel="stylesheet" href="public/css/courses.css">
     <link rel="stylesheet" href="public/css/form.css">
+    <link rel="stylesheet" href="public/css/contact.css">
 
     <title>Index</title>
 </head>

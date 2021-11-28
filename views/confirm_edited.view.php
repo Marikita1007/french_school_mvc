@@ -5,7 +5,7 @@ if(!empty($errors)){
     }
 }else{
     echo "<div>Votre compte a été modifié.</div>";
-    echo '<button><a href="?view=showStudent&op=show">Retournez à la page de votre compte</a></button>';
+    echo '<button><a href="?view=showMember&op=show">Retournez à la page de votre compte</a></button>';
 }
 
 

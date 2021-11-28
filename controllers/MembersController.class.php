@@ -3,16 +3,16 @@
 namespace controllers;
 
 use models\Model;
-use models\StudentsManager;
+use models\MembersManager;
 use PDO, PDOException, Exception;
 
-class StudentsController
+class MembersController
 {
     private $db;
 
     public function __construct()
     {
-        $this->db = new \Models\StudentsManager();
+        $this->db = new \Models\MembersManager();
     }
 
     public function run(){
@@ -49,7 +49,13 @@ class StudentsController
             case 'home':
                 $this->goHome();
                 break;
+            case 'admin':
+                $this->goAdmin();
         }
+    }
+
+    public function goAdmin(){
+        require ('views/admin.view.php');
     }
 
     public function goHome(){
@@ -62,14 +68,14 @@ class StudentsController
         header('location:?view=home');
     }
 
-    //!!!!!!何故か$_GET['id_student']が空
+    //!!!!!!何故か$_GET['id_member']が空
     public function deleteCheck(){
         require ('views/verify_delete.view.php');
     }
 
     public function delete(){
-        if($_GET['op'] == 'delete' && !empty($_SESSION['student']->id_student) && is_numeric($_SESSION['student']->id_student)){
-            $this->db->deleteData($_SESSION['student']->id_student);
+        if($_GET['op'] == 'delete' && !empty($_SESSION['member']->id_member) && is_numeric($_SESSION['member']->id_member)){
+            $this->db->deleteData($_SESSION['member']->id_member);
         }
         require ('views/confirm_deleted.view.php');
     }
@@ -90,14 +96,21 @@ class StudentsController
         if(empty($errors)){
 
             if(!empty($_POST['password']) && !empty($_POST['email'])){
-                $studentInfo = $this->db->loginCheck($_POST['password'], $_POST['email']);
+                $memberInfo = $this->db->loginCheck($_POST['password'], $_POST['email']);
             }
 
-            if($studentInfo){
-                unset($_SESSION['student']);
-                $_SESSION['student'] = $studentInfo;
-                new \Debug($_SESSION);
-                require('views/studentAccount.view.php');
+            if($memberInfo){
+                unset($_SESSION['member']);
+                $_SESSION['member'] = $memberInfo;
+                //Admin Check
+                $infosArray = json_decode(json_encode($_SESSION['member']), true);
+                if(!empty($infosArray) && $infosArray['status'] == 1){
+                    //CREATE AN ADMIN PAGE !!!!!!
+                    $adminButton = '<a href="?view=showMember&op=admin" class="btn btn-danger">Go to Admin Page</a>';
+                }else{
+                    $adminButton = '';
+                }
+                require('views/memberAccount.view.php');
             }else{
                 $errors[] = "Votre saisie est incorrecte.";
                 require ('views/login.view.php');
@@ -107,21 +120,21 @@ class StudentsController
     }
 
     public function showData(){
-        if($_GET['op'] == 'show' && !empty($_SESSION['student']->id_student) && is_numeric($_SESSION['student']->id_student)){
-            require('views/studentAccount.view.php');
+        if($_GET['op'] == 'show' && !empty($_SESSION['member']->id_member) && is_numeric($_SESSION['member']->id_member)){
+            require('views/memberAccount.view.php');
         }else{
             require ('views/login.view.php');
         }
     }
 
     public function editCheck(){
-        require ('views/edit_student.view.php');
+        require ('views/edit_member.view.php');
     }
 
     public function edit(){
 
-//        if($_GET['op'] == 'edit' && !empty($_GET['id_student']) && is_numeric($_GET['id_student'])){
-//            $studentInfo = $this->db->selectOne($_GET['id_student']);
+//        if($_GET['op'] == 'edit' && !empty($_GET['id_member']) && is_numeric($_GET['id_member'])){
+//            $memberInfo = $this->db->selectOne($_GET['id_member']);
 //        }
 
         if(!empty($_POST)){
@@ -145,15 +158,15 @@ class StudentsController
             }
 
             if (empty($errors)) {
-                // Cas de modif d'un student existant
-                if($_GET['op'] == 'edit' && !empty($_SESSION['student']->id_student) && is_numeric($_SESSION['student']->id_student)){
+                // Cas de modif d'un member existant
+                if($_GET['op'] == 'edit' && !empty($_SESSION['member']->id_member && is_numeric($_SESSION['member']->id_member))){
                     unset($_POST['password2']);
-                    $this->db->update($_SESSION['student']->id_student, $_POST);// je lance la méthode update du model
+                    $this->db->update($_SESSION['member']->id_member, $_POST);// je lance la méthode update du model
                 }
 
             }
         }
-        $_SESSION['student'] = $this->db->selectOne($_SESSION['student']->id_student);
+        $_SESSION['member'] = $this->db->selectOne($_SESSION['member']->id_member);
         require ('views/confirm_edited.view.php');
 
     }
@@ -198,12 +211,11 @@ class StudentsController
         if($errors == ""){
             $showPage = "";
             unset($_POST['password2']);
-            $_POST['password'] = md5($_POST['password']);//password
-            if($_GET['op'] == 'newStudent'){
-                $newStudentId = $this->db->insert($_POST);
-                if($newStudentId > 0){
-                    $_SESSION['student'] = $this->db->selectOne($newStudentId);
-                    //new \Debug($_SESSION);
+            $_POST['password'] = md5($_POST['password']);//password encrypted
+            if($_GET['op'] == 'newMember'){
+                $newMemberId = $this->db->insert($_POST);
+                if($newMemberId > 0){
+                    $_SESSION['member'] = $this->db->selectOne($newMemberId);
                     require('views/register_confirm.view.php');
                 }else{
                     $errors .= '<div class="alert alert-danger">Votre email est déjà utilisé.</div>';

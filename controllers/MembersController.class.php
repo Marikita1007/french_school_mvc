@@ -55,6 +55,7 @@ class MembersController
     }
 
     public function goAdmin(){
+        //echo "Im here";
         require ('views/admin.view.php');
     }
 
@@ -105,12 +106,11 @@ class MembersController
                 //Admin Check
                 $infosArray = json_decode(json_encode($_SESSION['member']), true);
                 if(!empty($infosArray) && $infosArray['status'] == 1){
-                    //CREATE AN ADMIN PAGE !!!!!!
-                    $adminButton = '<a href="?view=showMember&op=admin" class="btn btn-danger">Go to Admin Page</a>';
+                    require('views/admin.view.php');
                 }else{
-                    $adminButton = '';
+                    require('views/memberAccount.view.php');
                 }
-                require('views/memberAccount.view.php');
+                
             }else{
                 $errors[] = "Votre saisie est incorrecte.";
                 require ('views/login.view.php');

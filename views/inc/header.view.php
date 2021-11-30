@@ -19,6 +19,9 @@
     <!-- popper.min.jsファイルを Bootstrap javascriptの前に含むことでドロップダウンバーを使うことができる -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="public/css/navbar.css">
@@ -30,7 +33,7 @@
     <link rel="stylesheet" href="public/css/contact.css">
     <link rel="stylesheet" href="public/css/admin.css">
 
-    <title>Index</title>
+    <title>French School</title>
 </head>
 <body>
 
@@ -48,6 +51,12 @@
         <div class="collapse navbar-collapse" id="navbarColor03">
             <!-- ms-autoでナビアイテムが右側に移動-->
             <ul class="navbar-nav ms-auto">
+                <!-- === for sexurity reason -->
+                <?php if(!empty($_SESSION['member']) && $_SESSION['member']->status === "1"){ ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= '?view=showMember&op=admin' ?>">ADMIN</a>
+                    </li>
+                <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= '?view=test' ?>">TEST DE NIVEAU</a>
                 </li>
@@ -62,8 +71,8 @@
                 </li>
                 <li class="nav-item">
                 <?php
-                if(isset($_SESSION['student'])){ ?>
-                    <a class="nav-link" href="<?= '?view=showStudent&op=show' ?>">MON COMPTE</a>
+                if(isset($_SESSION['member'])){ ?>
+                    <a class="nav-link" href="<?= '?view=showMember&op=show' ?>">MON COMPTE</a>
                 <?php }else{
                     '?view=login'?>
                 <?php } ?>

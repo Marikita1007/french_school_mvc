@@ -52,4 +52,9 @@ switch ($view){
         break;
 }
 
-require_once ('views/inc/footer.view.php');
+if(!empty($_SESSION['member']) && $_SESSION['member']->status === "1"){ 
+    require_once('views/inc/admin_footer.view.php');
+}else{
+    require_once ('views/inc/footer.view.php');
+}
+

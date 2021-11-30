@@ -1,80 +1,41 @@
-#admin{
-    min-height: 86vh;    
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-}
 
-.admin-sidebar{
+#admin .sidebar {
     position: fixed;
-    left: -17.8vw;
-    width: 17.8vw;
-    height: 100%;
-    background: #1A8CFF;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 90px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    z-index: 99;
 }
-
-.admin-sidebar header{
-    font-size: 3vh;
-    color: #fff;
-    text-align: center;
-    line-height: 9.6vh;
-    background: #1ac2ff;
+  
+@media (max-width: 767.98px) {
+    #admin .sidebar {
+    top: 11.5rem;
+    padding: 0;
+    }
 }
-
-.admin-sidebar ul{
-    list-style: none;
+  
+#admin .navbar {
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
 }
-
-.admin-sidebar ul a{
-    display: block;
-    height: 100%;
-    width: 100%;
-    line-height: 8.9vh;
-    font-size: 2.7vh;
-    color: #fff;
-    padding-left: 2.8vw;
-    box-sizing: border-box;
-    border-top: 1px solid rgba(255, 255, 255, 1);
-    transition: 4s;
+  
+@media (min-width: 767.98px) {
+    #admin .navbar {
+        top: 0;
+        position: sticky;
+        z-index: 999;
+    }
 }
-
-ul li:hover a{
-    padding-left: 3.5vw;
+  
+#admin .sidebar .nav-link {
+    color: #333;
 }
-
-.admin-sidebar ul a i{
-    padding-right: 1vw;
-    margin-right: 1,4vw;
+  
+#admin .sidebar .nav-link.active {
+    color: #0d6efd;
 }
-
-#check{
-    display: none;
-}
-
-label #admin-btn, label #admin-cancel{
-    position: absolute;
-    cursor: pointer;
-}
-
-label #admin-btn{
-    left: 2.8vw;
-    top: 3.4vh;
-    font-size: 4.8vh;
-    color: #1A8CFF;
-    padding: 0.8vh 0.8vw;
-}
-
-label #admin-cancel{
-    z-index: 1111;
-    left: 14vw;
-    top: 2.3vh;
-    font-size: 4vh;
-    color: pink;
-    padding: 0.6vh 0.6vw;
-}
-
-/* 8,22 https://www.youtube.com/watch?v=V0O4pY2xX10 */
 
 
 

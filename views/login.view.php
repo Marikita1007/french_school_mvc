@@ -1,4 +1,5 @@
 <?php
+ob_start();
 if(!empty($errors)){
     foreach ($errors as $error){
         echo $error;
@@ -47,3 +48,6 @@ if(!empty($errors)){
     </container>
 </section>
 
+<?php
+$content = ob_get_clean();
+require('template.view.php');

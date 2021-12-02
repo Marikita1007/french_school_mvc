@@ -36,7 +36,6 @@
     <title>French School</title>
 </head>
 <body>
-
 <!-- BOOTSWATCH Theme LUX を使用-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -51,7 +50,7 @@
         <div class="collapse navbar-collapse" id="navbarColor03">
             <!-- ms-autoでナビアイテムが右側に移動-->
             <ul class="navbar-nav ms-auto">
-                <!-- === for sexurity reason -->
+                <!-- === for sexurity reason  it must use === -->
                 <?php if(!empty($_SESSION['member']) && $_SESSION['member']->status === "1"){ ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= '?view=showMember&op=admin' ?>">ADMIN</a>
@@ -64,18 +63,17 @@
                     <a class="nav-link" href="<?= '?view=about' ?>">QUI SOMMES-NOUS?</a>
                 </li>
                 <li class="nav-item">
+                    <?php
+                    if(isset($_SESSION['member'])){ ?>
+                        <a class="nav-link" href="<?= '?view=showMember&op=show' ?>">MON COMPTE</a>
+                    <?php } else { ?>
+                <li class="nav-item">
                     <a class="nav-link" href="<?= '?view=sign' ?>">S'INSCRIRE</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= '?view=login' ?>">CONNEXION</a>
                 </li>
-                <li class="nav-item">
-                <?php
-                if(isset($_SESSION['member'])){ ?>
-                    <a class="nav-link" href="<?= '?view=showMember&op=show' ?>">MON COMPTE</a>
-                <?php }else{
-                    '?view=login'?>
-                <?php } ?>
+            <?php } ?>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle toggle-controller" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">COURS DE FRANÇAIS</a>

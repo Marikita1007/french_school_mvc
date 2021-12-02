@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <div class="container">
     <div class="row">
         <table>
@@ -29,7 +33,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="p-3 ">
-                <a href="?view=showMember&op=logout" class="btn btn-info">Se déconnecter</a>
+                <a href="logout.php" class="btn btn-info">Se déconnecter</a>
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -40,3 +44,7 @@
     </div>
 
 </div>
+
+<?php
+$content = ob_get_clean();
+require('template.view.php');

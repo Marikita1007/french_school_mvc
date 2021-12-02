@@ -10,6 +10,12 @@ class MembersManager extends Model
 
     public function __construct(){}
 
+    public function selectStudents(){
+        $query = Model::getDataBase()->query("SELECT * FROM members WHERE status = 0");
+        $result = $query->fetchAll();
+        return $result;
+    }
+
     public function getIdColumnName(){
         $query = Model::getDataBase()->query("DESC members");
         $result = $query->fetch();

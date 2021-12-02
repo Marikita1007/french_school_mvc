@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <section id="contact">
     <div class="container">
         <div class="row">
@@ -43,3 +47,7 @@
         </div>
     </div>
 </section>
+
+<?php
+$content = ob_get_clean();
+require('template.view.php');

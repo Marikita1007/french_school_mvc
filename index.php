@@ -2,7 +2,6 @@
 
 session_start();
 require_once ('autoload.php');
-require_once ('views/inc/header.view.php');
 
 $view = $_GET['view'] ?? 'home';
 switch ($view){
@@ -14,8 +13,8 @@ switch ($view){
         $about = new Controllers\AboutController;
         $about->run();
         break;
-    case 'test' :
-        $test = new Controllers\TestController;
+    case 'question' :
+        $test = new Controllers\QuestionsController();
         $test->run();
         break;
     case 'sign' :
@@ -52,9 +51,5 @@ switch ($view){
         break;
 }
 
-if(!empty($_SESSION['member']) && $_SESSION['member']->status === "1"){ 
-    require_once('views/inc/admin_footer.view.php');
-}else{
-    require_once ('views/inc/footer.view.php');
-}
+
 

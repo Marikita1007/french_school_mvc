@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <section id="admin">
     <nav class="navbar navbar-light bg-light p-3">
         <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
@@ -15,12 +19,12 @@
         
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-            Hello, John Doe
+            Bonjour, <?= $_SESSION['member']->nom ?>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Messages</a></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" href="logout.php">Se déconnecter</a></li>
           </ul>
         </div>
   </div>
@@ -33,13 +37,13 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                                <span class="ml-2">Dashboard</span>
+                                <span class="ml-2">Membres</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="?view=question&opAdmin=qlist">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                                <span class="ml-2">Orders</span>
+                                <span class="ml-2">Test de niveau</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -77,14 +81,15 @@
                     </ol>
                 </nav>
                 <h1 class="h2">Dashboard</h1>
-                <p>This is the homepage of a simple admin interface which is part of a tutorial written on Themesberg</p>
+                <p>Voici un tableau de bord pour les utilisateurs de l'administration</p>
 
                 <div class="card">
-                    <h5 class="card-header">Customers</h5>
+                    <h5 class="card-header">Les élèves des french school</h5>
                     <div class="card-body">
-                        <h5 class="card-title">345k</h5>
-                        <p class="card-text">Feb 1 - Apr 1, United States</p>
-                        <p class="card-text text-success">18.2% increase since last month</p>
+                        <?php foreach ( $members as $member) : ?>
+                        <h5 class="card-title">Nom de membre : <?= $member->prenom ?> <?= $member->nom ?></h5>
+                        <p class="card-text text-success">Email : <?= $member->email ?></p>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 
@@ -175,3 +180,6 @@
                 </div>
 
 
+<?php
+$content = ob_get_clean();
+require('template.view.php');

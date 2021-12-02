@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <section id="intermediate">
     <div class="container">
         <div class="row introduction_titles">
@@ -120,4 +124,8 @@
         </div>
     </div>
 </section>
+
+<?php
+$content = ob_get_clean();
+require('template.view.php');
 

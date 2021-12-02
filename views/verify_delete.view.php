@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <div>Êtes-vous sûr de vouloir supprimer votre compte ?</div>
 <div class="row">
     <div class="col-lg-4 col-md-4 col-sm-12">
@@ -6,6 +10,10 @@
         </div>
     </div>
 </div>
+
+<?php
+$content = ob_get_clean();
+require('template.view.php');
 
 
 

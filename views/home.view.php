@@ -1,7 +1,8 @@
-
+<?php
+ob_start();
+?>
 
 <section id="welcome" >
-
     <div class="container-fluid">
         <div class="row">
             <h2 class="col-lg-6 col-md-12 col-sm-11 col-centered">APPRENEZ LE FRANÇAIS AVEC NOUS !</h2>
@@ -136,6 +137,10 @@
         </div>
     </div>
 </section>
+
+<?php
+$content = ob_get_clean();
+require('template.view.php');
 
 
 

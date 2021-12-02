@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 if(!empty($errors)){
     foreach ($errors as $error){
         echo $error;
@@ -8,4 +10,5 @@ if(!empty($errors)){
     echo '<button><a href="?view=showMember&op=show">Retournez à la page de votre compte</a></button>';
 }
 
-
+$content = ob_get_clean();
+require('template.view.php');

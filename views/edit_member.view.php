@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <section id="edit">
     <container>
         <row>
@@ -38,5 +42,8 @@
         </row>
     </container>
 
-
 </section>
+
+<?php
+$content = ob_get_clean();
+require('template.view.php');

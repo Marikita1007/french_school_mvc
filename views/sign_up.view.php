@@ -1,4 +1,5 @@
 <?php
+ob_start();
 if(isset($errors) && $errors != ""){
     echo "<div>" . $errors . "</div>";
 } ?>
@@ -56,4 +57,11 @@ if(isset($errors) && $errors != ""){
     </container>
 
 </section>
+
+<?php
+$content = ob_get_clean();
+require('template.view.php');
+
+
+
 

@@ -3,12 +3,12 @@ AOS.init();
 
 //introduction
 //!!!test!!! becomes array
-let test = document.querySelectorAll('.test')
+let shake = document.querySelectorAll('.shake_anime')
 
 //Animate.css animate__headShake
-for(let i = 0; i < test.length; i++){
+for(let i = 0; i < shake.length; i++){
     //test[i]の[i]はindex
-    test[i].addEventListener('mouseover', function(){
+    shake[i].addEventListener('mouseover', function(){
         this.classList.add("animate__headShake");
         this.classList.add("animate__animated");
         this.addEventListener('mouseout', function(){

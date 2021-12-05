@@ -13,12 +13,21 @@ class QuestionsManager extends Model{
         return $result;
     }
 
-    public function selectId($id){
+    public function selectQuestion($id){
         $query = Model::getDataBase()->prepare("SELECT * FROM questions WHERE " . $this->getIdColumnName() . "=:id");
         $query->execute(array (
             ':id' => $id
         ));
         $result = $query->fetch();
+        return $result;
+    }
+
+    public function selectAnswers($id_question){
+        $query = Model::getDataBase()->prepare("SELECT * FROM `answers` WHERE id_question=:id_question");
+        $query->execute(array (
+            ':id_question' => $id_question
+        ));
+        $result = $query->fetchAll();
         return $result;
     }
 

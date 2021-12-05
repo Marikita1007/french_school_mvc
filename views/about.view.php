@@ -12,10 +12,10 @@ ob_start();
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="p-3 ">
-                    <div class="d-flex justify-content-center test">
+                    <div class="d-flex justify-content-center">
                         <a class="teachers-image teacher2"></a>
                     </div>
-                    <div class="d-flex justify-content-center test2">
+                    <div class="d-flex justify-content-center">
                         <h3 class="teacher-name">Anne Ogastric</h3>
                     </div>
                 </div>

@@ -36,6 +36,11 @@ class QuestionsController
                     $this->deleteQuestions();
                     break;
             }
+            switch ($opAdmin){
+                case 'show' :
+                    $this->showData();
+                    break;
+            }
         }
     }
 
@@ -45,8 +50,12 @@ class QuestionsController
     }
 
     public function editQuestions(){
-        if ($_GET['opAdmin'] == 'edit' && !empty($_GET['id']) && is_numeric($_GET['id']) ){
-            $current = $this->db->selectId($_GET['id']);
+        if ($_GET['opAdmin'] == 'edit' && !empty($_GET['id']) && is_numeric($_GET['id'])){
+            $current = $this->db->selectQuestion($_GET['id']);
+            $answersInfo = $this->db->selectAnswers($_GET['id']);
+//            new \Debug($answersInfo);
+//            new \Debug($current);
+//            die;
         }
 
         if (!empty($_POST)) {
@@ -70,6 +79,15 @@ class QuestionsController
         }
 
         require('views/edit_q&a.view.php');
+    }
+
+    //Need to edit !!
+    public function showData(){
+        if($_GET['op'] == 'show' && !empty($_SESSION['member']->id_member) && is_numeric($_SESSION['member']->id_member)){
+            require('views/memberAccount.view.php');
+        }else{
+            require ('views/login.view.php');
+        }
     }
 
     public function deleteQuestions(){

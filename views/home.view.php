@@ -34,7 +34,7 @@ ob_start();
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="p-3 ">
                     <div class="d-flex justify-content-center">
-                        <i class="test fas fa-book fa-7x"></i>
+                        <i class="shake_anime fas fa-book fa-7x"></i>
                     </div>
                     <div class="row">
                         <div class="col content-text">
@@ -46,7 +46,7 @@ ob_start();
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="p-3 ">
                     <div class="d-flex justify-content-center">
-                        <i class="test fas fa-graduation-cap fa-7x"></i>
+                        <i class="shake_anime fas fa-graduation-cap fa-7x"></i>
                     </div>
                     <div class="row">
                         <div class="col content-text">
@@ -58,7 +58,7 @@ ob_start();
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="p-3 ">
                     <div class="d-flex justify-content-center">
-                        <i class="test fas fa-users fa-7x"></i>
+                        <i class="shake_anime fas fa-users fa-7x"></i>
                     </div>
                     <div class="row">
                         <div class="col content-text">

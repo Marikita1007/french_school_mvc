@@ -34,7 +34,7 @@ ob_start();
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                                 <span class="ml-2">Membres</span>
                             </a>
                         </li>
@@ -44,30 +44,7 @@ ob_start();
                                 <span class="ml-2">Test de niveau</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                                <span class="ml-2">Products</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                <span class="ml-2">Customers</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                                <span class="ml-2">Reports</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                                <span class="ml-2">Integrations</span>
-                            </a>
-                        </li>
+
                     </ul>
                 </div>
             </nav>
@@ -81,42 +58,51 @@ ob_start();
                 <h1 class="h2">Dashboard</h1>
                 <p>Voici un tableau de bord pour les utilisateurs de l'administration</p>
 
+                    <?php  if(!empty($errors)){ ?>
+                        <div class="alert alert-primary" role="alert"><?= implode($errors); ?></div>
+                    <?php } ?>
+
                 <!-- 問題と解答の入力フォーム -->
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-md-4 col-sm-6">
-                            <form action="?op=new" method="post" class="">
+                            <form action="?view=question&opAdmin=edit&id=<?= $currentQuestion->id_question ?>" method="post" class="">
 
+                                <!--<input type="hidden" name="id_question" value="<?= $currentQuestion->id_question ?>"> !-->
                                 <div class="form-group">
                                     <label for="question" class="form-label mt-4">Question</label>
-                                    <textarea class="form-control" id="question" rows="3" name="question"><?= $current->question ?></textarea>
+                                    <textarea class="form-control" id="question" rows="3" name="question"><?= $currentQuestion->question ?></textarea>
                                 </div>
                                 <?php $wrongAnswers = "";
+
+
                                 foreach ($answersInfo as $answer) :
-                                        if($answer->id_answer == $current->id_correct_answer){
+                                        if($answer->id_answer == $currentQuestion->id_correct_answer){
                                             $correctAnswer =
                                             '<div class="form-group">
                                                 <label for="answer">Bonne réponse</label><br>
-                                                <input type="text" class="form-control" id="" name="correct_answer" value="' . $answer->answer  . '">
+                                                <input type="text" class="form-control" id="" name="correct_answer_'. $answer->id_answer . '" value="' . $answer->answer  . '">
                                             </div>';
                                         }else{
                                             $wrongAnswers .=
                                             '<div class="form-group">
                                                 <label for="answer">Mauvaise réponse</label><br>
-                                                <input type="text" class="form-control" id="" name="answer" value="' . $answer->answer  . '">
+                                                <input type="text" class="form-control" id="" name="wrong_answer_'. $answer->id_answer . '"  value="' . $answer->answer  . '">
                                             </div>';
                                         } endforeach;
                                         echo $correctAnswer;
                                         echo $wrongAnswers;
                                         ?>
+
+                                <label>Choisissez le niveau de la question</label>
                                 <select name="difficulty" id="difficulty" class="form-select mt-3" aria-label="Default select example">
                                     <!--   condition ? if true, do this : otherwise, do this -->
-                                    <option <?= $current->id_difficulty == "1" ? ' selected ': ''; ?>value="1">Débutant</option>
-                                    <option <?= $current->id_difficulty == "2" ? ' selected ': ''; ?>value="2">Intermédiaire</option>
-                                    <option <?= $current->id_difficulty == "3" ? ' selected ': ''; ?>value="3">Avance</option>
+                                    <option <?= $currentQuestion->id_difficulty == "1" ? ' selected ': ''; ?>value="1">Débutant</option>
+                                    <option <?= $currentQuestion->id_difficulty == "2" ? ' selected ': ''; ?>value="2">Intermédiaire</option>
+                                    <option <?= $currentQuestion->id_difficulty == "3" ? ' selected ': ''; ?>value="3">Avance</option>
                                 </select>
 
-                                <input type="submit" value="Ajouter une nouvelle question et des réponses" class="btn btn-primary my-3">
+                                <input type="submit" value="Modifier la question et les réponses" class="btn btn-primary my-3">
                                 <a href="?view=question&opAdmin=qlist" >Return</a>
 
                             </form>

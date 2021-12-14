@@ -10,7 +10,7 @@ abstract class Model
     private static function setDataBase()
     {
         try{
-            self::$pdo = new PDO("mysql:host=localhost; dbname=french_school; charset=utf8", "root", "root",
+            self::$pdo = new PDO("mysql:host=localhost; dbname=french_school_mvc; charset=utf8", "root", "",
                 array(
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',

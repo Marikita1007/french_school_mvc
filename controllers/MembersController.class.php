@@ -19,7 +19,7 @@ class MembersController
         $op = $_GET['op'] ?? 'list';
 
         switch ($op){
-            case '//list' :
+            case 'list' :
                 break;
                 $this->listAll();
             case 'editCheck':

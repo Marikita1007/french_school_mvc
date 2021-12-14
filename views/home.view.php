@@ -80,7 +80,7 @@ ob_start();
         </div>
     </div>
 
-    <div class="container temoignages_pictures">
+    <div class="container temoignages_picturesté">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-6 student-comment">
                 <div class="p-3 ">

@@ -50,6 +50,7 @@ class QuestionsController
         require('views/admin.leveltest.view.php');
     }
 
+    //Prefill datas which are already in the database
     public function prefillQuestions(){
         if ($_GET['opAdmin'] == 'prefill' && !empty($_GET['id']) && is_numeric($_GET['id'])){
             $currentQuestion = $this->db->selectQuestion($_GET['id']);
@@ -58,26 +59,48 @@ class QuestionsController
         require('views/edit_q&a.view.php');
     }
 
+    //edit database of questions and answers
     public function editQuestion(){
 
         if(!empty($_POST)){
             $errors = array();
             $empty_columns = 0;
             foreach ($_POST as $key => $value){
+                //Prevent SQL injections
                 $_POST[$key] = htmlspecialchars($value);
                 if(trim($_POST[$key]) == '') $empty_columns++;
             }
             if($empty_columns > 0){
-                $errors[] = 'Il manque ' . $champs_vides . ' information(s)';
+                //Need to call this in the page so it actually shows.
+                $errors[] = 'Il manque ' . $empty_columns . ' information(s)';
             }
 
             if(empty($errors)){
                 if($_GET['opAdmin'] == 'edit' && !empty($_GET['id']) && is_numeric($_GET['id'])){
-                    $this->db->updateQuestion($_GET['id'], $_POST);
-                    $this->db->updateAnswers($_GET['id'], $_POST);
+                    //making arrays to separate datas of the table answers and questions
+                    //strpos needs to have arrays
+                    $answer_data = [];
+                    $question_data = [];
+                    foreach ($_POST as $key => $value) {
+                        //strpos finds the position of what's given as needle
+                        if(strpos($key, "correct_answer") !== false || strpos($key, "wrong_answer") !== false) {
+                            //array_push adds what it's given to $answer_data
+                            //Here it's getting only the necessary datas for answer table
+                            //It also create name "id" pour keys and name "answer" for values
+                            //By doing this, we can get associative arrays of answer datas as values of "id";
+                            //This helps to edit names of associative arrays cuz they are not the same as database column's names
+                            array_push($answer_data, array( "id" => $key,"answer" => $value));
+                        }else {
+                            //it only gets what we need for table questions
+                            //This one, we don't need to edit the associative arrays so don't need to do array_push
+                            $question_data[$key] =$value ;
+                        }
+                    }
+
+                    $this->db->updateQuestion($_GET['id'], $question_data);
+                    $this->db->updateAnswers($answer_data);
                 }
-                //This path is not created yet !!
-                //header('location:?opAdmin=lisQuestion');
+                header('location:?view=question&opAdmin=qlist');
             }
         }
 
@@ -108,9 +131,7 @@ class QuestionsController
                         }
                     }
                     if(empty($wrongInputs)){
-                        echo 'No wrongInputs or errors';
-                        die;
-                        $this->db->insert($_POST);
+                        $this->db->addQuestion($_POST);
                     }
                 }
             }

@@ -1,6 +1,7 @@
 <?php
 
 namespace models;
+use mysql_xdevapi\DocResult;
 use PDO, PDOException, Exception;
 
 class QuestionsManager extends Model{
@@ -45,12 +46,15 @@ class QuestionsManager extends Model{
         ));
     }
 
+    //This also need to be fixed just like updateQuestion and updateAnswers cuz this is inserting into é tables !!!!!!!!!!!!!!!!
     public function addQuestion($infos)
     {
         $column_lists = implode(',', array_keys($infos));//implode() Rassemble les éléments d'un tableau en une chaîne.
         $marker_lists = implode(',:', array_keys($infos));//array_keys — Retourne toutes les clés ou un ensemble des clés d'un tableau
         $query = Model::getDataBase()->prepare("INSERT INTO questions" . " ($column_lists ) VALUES (:$marker_lists)");
         if ($query->execute($infos)){
+            new \Debug($query);
+            die;
             return Model::getDataBase()->lastInsertId();
         }else{
             return false;
@@ -62,21 +66,28 @@ class QuestionsManager extends Model{
         foreach(array_keys($infos) as $key){//array_keys — Retourne toutes les clés ou un ensemble des clés d'un tableau
             $setList[] = "$key = :$key";
         }
-        $newValues = implode(',' , $setList);//implode() Rassemble les éléments d'un tableau en une chaîne. nom=:nom,prenom=:prenom, salaire=:salaire
-        $query = Model::getDataBase()->prepare("UPDATE question SET $newValues WHERE " . $this->getIdColumnName() . "=:id");
         $infos['id'] = $id;
-        //return $query->execute($infos);
+        $newValues = implode(', ' , $setList);//implode() Rassemble les éléments d'un tableau en une chaîne. nom=:nom,prenom=:prenom, salaire=:salaire
+        $query = Model::getDataBase()->prepare("UPDATE questions SET $newValues WHERE " . $this->getIdColumnName() . "=:id");
+        $query->execute($infos);
     }
 
-    //It need to have id_question and id_qnswer to edit the answers
-    public function updateAnswers($id_question, $infos){
-        new \Debug($id_question);
-        new \Debug($infos);
-        die;
-
-        //UPDATE answer SET `answer`='Bonjour mod' WHERE id_question = 1 AND id_answer = 5;
-        $query = Model::getDataBase()->prepare("UPDATE answers SET  WHERE " . $this->getIdColumnName() . "=:id");
-        $infos['id'] = $id_question;
+    //its getting $answerArray which contains an array.
+    // This array has 2 values.
+    // Ons is associative arrays which has  "id" as key name, second is user inputs answers which has "answer" as key name
+    public function updateAnswers($answerArray){
+        foreach($answerArray as $answer){
+            //explode separate key name. ex : correct_answer_id of key name "id"
+            $idAnswer = explode('_', $answer["id"]);
+            //Get last letters after "_" so even the id number is huge, it still works.
+            $idAnswer = end($idAnswer);
+            $query = Model::getDataBase()->prepare("UPDATE answers SET answer =  :answer  WHERE id_answer =  :id_answer");
+            $query->execute(array(
+                    ':answer' => $answer["answer"],
+                    ':id_answer' => $idAnswer
+                )
+            );
+        }
     }
 
 

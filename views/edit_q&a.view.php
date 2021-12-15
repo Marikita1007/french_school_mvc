@@ -67,17 +67,13 @@ ob_start();
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-md-4 col-sm-6">
                             <form action="?view=question&opAdmin=edit&id=<?= $currentQuestion->id_question ?>" method="post" class="">
-
-                                <!--<input type="hidden" name="id_question" value="<?= $currentQuestion->id_question ?>"> !-->
                                 <div class="form-group">
                                     <label for="question" class="form-label mt-4">Question</label>
                                     <textarea class="form-control" id="question" rows="3" name="question"><?= $currentQuestion->question ?></textarea>
                                 </div>
                                 <?php $wrongAnswers = "";
-
-
                                 foreach ($answersInfo as $answer) :
-                                        if($answer->id_answer == $currentQuestion->id_correct_answer){
+                                        if($answer->id_answer == $currentQuestion->id_answer){
                                             $correctAnswer =
                                             '<div class="form-group">
                                                 <label for="answer">Bonne réponse</label><br>
@@ -95,7 +91,7 @@ ob_start();
                                         ?>
 
                                 <label>Choisissez le niveau de la question</label>
-                                <select name="difficulty" id="difficulty" class="form-select mt-3" aria-label="Default select example">
+                                <select name="id_difficulty" id="difficulty" class="form-select mt-3" aria-label="Default select example">
                                     <!--   condition ? if true, do this : otherwise, do this -->
                                     <option <?= $currentQuestion->id_difficulty == "1" ? ' selected ': ''; ?>value="1">Débutant</option>
                                     <option <?= $currentQuestion->id_difficulty == "2" ? ' selected ': ''; ?>value="2">Intermédiaire</option>

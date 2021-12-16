@@ -46,11 +46,10 @@ class QuestionsManager extends Model{
         ));
     }
 
-    //This also need to be fixed just like updateQuestion and updateAnswers cuz this is inserting into é tables !!!!!!!!!!!!!!!!
     public function addQuestion($question_data)
     {
-        $column_lists = implode(',', array_keys($question_data));//implode() Rassemble les éléments d'un tableau en une chaîne.
-        $marker_lists = implode(',:', array_keys($question_data));//array_keys — Retourne toutes les clés ou un ensemble des clés d'un tableau
+        $column_lists = implode(',', array_keys($question_data));
+        $marker_lists = implode(',:', array_keys($question_data));
         $query = Model::getDataBase()->prepare("INSERT INTO questions" . " ($column_lists ) VALUES (:$marker_lists)");
         if ($query->execute($question_data)){
             return Model::getDataBase()->lastInsertId();
@@ -59,22 +58,28 @@ class QuestionsManager extends Model{
         }
     }
 
-    public function addAnswers($id_question, $correct_answer_data, $wrong_answer_data){
-        new \Debug($correct_answer_data);
-        new \Debug($wrong_answer_data);
-
-        $column_lists = implode(',', array_keys($correct_answer_data));
-        $marker_lists = implode(',:', array_keys($correct_answer_data));
-        new \Debug($column_lists);
-        new \Debug($marker_lists);
-        die;
-        //!!!!!!!!!!!!!!!!!!!!!!!!!HERE NEED TO BE FIXED
-        $query = Model::getDataBase()->prepare("INSERT INTO answers WHERE answer =  :answer  WHERE id_answer =  :id_answer");
-        if ($query->execute($question_data)){
-            return Model::getDataBase()->lastInsertId();
+    //We did here !!!
+    public function addAnswers($id_question, $answersArray){
+        foreach ($answersArray as $answer){
+            $query = Model::getDataBase()->prepare("INSERT INTO answers (id_question, answer) VALUES (:id_question, :answer) ");
+            $executeQuery= $query->execute(array(
+                ':id_question' => $id_question,
+                ':answer' => $answer['answer']
+            ));
+            if ($executeQuery == true && strpos($answer["id"], "correct_answer") !== false){
+                $id_correct_answer = Model::getDataBase()->lastInsertId();
+            }
+        }
+        if(is_int($id_correct_answer)){
+            return $id_correct_answer;
         }else{
             return false;
         }
+    }
+
+    public function addGoodAnswerToQuestion($id_question, $id_correct_answer){
+        echo 'hi';
+        die;
     }
 
     public function updateQuestion($id, $infos){
@@ -90,7 +95,7 @@ class QuestionsManager extends Model{
 
     //its getting $answerArray which contains an array of $answer_data.
     // This array has 2 values.
-    // Ons is associative arrays which has "id" as key name, second is user inputs answers which has "answer" as key name
+    // Ons is associative arrays which has  "id" as key name, second is user inputs answers which has "answer" as key name
     public function updateAnswers($answerArray){
         foreach($answerArray as $answer){
             //explode separate key name. ex : correct_answer_id of key name "id"

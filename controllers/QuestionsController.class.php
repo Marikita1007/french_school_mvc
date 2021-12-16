@@ -142,11 +142,9 @@ class QuestionsController
                             $question_data = [];
                             foreach ($_POST as $key => $value) {
                                 //strpos finds the position of what's given as needle
-                                if(strpos($key, "correct_answer") !== false) {
-                                    $correct_answer_data[$key] = $value;
-                                }elseif (strpos($key, "wrong_answer") !== false){
-                                    $wrong_answer_data[$key] = $value;
-                                }else{
+                                if(strpos($key, "correct_answer") !== false || strpos($key, "wrong_answer") !== false) {
+                                    array_push($answer_data, array( "id" => $key,"answer" => $value));
+                                }else {
                                     //it only gets what we need for table questions
                                     //This one, we don't need to edit the associative arrays so don't need to do array_push
                                     $question_data[$key] =$value ;
@@ -155,7 +153,7 @@ class QuestionsController
                             //Input a new question to the table "questions" without a column "id_answer"
                             $id_question = $this->db->addQuestion($question_data);
                             //Input new answers to the table "answers"
-                            $id_good_answer = $this->db->addAnswers($id_question, $correct_answer_data, $wrong_answer_data);
+                            $id_good_answer = $this->db->addAnswers($id_question, $answer_data);
                             //Get the correct answer from the addAnswers function and input into "questions" column "id_answer"
                             $this->db->addGoodAnswerToQuestion($id_question, $id_good_answer);
                         }

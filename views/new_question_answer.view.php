@@ -93,7 +93,7 @@ ob_start();
                         </div>
 
 
-                    <select name="difficulty" id="difficulty" class="form-select mt-3" aria-label="Default select example">
+                    <select name="id_difficulty" id="difficulty" class="form-select mt-3" aria-label="Default select example">
                         <option>Choisissez le niveau de la question</option>
                         <option value="1">Débutant</option>
                         <option value="2">Intermédiaire</option>

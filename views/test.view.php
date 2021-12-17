@@ -1,18 +1,18 @@
 <?php
 ob_start();
-
-echo "TEST FOR STUDENT PAGE";
 ?>
 
     <!-- 表示場所 -->
-    <div class="container">
+    <div class="container test_test">
 
-        <h2>Please choose the answer from the options</h2>
+        <h2>Faites le test et vérifiez votre niveau de français</h2>
 
-        <div class="row">
-            <form action="" method="post">
+        <div class="row my-3">
+            <div class="class=">
+                <form action="?view=showMember&op=testResult" method="post">
+                <?php $questionNumber = 1;?>
                 <?php foreach ($questionsData as $questions) : ?>
-                    <row><?= $questions->id_question ?> - <?= $questions->question ?><br><br>
+                    <row><?= $questionNumber++ ?>.  <?= $questions->question ?><br><br>
                         <?php
                         $answersList = new \controllers\AnswersController();
                         $answersData = $answersList->listAnswers($questions->id_question);
@@ -24,8 +24,9 @@ echo "TEST FOR STUDENT PAGE";
                         if(!empty($answersData)) {} ?><br><br>
                     </row>
                 <?php endforeach; ?>
-                <button type="submit" name="submit" value="submit" class="btn btn-info"><a href="?op=new" style="text-decoration: none">Submit</a></button>
+                    <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
             </form>
+            </div>
         </div>
     </div>
 

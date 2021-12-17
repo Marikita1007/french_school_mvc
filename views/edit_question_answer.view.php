@@ -1,10 +1,5 @@
 <?php
 ob_start();
-if(!empty($errors)){
-    foreach ($errors as $error){
-        echo $error;
-    };
-}
 ?>
 
     <section id="admin">
@@ -25,7 +20,6 @@ if(!empty($errors)){
                     Bonjour, <?= $_SESSION['member']->nom ?>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
                     <li><a class="dropdown-item" href="#">Messages</a></li>
                     <li><a class="dropdown-item" href="logout.php">Se déconnecter</a></li>
                 </ul>
@@ -38,13 +32,13 @@ if(!empty($errors)){
                 <div class="position-sticky pt-md-5">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">
+                            <a class="nav-link" href="?view=showMember&op=admin">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                                 <span class="ml-2">Membres</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="?view=question&opAdmin=qlist">
+                            <a class="nav-link active" aria-current="page"  href="?view=question&opAdmin=qlist">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
                                 <span class="ml-2">Modifier le test</span>
                             </a>
@@ -64,8 +58,14 @@ if(!empty($errors)){
                 <p>Voici un tableau de bord pour les utilisateurs de l'administration</p>
 
                     <?php  if(!empty($errors)){ ?>
-                        <div class="alert alert-primary" role="alert"><?= implode($errors); ?></div>
-                    <?php } ?>
+                        <div class="alert alert-danger" role="alert"><?= implode($errors); ?></div>
+                    <?php }
+                    if(!empty($empty_difficulty)){ ?>
+                        <div class="alert alert-danger" role="alert"><?= $empty_difficulty; ?></div>
+                    <?php }
+                    if(!empty($wrongInputs)){ ?>
+                        <div class="alert alert-danger" role="alert"><?= $wrongInputs; ?></div>
+                    <?php }?>
 
                 <!-- 問題と解答の入力フォーム -->
                 <div class="container">
@@ -95,12 +95,12 @@ if(!empty($errors)){
                                         echo $wrongAnswers;
                                         ?>
 
-                                <label>Choisissez le niveau de la question</label>
                                 <select name="id_difficulty" id="difficulty" class="form-select mt-3" aria-label="Default select example">
                                     <!--   condition ? if true, do this : otherwise, do this -->
-                                    <option <?= $currentQuestion->id_difficulty == "1" ? ' selected ': ''; ?>value="1">Débutant</option>
-                                    <option <?= $currentQuestion->id_difficulty == "2" ? ' selected ': ''; ?>value="2">Intermédiaire</option>
-                                    <option <?= $currentQuestion->id_difficulty == "3" ? ' selected ': ''; ?>value="3">Avance</option>
+                                    <option  value="">Choisissez le niveau de la question</option>
+                                    <option  value="1">Débutant</option>
+                                    <option  value="2">Intermédiaire</option>
+                                    <option  value="3">Avance</option>
                                 </select>
 
                                 <input type="submit" value="Modifier la question et les réponses" class="btn btn-primary my-3">

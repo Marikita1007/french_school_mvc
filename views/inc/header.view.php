@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="public/css/form.css">
     <link rel="stylesheet" href="public/css/contact.css">
     <link rel="stylesheet" href="public/css/admin.css">
+    <link rel="stylesheet" href="public/css/test.css">
 
     <title>French School</title>
 </head>
@@ -51,7 +52,7 @@
                     </li>
                 <?php } ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= '?view=test' ?>">TEST DE NIVEAU</a>
+                    <a class="nav-link" href="<?= '?view=showMember&op=test' ?>">TEST DE NIVEAU</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= '?view=about' ?>">QUI SOMMES-NOUS?</a>

@@ -31,13 +31,13 @@ class QuestionsController
                     $this->prefillQuestions();
                     break;
                 case 'delete' :
-                    $this->deleteQuestions();
+                    $this->deleteQuestionAndAnswers();
                     break;
                 case 'show' :
                     $this->showDashboard();
                     break;
                 case 'new' :
-                    $this->newQuestions();
+                    $this->newQuestionAndAnswers();
                     break;
                 case 'edit' :
                     $this->editQuestion();
@@ -65,15 +65,19 @@ class QuestionsController
 
         if(!empty($_POST)){
             $errors = array();
-            $empty_columns = 0;
+            $empty_fields = 0;
+            $empty_difficulty = '';
             foreach ($_POST as $key => $value){
                 //Prevent SQL injections
                 $_POST[$key] = htmlspecialchars($value);
-                if(trim($_POST[$key]) == '') $empty_columns++;
+                if(trim($_POST[$key]) == '') $empty_fields++;
             }
-            if($empty_columns > 0){
+            if($empty_fields > 0){
                 //Need to call this in the page so it actually shows.
-                $errors[] = 'Il manque ' . $empty_columns . ' information(s)';
+                $errors[] = 'Il manque ' . $empty_fields . ' information(s)';
+                if ($_POST["id_difficulty"] == '') {
+                    $empty_difficulty .= 'Veuillez choisir la niveau de la question';
+                }
                 //refilling the data again
                 $currentQuestion = $this->db->selectQuestion($_GET['id']);
                 $answersInfo = $this->db->selectAnswers($_GET['id']);
@@ -110,26 +114,29 @@ class QuestionsController
     }
 
     //Need to add if else for checking if the answers are different
-    public function newQuestions(){
+    public function newQuestionAndAnswers(){
         if (!empty($_POST)) {
             $errors = array();
-            $champs_vides = 0;
+            $empty_difficulty = '';
+            $empty_fields = 0;
             foreach ($_POST as $key => $value) {
                 $_POST[$key] = htmlspecialchars($value);
-                if (trim($_POST[$key]) == '') $champs_vides++;
+                if (trim($_POST[$key]) == '') $empty_fields++;
             }
-            if ($champs_vides > 0) {
-                $errors[] = 'Il manque ' . $champs_vides . ' information(s) !';
+            if ($empty_fields > 0) {
+                $errors[] = 'Il manque ' . $empty_fields . ' information(s)';
+                if ($_POST["id_difficulty"] == '') {
+                    $empty_difficulty .= 'Veuillez choisir la niveau de la question';
+                }
             }
-
             //Need to write insert in the model and make sure that the inputs shows if the user input is wrong!
-            if(empty($errors)){
+            if(empty($errors) && empty($empty_difficulty)){
                 if ($_GET['opAdmin'] == 'new') {
                     $wrongInputs = '';
                     if($_POST['correct_answer'] == $_POST['wrong_answer_1'] && $_POST['correct_answer'] == $_POST['wrong_answer_2'] && $_POST['correct_answer'] == $_POST['wrong_answer_3']   ){
                         $wrongInputs .= 'La bonne réponse doit être unique!';
                     }else{
-                        if($_POST['wrong_answer_1'] == $_POST['wrong_answer_2'] && $_POST['wrong_answer_2'] == $_POST['wrong_answer_3']  ){
+                        if($_POST['wrong_answer_1'] == $_POST['wrong_answer_2'] || $_POST['wrong_answer_2'] == $_POST['wrong_answer_3']  ){
                             $wrongInputs .= 'Les mauvaises réponses doivent être différentes !';
                         }
                     }
@@ -156,13 +163,14 @@ class QuestionsController
                             $id_good_answer = $this->db->addAnswers($id_question, $answer_data);
                             //Get the correct answer from the addAnswers function and input into "questions" column "id_answer"
                             $this->db->addGoodAnswerToQuestion($id_question, $id_good_answer);
+                            // Is it good ?
+                            $answersInfo = $this->db->selectAnswers($_GET['id']);
                         }
                         header('location:?view=question&opAdmin=qlist');
                     }
                 }
             }
 
-            //header('location:?opAdmin=list');
         }
         require_once('views/new_question_answer.view.php');
     }
@@ -176,13 +184,12 @@ class QuestionsController
         }
     }
 
-    public function deleteQuestions(){
+    public function deleteQuestionAndAnswers(){
         if (!empty($_GET['id']) && is_numeric($_GET['id']) && $_GET['opAdmin'] == 'delete'){
-                $this->db->delete($this['id']);
+                $this->db->deleteAnswers($_GET['id']);
+                $this->db->deleteQuestion($_GET['id']);
         }
-        echo "Its deleted ! ";
-        die;
-        header('location:?opAdmin=qlist');
+        header('location:?view=question&opAdmin=qlist');
     }
 
 

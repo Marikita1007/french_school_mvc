@@ -20,7 +20,6 @@ ob_start();
             Bonjour, <?= $_SESSION['member']->nom ?>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Messages</a></li>
             <li><a class="dropdown-item" href="logout.php">Se déconnecter</a></li>
           </ul>

@@ -39,9 +39,16 @@ class QuestionsManager extends Model{
         return $this->idColumName;
     }
 
-    public function delete($id){
-        $query = Model::getDataBase()->query("DELETE FROM questions WHERE " . $this->getIdColumnName() . "=:id");
-        return $query->execute(array(
+    public function deleteAnswers($id_question){
+        $query = Model::getDatabase()->prepare("DELETE FROM answers WHERE id_question =:id_question");
+        $query->execute(array(
+           ':id_question' => $id_question
+        ));
+    }
+
+    public function deleteQuestion($id){
+        $query = Model::getDataBase()->prepare("DELETE FROM questions WHERE " . $this->getIdColumnName() . "=:id");
+        $query->execute(array(
             ':id' => $id
         ));
     }
@@ -60,6 +67,7 @@ class QuestionsManager extends Model{
 
     //We did here !!!
     public function addAnswers($id_question, $answersArray){
+
         foreach ($answersArray as $answer){
             $query = Model::getDataBase()->prepare("INSERT INTO answers (id_question, answer) VALUES (:id_question, :answer) ");
             $executeQuery= $query->execute(array(
@@ -70,16 +78,22 @@ class QuestionsManager extends Model{
                 $id_correct_answer = Model::getDataBase()->lastInsertId();
             }
         }
-        if(is_int($id_correct_answer)){
+        if(is_numeric($id_correct_answer)){
             return $id_correct_answer;
-        }else{
-            return false;
         }
     }
 
     public function addGoodAnswerToQuestion($id_question, $id_correct_answer){
-        echo 'hi';
-        die;
+        $query = Model::getDataBase()->prepare("UPDATE questions SET id_answer = :id_answer WHERE id_question = :id_question");
+        $executeQuery = $query->execute(array(
+            ':id_answer' => $id_correct_answer,
+            ':id_question' => $id_question
+        ));
+        if ($executeQuery == true ){
+            return Model::getDataBase()->lastInsertId();
+        }else{
+            return false;
+        }
     }
 
     public function updateQuestion($id, $infos){

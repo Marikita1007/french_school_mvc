@@ -4,6 +4,8 @@ namespace controllers;
 
 use models\Model;
 use models\MembersManager;
+use models\QuestionsManager;
+use models\AnswersManager;
 use PDO, PDOException, Exception;
 
 class MembersController
@@ -13,6 +15,8 @@ class MembersController
     public function __construct()
     {
         $this->db = new \Models\MembersManager();
+        $this->dbQuestions = new \Models\QuestionsManager();
+        $this->dbAnswers = new \Models\AnswersManager;
     }
 
     public function run(){
@@ -51,6 +55,13 @@ class MembersController
                 break;
             case 'admin':
                 $this->goAdmin();
+                break;
+            case 'test':
+                $this->showTest();
+                break;
+            case 'testResult':
+                $this->showTestResult();
+                break;
         }
     }
 
@@ -224,6 +235,21 @@ class MembersController
             require('views/sign_up.view.php');
         }
 
+    }
+
+    public function showTest(){
+        if($_GET['op'] == 'test' && !empty($_SESSION) ){
+            $questionsData = $this->dbQuestions->selectQuestions();
+            $answersData = $this->dbAnswers->selectAll();
+            require('views/test.view.php');
+        }else{
+            header('location:?view=login');
+        }
+    }
+
+    public function showTestResult(){
+        echo 'Make sure it checks all the inputs !';
+        die;
     }
 
 }

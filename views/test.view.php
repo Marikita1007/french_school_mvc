@@ -10,17 +10,19 @@ ob_start();
         <div class="row my-3">
             <div class="class=">
                 <form action="?view=showMember&op=testResult" method="post">
-                <?php $questionNumber = 1;?>
+                <?php $questionNumber = 1; ?>
                 <?php foreach ($questionsData as $questions) : ?>
                     <row><?= $questionNumber++ ?>.  <?= $questions->question ?><br><br>
                         <?php
                         $answersList = new \controllers\AnswersController();
                         $answersData = $answersList->listAnswers($questions->id_question);
-                        if(!empty($answersData)){}
-                        foreach ($answersData as $answer) : ?>
-                            <input class="form-check-input" type="radio" id="answer" name="<?= $answer->id_question?>" value="<?= $answer->id_answer ?? '' ?>">
-                            <?= $answer->answer;
-                        endforeach;
+                        if(!empty($answersData)){
+                            shuffle($answersData);
+                            foreach ($answersData as $answer) : ?>
+                                <input class="form-check-input" type="radio" id="answer" name="<?=$questions->id_question ?>" value="<?= $answer->id_answer ?>">
+                                <?=  $answer->answer;
+                            endforeach;
+                        }
                         if(!empty($answersData)) {} ?><br><br>
                     </row>
                 <?php endforeach; ?>

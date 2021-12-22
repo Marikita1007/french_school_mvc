@@ -61,6 +61,7 @@ ob_start();
     <table class="table">
         <thead>
         <tr>
+            <th scope="col">No.</th>
             <th scope="col">Question ID</th>
             <th scope="col">Question</th>
             <th scope="col">Difficultés</th>
@@ -68,8 +69,10 @@ ob_start();
             <th scope="col"><a href="?view=question&opAdmin=new" class="btn btn-primary ">Ajouter</a></th>
         </tr>
         </thead>
+        <?php $questionNumber = 1; ?>
         <?php foreach ($questionsData as $question) : ?>
             <tr>
+                <td><?= $questionNumber++ ?></td>
                 <td><?= $question->id_question ?></td>
                 <td><?= $question->question ?></td>
                 <td><?= $question->difficulty ?></td>

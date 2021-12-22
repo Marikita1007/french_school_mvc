@@ -249,6 +249,7 @@ class MembersController
 
     public function showTestResult(){
         echo 'Make sure it checks all the inputs !';
+        new \Debug($_POST);
         die;
     }
 

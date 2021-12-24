@@ -125,6 +125,17 @@ class QuestionsManager extends Model{
         }
     }
 
-
+    //When the user take the level test, here it checks the result
+    public function checkTestAnswers($answers){
+        //new \Debug($answers);
+        $setList = array();
+        foreach(array_keys($answers) as $key){//array_keys — Retourne toutes les clés ou un ensemble des clés d'un tableau
+            $setList[] = "$key = :$key";
+        }
+        $newValues = implode(', :' , $setList );
+        new \Debug($setList);
+        new \Debug($newValues);
+        die;
+    }
 
 }

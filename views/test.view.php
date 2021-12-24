@@ -19,14 +19,16 @@ ob_start();
                         if(!empty($answersData)){
                             shuffle($answersData);
                             foreach ($answersData as $answer) : ?>
-                                <input class="form-check-input" type="radio" id="answer" name="<?=$questions->id_question ?>" value="<?= $answer->id_answer ?>">
+                                <input class="form-check-input" type="radio" id="answer" name="<?= $questions->id_question ?>" value="<?= $answer->id_answer ?>">
                                 <?=  $answer->answer;
                             endforeach;
                         }
                         if(!empty($answersData)) {} ?><br><br>
                     </row>
                 <?php endforeach; ?>
-                    <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
+                    <!-- Here its counting the number of questions  -->
+                    <input type="hidden" name="questions_amount" value="<?= count($questionsData) ?>" >
+                    <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>
         </div>

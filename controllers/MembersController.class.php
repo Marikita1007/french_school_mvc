@@ -247,10 +247,27 @@ class MembersController
         }
     }
 
+
     public function showTestResult(){
-        echo 'Make sure it checks all the inputs !';
-        new \Debug($_POST);
-        die;
+        //Even the user didn't choose any answer, it still get in here because of  $_POST["questions_amount"]
+        if($_GET['op'] == 'testResult' && !empty($_SESSION)){
+            $errors = array();
+            //$_POST["questions_amount"] is checking the length of the questions
+            //It is adding questions_amount so it needs to be increased(+1)
+            $empty_answers = $_POST["questions_amount"] - count($_POST) + 1;
+            //We don't need the questions_amount anymore so unset it
+            unset($_POST["questions_amount"]);
+            if($empty_answers > 0){
+                $errors[] = 'Vous avez oublié ' . $empty_answers .'réponse(s).';
+            }
+            if(empty($errors)){
+                // models\QuestionManager
+                $this->dbQuestions->checkTestAnswers($_POST);
+            }
+        }else{
+           header('location:?view=home');
+        }
+
     }
 
 }

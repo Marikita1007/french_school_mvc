@@ -70,7 +70,7 @@ class QuestionsController
             foreach ($_POST as $key => $value){
                 //Prevent SQL injections
                 $_POST[$key] = htmlspecialchars($value);
-                if(trim($_POST[$key]) == '') $empty_fields++;
+                if(trim($_POST[$questions->id_question]) == '') $empty_fields++;
             }
             if($empty_fields > 0){
                 //Need to call this in the page so it actually shows.
@@ -91,7 +91,7 @@ class QuestionsController
                     $question_data = [];
                     foreach ($_POST as $key => $value) {
                         //strpos finds the position of what's given as needle
-                        if(strpos($key, "correct_answer") !== false || strpos($key, "wrong_answer") !== false) {
+                        if(strpos($key, "answer_") !== false || strpos($key, "wrong_answer") !== false) {
                             //array_push adds what it's given to $answer_data
                             //Here it's getting only the necessary datas for answer table
                             //It also create name "id" pour keys and name "answer" for values

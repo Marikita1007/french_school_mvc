@@ -55,6 +55,14 @@ ob_start();
             <div class="card">
                 <h5 class="card-header">Etudiez avec nous !</h5>
                 <div class="card-body">
+                    <?php
+                    if(!empty($testResult)){
+                        echo 'Dernier résultat du test de niveau : ' . $testResult;
+                    } else {
+                        echo 'Empty';
+                    }?>
+                </div>
+                <div class="card-body">
                     <a href="" class="btn btn-info"><div id="traffic-chart">Faire le test de niveau</div></a>
                 </div>
                 <div class="card-body">

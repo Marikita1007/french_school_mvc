@@ -6,6 +6,7 @@ use models\Model;
 use models\MembersManager;
 use models\QuestionsManager;
 use models\AnswersManager;
+use models\TestResultsManager;
 use PDO, PDOException, Exception;
 
 class MembersController
@@ -16,7 +17,8 @@ class MembersController
     {
         $this->db = new \Models\MembersManager();
         $this->dbQuestions = new \Models\QuestionsManager();
-        $this->dbAnswers = new \Models\AnswersManager;
+        $this->dbAnswers = new \Models\AnswersManager();
+        $this->dbtestResults = new \Models\TestResultsManager();
     }
 
     public function run(){
@@ -262,12 +264,30 @@ class MembersController
             }
             if(empty($errors)){
                 // models\QuestionManager
-                $this->dbQuestions->checkTestAnswers($_POST);
+                // $testScores returns the result score of the user
+                $testScores = $this->dbQuestions->checkTestAnswers($_POST);
+                // this checks the level of the user
+                switch ($testScores) {
+                    case ($testScores >= 40) :
+                        $testResult = "Avancé";
+                        break;
+                    case ($testScores >= 20) :
+                        $testResult = "Intermédiaire";
+                        break;
+                    case ($testScores >= 0) :
+                        $testResult = "Débutant";
+                        break;
+                }
+                //Can I do it here ?
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                //Need to get id_member to keep the student results
+                $insertTestResult = $this->dbtestResults->insertTestResult($testResult, $_SESSION);
+                //$latestTestResult = $this->dbtestResults->getLastTestResult;
+                require('views/show_test_result.view.php');
             }
         }else{
            header('location:?view=home');
         }
-
     }
 
 }

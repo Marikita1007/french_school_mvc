@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="public/css/contact.css">
     <link rel="stylesheet" href="public/css/admin.css">
     <link rel="stylesheet" href="public/css/test.css">
+    <link rel="stylesheet" href="public/css/show_test_result.css">
 
     <title>French School</title>
 </head>

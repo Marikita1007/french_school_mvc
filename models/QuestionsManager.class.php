@@ -1,6 +1,8 @@
 <?php
 
 namespace models;
+//CHECK IF THE DOWN BELOWS ARE USED !!!!!!!!!!!!!!!!!!!!!!
+use http\Encoding\Stream\Debrotli;
 use mysql_xdevapi\DocResult;
 use PDO, PDOException, Exception;
 
@@ -125,17 +127,38 @@ class QuestionsManager extends Model{
         }
     }
 
-    //When the user take the level test, here it checks the result
-    public function checkTestAnswers($answers){
-        //new \Debug($answers);
-        $setList = array();
-        foreach(array_keys($answers) as $key){//array_keys — Retourne toutes les clés ou un ensemble des clés d'un tableau
-            $setList[] = "$key = :$key";
+    //When the user take the level test, this function checks the result
+    public function checkTestAnswers($userAnswers){
+        $setListQuestions = array();
+        foreach (array_keys($userAnswers) as $key){
+            $setListQuestions[] = "$key";
         }
-        $newValues = implode(', :' , $setList );
-        new \Debug($setList);
-        new \Debug($newValues);
-        die;
+        $allQuestions = implode(', ', $setListQuestions);
+        $query = Model::getDataBase()->prepare("SELECT * FROM questions WHERE id_question IN ($allQuestions)");
+        $query->execute();
+        $dbQuestionDatas = $query->fetchAll();
+        //$correct_counter = 0;
+        $testScores = 0;
+        foreach ($dbQuestionDatas as $questionData){
+            //new \Debug($answerResult->id_question);
+            //new \Debug($setListQuestions);
+            foreach ($userAnswers as $id_question => $id_answer){
+                if($questionData->id_question ==  $id_question && $questionData->id_answer == $id_answer && $questionData){
+                    //$correct_counter ++;
+                    switch ($questionData->id_difficulty){
+                        case "1":
+                            $testScores ++;
+                            break;
+                        case "2":
+                            $testScores += 2;
+                            break;
+                        case "3":
+                            $testScores += 3;
+                            break;
+                    }
+                }
+            }
+        }
+        return $testScores;
     }
-
 }

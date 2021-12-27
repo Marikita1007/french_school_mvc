@@ -6,8 +6,12 @@ if(!empty($errors)){
         echo $error;
     }
 }else{
-    echo "<div>Votre compte a été modifié.</div>";
-    echo '<button><a href="?view=showMember&op=show">Retournez à la page de votre compte</a></button>';
+    echo "<section style='height: 40vh;' class='d-flex flex-column justify-content-center align-items-center'>
+                    <h5>Votre compte a été modifié.</h5>
+                    <div>
+                        <button type='button' class='btn btn-primary'><a href='?view=showMember&op=show' class='text-white'>Retournez à la page de votre compte</a></button>
+                    </div>
+            </section>";
 }
 
 $content = ob_get_clean();

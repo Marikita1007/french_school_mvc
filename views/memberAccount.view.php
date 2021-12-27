@@ -1,11 +1,12 @@
 <?php
 ob_start();
+
 ?>
-<!-- Need to modify the bootstrap--!>
+<!-- Need to modify the bootstrap !-->
     <div class="row">
         <div class="col-lg-12 col-md-8 col-xl-8 mb-4 mb-lg-0">
             <div class="card">
-                <h5 class="card-header">Bonjour <?= $_SESSION['member']->nom ?> ! </h5>
+                <h5 class="card-header">Bonjour <strong class="text-primary" ><?= $_SESSION['member']->prenom ?></strong> !</h5>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table">
@@ -56,14 +57,14 @@ ob_start();
                 <h5 class="card-header">Etudiez avec nous !</h5>
                 <div class="card-body">
                     <?php
-                    if(!empty($testResult)){
-                        echo 'Dernier résultat du test de niveau : ' . $testResult;
+                    if(isset($testResult)){
+                        echo "<div>Dernier résultat du test de niveau : " . '<strong class="text-primary" >' . $testResult . '</strong></div>';
                     } else {
-                        echo 'Empty';
+                        echo "Vous n'avez pas passé le test de niveau.";
                     }?>
                 </div>
                 <div class="card-body">
-                    <a href="" class="btn btn-info"><div id="traffic-chart">Faire le test de niveau</div></a>
+                    <a class="btn btn-info" href="<?= '?view=showMember&op=test' ?>"><div id="traffic-chart">Faire le test de niveau</div></a>
                 </div>
                 <div class="card-body">
                     <a class="btn btn-info" href="<?= '?view=beginner' ?>"><div id="traffic-chart">DÉBUTANT</div></a>

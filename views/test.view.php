@@ -1,5 +1,11 @@
 <?php
 ob_start();
+
+if(!empty($errors)){
+    foreach ($errors as $error){
+        echo $error;
+    };
+}
 ?>
 
     <!-- 表示場所 -->

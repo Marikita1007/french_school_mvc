@@ -119,6 +119,9 @@ class MembersController
                     //header('location:?view=home&op=admin');
                 }else{
                     //header('location:?view=home');
+                    //これなんでアドミンは何もしないのにでるのか。多分セッション。そのほうがきれい。
+                    $testResultDatas = $this->dbtestResults->checkUserHistory($_SESSION["member"]->id_member);
+                    $testResult = $testResultDatas->test_result;
                     require ('views/memberAccount.view.php');
                 }
 
@@ -132,6 +135,8 @@ class MembersController
 
     public function showData(){
         if($_GET['op'] == 'show' && !empty($_SESSION['member']->id_member) && is_numeric($_SESSION['member']->id_member)){
+            $testResultDatas = $this->dbtestResults->checkUserHistory($_SESSION["member"]->id_member);
+            $testResult = $testResultDatas->test_result;
             require('views/memberAccount.view.php');
         }else{
             require ('views/login.view.php');
@@ -158,7 +163,7 @@ class MembersController
                     $_POST[$key] = md5($_POST[$key]);
                 }
                 if (trim($_POST[$key]) == '') $champs_vides++;
-                // j'incremente mon compteur de champs vides chaque fois que je detecte un champ non rempli
+                // j'incrementxe mon compteur de champs vides chaque fois que je detecte un champ non rempli
             }
             if ($champs_vides > 0) {
                 $errors[] = '<div class="alert alert-danger">Il manque ' . $champs_vides . ' information(s)</div>';
@@ -249,7 +254,6 @@ class MembersController
         }
     }
 
-
     public function showTestResult(){
         //Even the user didn't choose any answer, it still get in here because of  $_POST["questions_amount"]
         if($_GET['op'] == 'testResult' && !empty($_SESSION)){
@@ -260,7 +264,9 @@ class MembersController
             //We don't need the questions_amount anymore so unset it
             unset($_POST["questions_amount"]);
             if($empty_answers > 0){
-                $errors[] = 'Vous avez oublié ' . $empty_answers .'réponse(s).';
+                $errors[] = '<div class="alert alert-danger">Vous avez oublié ' . $empty_answers .'réponse(s)</div>';
+                $questionsData = $this->dbQuestions->selectQuestions();
+                $answersData = $this->dbAnswers->selectAll();
             }
             if(empty($errors)){
                 // models\QuestionManager
@@ -278,16 +284,20 @@ class MembersController
                         $testResult = "Débutant";
                         break;
                 }
-                //Can I do it here ?
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                //Need to get id_member to keep the student results
-                $insertTestResult = $this->dbtestResults->insertTestResult($testResult, $_SESSION);
-                //$latestTestResult = $this->dbtestResults->getLastTestResult;
+                //insertTestResult function will keep the latest data of the level test result
+                // $_SESSION["member"]->id_member gets the id_member which is in array in array
+                $userHistory = $this->dbtestResults->checkUserHistory($_SESSION["member"]->id_member);
+                if($userHistory == false){
+                    $insertTestResult = $this->dbtestResults->insertTestResult($testResult, $_SESSION["member"]->id_member);
+                }else{
+                    $updateTestResult = $this->dbtestResults->updateTestResult($testResult, $_SESSION["member"]->id_member);
+                }
+                $testResultDatas = $this->dbtestResults->checkUserHistory($_SESSION["member"]->id_member);
+                $testResult = $testResultDatas->test_result;
                 require('views/show_test_result.view.php');
             }
-        }else{
-           header('location:?view=home');
         }
+        require("views/test.view.php");
     }
 
 }

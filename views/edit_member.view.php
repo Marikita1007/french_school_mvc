@@ -33,7 +33,7 @@ ob_start();
                             </div>
                             <br>
                             <div class="text-center">
-                                <button type="submit" class="btn sign-in-button mb-4">MODIFIER</button>
+                                <button type="submit" class="btn btn-info sign-in-button mb-4">MODIFIER</button>
                             </div>
                         </fieldset>
                     </form>

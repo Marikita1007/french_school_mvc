@@ -131,7 +131,7 @@ ob_start();
             <div class="p-3">
                 <p>Essaies l'exercice de cette leçon !</p>
                 <div class="d-flex justify-content-center">
-                    <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_debutant">Exercices</button>
+                    <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_debutant">Exercice</button>
                 </div>
             </div>
         </div>

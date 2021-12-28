@@ -57,8 +57,8 @@ ob_start();
                 <h5 class="card-header">Etudiez avec nous !</h5>
                 <div class="card-body">
                     <?php
-                    if(isset($testResult)){
-                        echo "<div>Dernier résultat du test de niveau : " . '<strong class="text-primary" >' . $testResult . '</strong></div>';
+                    if($testResult){
+                        echo "<div>Résultat du dernier test de niveau : " . '<strong class="text-primary" >' . $testResult . '</strong></div>';
                     } else {
                         echo "Vous n'avez pas passé le test de niveau.";
                     }?>

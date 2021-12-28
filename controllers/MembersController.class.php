@@ -121,7 +121,11 @@ class MembersController
                     //header('location:?view=home');
                     //これなんでアドミンは何もしないのにでるのか。多分セッション。そのほうがきれい。
                     $testResultDatas = $this->dbtestResults->checkUserHistory($_SESSION["member"]->id_member);
-                    $testResult = $testResultDatas->test_result;
+                    if($testResultDatas){
+                        $testResult = $testResultDatas->test_result;
+                    }else{
+                        $testResult = false;
+                    }
                     require ('views/memberAccount.view.php');
                 }
 
@@ -136,7 +140,11 @@ class MembersController
     public function showData(){
         if($_GET['op'] == 'show' && !empty($_SESSION['member']->id_member) && is_numeric($_SESSION['member']->id_member)){
             $testResultDatas = $this->dbtestResults->checkUserHistory($_SESSION["member"]->id_member);
-            $testResult = $testResultDatas->test_result;
+            if($testResultDatas){
+                $testResult = $testResultDatas->test_result;
+            }else{
+                $testResult = false;
+            }
             require('views/memberAccount.view.php');
         }else{
             require ('views/login.view.php');

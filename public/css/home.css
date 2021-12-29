@@ -216,10 +216,49 @@
     }
 }
 
-#temoignages{
-    padding: 3vh;
+#instructions{
+    margin-top: 0 ;
+    padding: 0 ;
+    color: cornsilk;
+}
+
+#instructions .wave-container{
+    position: relative;
+    width: 100%;
     height: 100vh;
-    margin-bottom: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+    box-sizing: border-box;
+    background: linear-gradient(#c9b8b8, #1A8CFF);
+    background-blend-mode: screen;
+}
+
+#instructions .wave-container h3{
+    font-size: 2rem;
+}
+
+#instructions .wave-container p{
+    font-size: 1.2rem;
+}
+
+
+#instructions img{
+    position: relative;
+    max-width: 20vw;
+    z-index: 1000;
+}
+
+#instructions .wave-container svg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+#temoignages{
+    height: 120vh;
 }
 
 #temoignages h2{

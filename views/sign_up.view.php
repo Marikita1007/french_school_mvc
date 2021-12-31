@@ -1,8 +1,6 @@
 <?php
 ob_start();
-if(isset($errors) && $errors != ""){
-    echo "<div>" . $errors . "</div>";
-} ?>
+ ?>
 
 <section id="sign-in">
     <container>
@@ -12,6 +10,11 @@ if(isset($errors) && $errors != ""){
                     <form action="?view=sign&op=newMember" method="POST">
                         <fieldset>
                             <legend class="mt-2 title">S'INSCRIRE</legend>
+                            <?php
+                            if(isset($errors) && $errors != ""){
+                                echo "<div>" . $errors . "</div>";
+                            }
+                            ?>
                             <div class="form-group">
                                 <label for="" class="form-label mt-2">Prénom</label>
                                 <input type="prenom" name="prenom" class="form-control" id="prenom" placeholder="Entrez votre prénom">

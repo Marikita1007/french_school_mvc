@@ -2,9 +2,11 @@
 ob_start();
 ?>
 
-<div>Votre compte a été supprimé.</div>
+<div class="delete-account-txt text-center">Votre compte a été supprimé.</div>
 
-<button><a href="?view=showMember&op=home">Retournez à la page d'accueil</a></button>
+<div class="text-center return-home-button">
+    <button><a href="?view=showMember&op=home">Retournez à la page d'accueil</a></button>
+</div>
 
 <?php
 $content = ob_get_clean();

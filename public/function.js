@@ -1,8 +1,19 @@
 //AOS
 AOS.init();
 
-//introduction
-//!!!test!!! becomes array
+var nav = document.querySelector('nav');
+//navbar color change
+window.addEventListener('scroll', function(){
+    if(window.pageYOffset > 100){
+        nav.classList.add('bg-light','shadow');
+        console.log('color added!');
+    }else{
+        nav.classList.remove('bg-light','shadow');
+        console.log('transparent!');
+    }
+});
+
+//introduction fontawesome shakes
 let shake = document.querySelectorAll('.shake_anime')
 
 //Animate.css animate__headShake

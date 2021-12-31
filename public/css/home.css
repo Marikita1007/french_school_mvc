@@ -26,6 +26,23 @@
     min-width: 20vw;
 }
 
+#welcome .courses_buttons a{
+    text-decoration: none;
+    color: #333333;
+}
+
+#welcome .courses_buttons .button_debutant a:hover{
+    color: #FFFFFF;
+}
+
+#welcome .courses_buttons .button_intermediaire a:hover{
+    color: #0066CC;
+}
+
+#welcome .courses_buttons .button_avance a:hover{
+    color: #FFFFFF;
+}
+
 #welcome .courses_buttons .button_debutant{
     background-color: #0066CC;
     border-color: #0066CC;
@@ -51,13 +68,19 @@
         min-height: 50vh;
         max-height: 70vh;
         text-align: center;
+
     }
 
     #welcome .container-fluid .row  h2{
         /* APPRENEZ LE FRANÇAIS AVEC NOUS ! */
         font-size: 3vw;
-        margin-top: 3vh;
+        margin-top: 30vh;
         width: 80vw;
+        padding:20px;
+        width:710px;
+        position:relative;
+        background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+        background: rgba(204, 204, 204, 0.5);
     }
 
     #welcome .container-fluid .row{
@@ -68,7 +91,6 @@
         /* COURS GRATUITS */
         font-size: 3vw;
         margin: auto;
-        margin-top: 30vh;
     }
 
     #welcome .courses_buttons{
@@ -82,7 +104,7 @@
 }
 
 /* iPad */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (min-width: 575px) {
 
     #welcome{
         background: no-repeat 0 0 cover;
@@ -91,17 +113,24 @@
         padding: 1vh;
     }
 
+    #welcome .container-fluid{
+        display: inline;
+    }
+
     #welcome .container-fluid .row  h2{
         /* APPRENEZ LE FRANÇAIS AVEC NOUS ! */
-        font-size: 4vw;
-        margin: auto;
+        font-size: 4vw;  
+        padding:20px;
+        width:710px;
+        position:relative;
+        background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+        background: rgba(204, 204, 204, 0.5);
     }
 
     #welcome .container-fluid .row  h3{
         /* COURS GRATUITS */
         font-size: 3.5vw;
         margin: auto;
-        margin-top: 20vh;
     }
 
     #welcome .courses_buttons{
@@ -131,25 +160,27 @@
     #welcome .container-fluid .row  h2{
         /* APPRENEZ LE FRANÇAIS AVEC NOUS ! */
         font-size: 4vw;
-        margin-top: 0.5vh;
+        padding:20px;
+        width:710px;
+        position:relative;
+        background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+        background: rgba(204, 204, 204, 0.5);
     }
 
     #welcome .container-fluid .row  h3{
         /* COURS GRATUITS */
         font-size: 3.5vw;
-        margin-top: 15vh;
-        margin-bottom: 1vh;
     }
 
     #welcome .courses_buttons{
-        flex-direction: column;
-        width: 25vw;
+        width: min-content;
+        display: inline-flex;
     }
 
     #welcome .courses_buttons button{
-        font-size: 2.5vw;
         margin: 0;
     }
+
 }
 
 #introduction{
@@ -214,6 +245,10 @@
     #introduction{
         height: 90vh;
     }
+
+    #introduction i{
+        font-size: 10vh;
+    }
 }
 
 #instructions{
@@ -256,9 +291,43 @@
     left: 0;
 }
 
+@media (max-width: 576px){
+
+    #instructions svg{
+        display: none;
+    }
+
+    #instructions .wave-container{
+        position: relative;
+        width: 100%;
+        height: 70vh;
+        padding: 3vw;
+    }
+
+    #instructions h3{
+        font-size: 15px !important;
+        font-weight: bold;
+    }
+
+    #instructions p{
+        max-height: 30vh;
+        font-size: 15px !important;
+    }
+
+    #instructions i{
+        max-height: 30vh;
+    }
+
+    #instructions img{
+        display: none;
+    }
+
+}
+
 
 #temoignages{
-    height: 120vh;
+    max-height: 120vh;
+    margin-bottom: 10vh;
 }
 
 #temoignages h2{
@@ -272,7 +341,7 @@
 
 #temoignages .student-comment{
     background-color: #E6FFFF;
-}
+} 
 
 #temoignages .student-image{
     height: 30vh;
@@ -310,7 +379,7 @@
 @media (max-width: 1200px) {
     
     #temoignages{
-        height: 80vh;
+        max-height: 200vh;
     }
 
     #temoignages h3{
@@ -323,16 +392,13 @@
     }
 
     #temoignages p{
-        font-size: 1.5vw;
+        font-size: 1.5vh;
     }
 }
 
 /* iPad */
 @media screen and (max-width: 768px) {
 
-    #temoignages{
-        height: auto!important;
-    }
 
     #temoignages .mobile-picture{
         justify-content: center !important;
@@ -340,15 +406,12 @@
 
 
     #temoignages p{
-        font-size: 2vw;
+        font-size: 2vh;
     }
 
 }
 
 @media (max-width: 576px) {
-    #temoignages{
-        height: 100vh;
-    }
 
     #temoignages h2{
         text-align: center;

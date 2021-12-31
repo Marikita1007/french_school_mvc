@@ -3,7 +3,7 @@ ob_start();
 
 if(!empty($errors)){
     foreach ($errors as $error){
-        echo $error;
+        echo "<div style=' margin-top: 10vh;' >" . $error . "</div>";
     }
 }else{
     echo "<section style='height: 40vh;' class='d-flex flex-column justify-content-center align-items-center'>

@@ -4,13 +4,11 @@
     font-family: 'ABeeZee', sans-serif;
 }
 
-.navbar{
-    background-color: #f4f0ec;
+nav .navbar{
+    border: 1px solid red;
 }
 
-/* a.nav-link.dropdown-toggle.toggle-controller {
-    width: 12vw;
-} */
+
 
 
 

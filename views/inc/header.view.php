@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="public/img/favicon.ico" type="image/x-icon"/>
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <!--  animate.css !!!! NOT USING YET !!!!!-->
+    <!--  animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- AOS  This is for the animation of the explanation of the site at page home -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -30,13 +30,19 @@
     <link rel="stylesheet" href="public/css/admin.css">
     <link rel="stylesheet" href="public/css/test.css">
     <link rel="stylesheet" href="public/css/show_test_result.css">
+    <link rel="stylesheet" href="public/css/login.css">
+    <link rel="stylesheet" href="public/css/member_page.css">
+    <link rel="stylesheet" href="public/css/sign_up.css">
+    <link rel="stylesheet" href="public/css/new-member.css">
+    <link rel="stylesheet" href="public/css/errors.css">
+    <link rel="stylesheet" href="public/css/delete_check.css">
 
     <title>French School</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light p-md-3">
 
-        <div class="container-fluid">
+        <div class="container-fluid navbar-inner">
             <a class="navbar-brand" href="<?= '?view=home' ?>">
                 <img src= "public/img/school_icon.png" alt="French School" height="45">
             </a>
@@ -86,5 +92,33 @@
             </div>
         </div>
     </nav>
+
+
+
+    <?php if(!empty($_SESSION['member']) && $_SESSION['member']->status === "1"){ ?>
+        <nav class="navbar navbar-light bg-light p-3 admin-nav">
+            <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
+                <a class="navbar-brand" href="#">
+                    Administration
+                </a>
+                <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
+            
+            <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                Bonjour, <?= $_SESSION['member']->nom ?>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="logout.php">Se déconnecter</a></li>
+            </ul>
+            </div>
+        </nav>
+    <?php } ?>
+    
+
 
 <main>

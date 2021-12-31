@@ -17,12 +17,15 @@
     }
 }
   
-#admin .navbar {
+
+.admin-nav{
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
+    margin-top: 10vh;
 }
+
   
 @media (min-width: 767.98px) {
-    #admin .navbar {
+    .admin-nav {
         top: 0;
         position: sticky;
         z-index: 999;

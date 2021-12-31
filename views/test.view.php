@@ -1,17 +1,20 @@
 <?php
 ob_start();
 
-if(!empty($errors)){
-    foreach ($errors as $error){
-        echo $error;
-    };
-}
 ?>
 
     <!-- 表示場所 -->
-    <div class="container test_test">
+    <div class="container test_container">
 
         <h2>Faites le test et vérifiez votre niveau de français</h2>
+
+        <?php
+        if(!empty($errors)){
+            foreach ($errors as $error){
+                echo $error;
+            };
+        }
+        ?>
 
         <div class="row my-3">
             <div class="class=">

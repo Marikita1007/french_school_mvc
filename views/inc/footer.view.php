@@ -105,7 +105,7 @@
 
 <!-- Bootstrap JS  I might need to change the </body> to footer-->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
- <!-- AOS  This is for the animation of the explanation of the site -->
+<!-- AOS  Animations at the home page telephone section -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <!-- JavaScript -->
 <script src="public/function.js"></script>

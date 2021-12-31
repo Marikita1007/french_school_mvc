@@ -13,9 +13,9 @@ ob_start();
             <div class="offset-lg-6 offset-md-0 offset-sm-4"></div>
         </div>
         <div class ="row courses_buttons">
-            <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_debutant">DÉBUTANT</button>
-            <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_intermediaire">INTERMÉDIAIRE</button>
-            <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_avance">AVANCÉ</button>
+            <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_debutant"><a href="<?= '?view=beginner' ?>">DÉBUTANT</a></button>
+            <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_intermediaire"><a href="<?= '?view=intermediate' ?>">INTERMÉDIAIRE</a></button>
+            <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_avance"><a href="<?= '?view=advanced' ?>">AVANCÉ</a></button>
             <div class="offset-lg-6 offset-md-3"></div>
         </div>
     </div>
@@ -75,14 +75,17 @@ ob_start();
 
 <section id="instructions">
     <div class="wave-container">
-        <div class="content">
-            <h3 class="text-center mb-5">Une méthode pour chaque type d'apprentissage</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <i class="far fa-check-circle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis voluptatum minima, earum maxime sequi tempora.</i>
-            <i class="far fa-check-circle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci, quisquam.</i>
-            <i class="far fa-check-circle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto explicabo aliquid consequatur quaerat.</i>
+        <div data-aos="zoom-in-right" data-aos-duration="3000">
+            <div class="content">
+                <h3 class="text-center mb-5">Une méthode pour chaque type d'apprentissage</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <i class="far fa-check-circle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis voluptatum minima, earum maxime sequi tempora.</i>
+                <i class="far fa-check-circle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci, quisquam.</i>
+                <i class="far fa-check-circle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto explicabo aliquid consequatur quaerat.</i>
+            </div>
         </div>
-        <img src="public/img/mobile-course.jpg" alt="Online Course">
+
+        <div data-aos="zoom-in-up"  data-aos-duration="3000"> <img src="public/img/mobile-course.jpg" alt="Online Course"></div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00008B" fill-opacity="0.3" d="M0,32L60,69.3C120,107,240,181,360,208C480,235,600,213,720,176C840,139,960,85,1080,90.7C1200,96,1320,160,1380,192L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
     </div>
     

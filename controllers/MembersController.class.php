@@ -1,5 +1,4 @@
 <?php
-
 namespace controllers;
 
 use models\Model;
@@ -242,7 +241,7 @@ class MembersController
                     $_SESSION['member'] = $this->db->selectOne($newMemberId);
                     require('views/register_confirm.view.php');
                 }else{
-                    $errors .= '<div class="alert alert-danger">Votre email est déjà utilisé.</div>';
+                    $errors .= '<div class="alert alert-danger" >Votre email est déjà utilisé.</div>';
                     require('views/sign_up.view.php');
                 }
             }

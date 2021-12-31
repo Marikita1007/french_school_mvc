@@ -3,7 +3,7 @@ ob_start();
 
 ?>
 <!-- Need to modify the bootstrap !-->
-    <div class="row">
+    <div class="row member-page-container">
         <div class="col-lg-12 col-md-8 col-xl-8 mb-4 mb-lg-0">
             <div class="card">
                 <h5 class="card-header">Bonjour <strong class="text-primary" ><?= $_SESSION['member']->prenom ?></strong> !</h5>

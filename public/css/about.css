@@ -1,8 +1,7 @@
 #teachers h2{
     color: #1A8CFF;
     font-size: 4vw;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
+    margin-top: 10vh;
     font-weight: 700;
 }
 
@@ -37,10 +36,6 @@
 }
 
 @media (max-width: 1200px) {
-
-    #teachers{
-        border: 1px solid red;
-    }
 
     #teachers h2{
         font-size: 4vw;
@@ -99,6 +94,24 @@
 
 #buttons{
     background-color: #E6FFFF;
+}
+
+#buttons .courses_buttons a{
+    text-decoration: none;
+    color: #333333;
+}
+
+
+#buttons .courses_buttons .button_debutant a:hover{
+    color: #FFFFFF;
+}
+
+#buttons .courses_buttons .button_intermediaire a:hover{
+    color: #0066CC;
+}
+
+#buttons .courses_buttons .button_avance a:hover{
+    color: #FFFFFF;
 }
 
 #buttons .container h2{
@@ -160,13 +173,8 @@
 
 @media (max-width: 576px){
 
-    #buttons{
-        border: 1px solid green;
-    }
-
     #buttons h2{
         font-size: 4vw !important;
-        border: 1px solid green;
     }
 
     #buttons .courses_buttons button{

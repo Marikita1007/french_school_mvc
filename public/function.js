@@ -32,7 +32,7 @@ for(let i = 0; i < shake.length; i++){
 
 // scroll and arrow appears
 window.addEventListener('scroll', function(){
-    this.console.log(window.scrollY);
+    //this.console.log(window.scrollY);
 
     if(window.scrollY > 500){
         document.getElementById('back-to-top').style.display = 'block';  

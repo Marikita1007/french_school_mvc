@@ -4,6 +4,15 @@ namespace controllers;
 class BeginnerController
 {
     public function run(){
-        require ('views/beginner.view.php');
+        $op = $_GET['op'] ?? 'list';
+
+        switch ($op){
+            case 'beginner_exercice' :
+                require ('views/beginner_exercice.view.php');
+                break;
+            default:
+                require ('views/beginner.view.php');
+        }
     }
+
 }

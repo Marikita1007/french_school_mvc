@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="public/css/new-member.css">
     <link rel="stylesheet" href="public/css/errors.css">
     <link rel="stylesheet" href="public/css/delete_check.css">
+    <link rel="stylesheet" href="public/css/beginner_exercice.css">
 
     <title>French School</title>
 </head>

@@ -37,13 +37,14 @@
     <link rel="stylesheet" href="public/css/errors.css">
     <link rel="stylesheet" href="public/css/delete_check.css">
     <link rel="stylesheet" href="public/css/beginner_exercice.css">
+    <link rel="stylesheet" href="public/css/test.css">   
 
     <title>French School</title>
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light p-md-3">
 
-        <div class="container-fluid navbar-inner">
+        <div class="container-fluid navbar-inner responsive">
             <a class="navbar-brand" href="<?= '?view=home' ?>">
                 <img src= "public/img/school_icon.png" alt="French School" height="45">
             </a>

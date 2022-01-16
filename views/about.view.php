@@ -121,7 +121,7 @@ ob_start();
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="p-3 ">
                     <div class="d-flex justify-content-center courses_buttons">
-                        <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_debutant test"><a href="<?= '?view=beginner' ?>">DÉBUTANT</a></button>
+                        <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_debutant"><a href="<?= '?view=beginner' ?>">DÉBUTANT</a></button>
                     </div>
                 </div>
             </div>

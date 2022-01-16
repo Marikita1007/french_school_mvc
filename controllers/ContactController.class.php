@@ -2,6 +2,7 @@
 
 namespace controllers;
 
+use Debug;
 use models\Model;
 use PDO, PDOException, Exception;
 
@@ -66,24 +67,29 @@ class ContactController
 
         if($errors == ""){
 
-            if(isset($_POST['submit'])){
-                $lastName = $_POST['last_name'];
-                $firstName = $_POST['first_name'];
-                $subject = $_POST['subject'];
-                $emailFrom = $_POST['email'];
-                $message = $_POST['message'];
+            $lastName = $_POST['last_name'];
+            $firstName = $_POST['first_name'];
+            $subject = $_POST['subject'];
+            $emailFrom = $_POST['email'];
+            $message = $_POST['message'];
 
-                //need to make sure if its possible to send to gmail
-                $mailTo = 'ishinomaki1007@gmail.com';
-                $headers = "Destinateur: " . $emailFrom;
-                $txt = "Vous avez reçu un e-mail de " . $firstName . $lastName . ".\n\n" . $message;
+            //need to make sure if its possible to send to gmail
+            $mailTo = 'french_school@hotmail.com';
+            $headers = "Expéditeur: " . $emailFrom;
+            $txt = "Vous avez reçu un e-mail de " . $firstName . " " . $lastName . ".\n\n" . $message;
 
-                mail($mailTo, $subject, $txt, $headers);
+            mail($mailTo, $subject, $txt, $headers);
 
-                //Have to edit this header
-                //need to create a new view
-                require('views/confirm_contact_sent.view.php');
-            }
+            //NEED TO CHECK IF THE EMAIL IF ACTUALLY WORKING ONCE ITS UPLOADED
+            // new Debug($mailTo);
+            // new Debug($headers);
+            // new Debug($txt);
+            // die;
+
+            //Have to edit this header
+            //need to create a new view
+            require('views/confirm_contact_sent.view.php');
+
         }else{
             require('views/contact.view.php');
         }

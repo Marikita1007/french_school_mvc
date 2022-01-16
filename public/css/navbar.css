@@ -4,10 +4,11 @@
     font-family: 'ABeeZee', sans-serif;
 }
 
-nav .navbar{
-    border: 1px solid red;
+@media (max-width: 767.98px) {
+    .navbar .responsive{
+        background: rgba(196, 196, 196, .2); 
+    }
 }
-
 
 
 

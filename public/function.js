@@ -50,3 +50,59 @@ window.addEventListener('scroll', function(){
 //     });
 // });
 
+//ここからエクササイズのクイズ用のJS
+var skip = document.getElementById('skip');
+var next = document.getElementById('next');
+var score = document.getElementById('score');
+var totalScore = document.getElementById('totalScore');
+var countdown = document.getElementById('countdown');
+var count = 0;
+var scoreCount = 0;
+var duration = 0;
+var exerciceSet = document.querySelectorAll('.exercice_set');
+var exerciceAnsRow = document.querySelectorAll('.exercice_set .exercice_ans_row input');
+
+skip.addEventListener('click',function(){
+    step();
+    duration = 60
+});
+skip.addEventListener('click',function(){
+    step();
+    duration = 60
+});
+
+exerciceAnsRow.forEach(function(exerciceAnsRowSingle){
+    exerciceAnsRowSingle.addEventListener('click', function(){
+        setTimeout(function(){
+            step();
+            duration = 60
+        },500) 
+
+        var valid = this.getAttribute("valid");
+        if(valid == "valid"){
+            scoreCount += 20;
+            score.innerHTML = scoreCount;
+            totalScore.innerHTML = scoreCount; 
+        }else{
+            scoreCount += 0;
+            score.innerHTML = scoreCount;
+            totalScore.innerHTML = scoreCount; 
+        }
+    })
+});
+
+function step(){
+    count += 1;
+    for(var i = 0; i < exerciceSet.length; i++ ){
+        exerciceSet[i].className = 'exercice_set';
+    }
+    
+    exerciceSet[count].className = 'exercice_set active';
+    if(count == 5){
+        skip.style.display = 'none';
+        clearInterval(duration);
+    }
+}
+
+
+

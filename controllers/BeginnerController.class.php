@@ -7,7 +7,10 @@ class BeginnerController
         $op = $_GET['op'] ?? 'list';
 
         switch ($op){
-            case 'beginner_exercice' :
+            case 'start' :
+                require ('views/start_beginner_exercice.view.php');
+                break;
+            case 'beginner_exercice':
                 require ('views/beginner_exercice.view.php');
                 break;
             default:

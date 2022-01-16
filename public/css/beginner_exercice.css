@@ -1,3 +1,121 @@
 #beginner_exercice{
-    height: 100vh;
+    font-size: 16px;
+    margin-top: 15vh;
+    margin-left: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+    background: linear-gradient(#c9b8b8, #1A8CFF);
 }
+
+#beginner_exercice .exercice_box{
+    width: 500px;
+    padding: 20px;
+    min-height: 100px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 3);
+    border-radius: 15px;
+}
+
+#beginner_exercice .exercice_header{
+    background-color: #0b58a7;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: -20px -20px 20px;
+    border-radius: 15px 15px 0 0;
+    font-size: 20px; 
+}
+
+#beginner_exercice .exercice_set{
+    display: none;
+}
+
+#beginner_exercice .exercice_set .result{
+    flex-direction: column;
+}
+
+#beginner_exercice .exercice_set.active{
+    display: block;
+}
+
+#beginner_exercice .exercice_set h4{
+    margin: relative;
+    font-size: 20px;
+}
+
+#beginner_exercice .exercice_set a{
+    max-width: 150px;
+    max-height: 150px;
+    font-size: 15px;
+    background-color: #0b58a7;
+}
+
+#beginner_exercice .exercice_ans_row{
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#beginner_exercice .exercice_ans_row input{
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#beginner_exercice .exercice_ans_row span{
+    display: block;
+    padding: 8px 15px;
+    background-color: #bad0c9;
+    border-radius: 15px;
+    transition: all 0.3s ease-out;
+}
+
+#beginner_exercice .exercice_ans_row:hover span{
+    background-color: #9ab5ac;
+}
+
+#beginner_exercice .exercice_ans_row input:checked + span{
+    background-color: #f93c3c;
+}
+
+#beginner_exercice .exercice_ans_row input[valid]:checked + span{
+    background-color: green;
+    color: #fff;
+}
+
+#beginner_exercice .exercice_footer{
+    padding: 10px 0 0;
+    text-align: right;
+}
+
+#beginner_exercice .btn1{
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #0b58a7;
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.btn1:hover{
+    background-color: #064484;
+}
+
+#beginner_exercice .exercice_footer .btn1:hover{
+    background-color: #064484;
+
+}
+
+

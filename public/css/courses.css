@@ -34,11 +34,24 @@
 
 #button-exercices button{
     background-color: #0066CC;
-    color: #fff;
     font-size: 2vw;
     margin-top: 3vh;
     min-width: 15vw;
 }
+
+#button-exercices button:hover{
+    background-color: #064484;
+}
+
+#button-exercices .btn-exercice{
+    text-decoration: none;
+    color: #fff;
+}
+
+#button-exercices .btn-exercice:hover{
+    text-decoration: none;
+}
+
 
 #button-exercices p{
     text-align: center;

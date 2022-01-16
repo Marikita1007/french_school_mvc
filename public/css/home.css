@@ -31,31 +31,28 @@
     color: #333333;
 }
 
-#welcome .courses_buttons .button_debutant a:hover{
-    color: #FFFFFF;
-}
-
-#welcome .courses_buttons .button_intermediaire a:hover{
-    color: #0066CC;
-}
-
-#welcome .courses_buttons .button_avance a:hover{
-    color: #FFFFFF;
-}
-
 #welcome .courses_buttons .button_debutant{
     background-color: #0066CC;
-    border-color: #0066CC;
 }
 
 #welcome .courses_buttons .button_intermediaire{
     background-color: #FFFFFF;
-    border-color: #FFFFFF;
 }
 
 #welcome .courses_buttons .button_avance{
     background-color: #FF0000;
-    border-color: #FF0000;
+}
+
+#welcome .courses_buttons .button_debutant:hover{
+    background-color: #1a53ff;
+}
+
+#welcome .courses_buttons .button_intermediaire:hover{
+    background-color: #f2f2f2;
+}
+
+#welcome .courses_buttons .button_avance:hover{
+    background-color:#cc0000;
 }
 
 @media (max-width: 1200px) {

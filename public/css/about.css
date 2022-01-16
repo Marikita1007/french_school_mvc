@@ -101,17 +101,16 @@
     color: #333333;
 }
 
-
-#buttons .courses_buttons .button_debutant a:hover{
-    color: #FFFFFF;
+#buttons .courses_buttons .button_debutant:hover{
+    background-color: #1a53ff;
 }
 
-#buttons .courses_buttons .button_intermediaire a:hover{
-    color: #0066CC;
+#buttons .courses_buttons .button_intermediaire:hover{
+    background-color: #f2f2f2;
 }
 
-#buttons .courses_buttons .button_avance a:hover{
-    color: #FFFFFF;
+#buttons .courses_buttons .button_avance:hover{
+    background-color:#cc0000;
 }
 
 #buttons .container h2{
@@ -129,24 +128,17 @@
 
 #buttons .courses_buttons .button_debutant{
     background-color: #0066CC;
-    border-color: #0066CC;
 }
 
 #buttons .courses_buttons .button_intermediaire{
     background-color: #FFFFFF;
-    border-color: #FFFFFF;
 }
 
 #buttons .courses_buttons .button_avance{
     background-color: #FF0000;
-    border-color: #FF0000;
 }
 
 @media (max-width: 1200px) {
-
-    #buttons{
-        border: 1px solid blue;
-    }
 
     #buttons .courses_buttons button{
         font-size: 2vh;
@@ -156,10 +148,6 @@
 
 /* iPad */
 @media screen and (max-width: 768px) {
-
-    #buttons{
-        border: 1px solid pink;
-    }
 
     #buttons h2{
         font-size: 3vw !important;

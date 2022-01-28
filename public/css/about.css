@@ -125,13 +125,20 @@
     min-width: 15vw;
 }
 
+#buttons .courses_buttons .button_debutant, 
+#buttons .courses_buttons .button_intermediaire, 
+#buttons .courses_buttons .button_avance{
+    border-radius: 15px 50px;
+    border: none;
+    -webkit-box-shadow: 9px 12px 14px 6px #777777;
+}
 
 #buttons .courses_buttons .button_debutant{
-    background-color: #0066CC;
+    background-color: #0066CC;    
 }
 
 #buttons .courses_buttons .button_intermediaire{
-    background-color: #FFFFFF;
+    background-color: #FFFFFF;    
 }
 
 #buttons .courses_buttons .button_avance{

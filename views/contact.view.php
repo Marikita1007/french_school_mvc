@@ -45,7 +45,7 @@ ob_start();
                         <div class="p-1">
                             <textarea class="form-control message" name="message" placeholder="Message" rows="6"></textarea>
                         </div>
-                        <div class="p-3">
+                        <div class="p-3 d-flex justify-content-center">
                             <button type="submit" class="btn float-end contact-button">Envoyer un message</button>
                         </div>
                     </fieldset>

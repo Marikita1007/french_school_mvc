@@ -97,7 +97,7 @@ class MembersController
             // j'incremente mon compteur de champs vides chaque fois que je detecte un champ non rempli
         }
         if (!empty($champs_vides)) {
-            $errors[] = 'Il manque ' . $champs_vides . ' information(s)';
+            $errors[] = '<div class="alert alert-danger">Il manque' . $champs_vides . ' information(s) </div>';
             require ('views/login.view.php');
         }
 
@@ -129,7 +129,7 @@ class MembersController
                 }
 
             }else{
-                $errors[] = "Votre saisie est incorrecte.";
+                $errors[] = '<div class="alert alert-danger"> Votre saisie est incorrecte. </div>';
                 require ('views/login.view.php');
             }
 
@@ -173,7 +173,7 @@ class MembersController
                 // j'incrementxe mon compteur de champs vides chaque fois que je detecte un champ non rempli
             }
             if ($champs_vides > 0) {
-                $errors[] = '<div class="alert alert-danger">Il manque ' . $champs_vides . ' information(s)</div>';
+                $errors[] = '<div class="alert alert-danger">Il manque ' . $champs_vides . ' information(s).</div>';
             }
 
             if(!isset($_POST['password']) || $_POST['password'] != $_POST['password2']){
@@ -206,7 +206,7 @@ class MembersController
                 if (trim($_POST[$key]) == '') $champs_vides++;
             }
             if($champs_vides > 0){
-                $errors .= '<div class="alert alert-danger">Il manque ' . $champs_vides . ' information(s)</div>';
+                $errors .= '<div class="alert alert-danger">Il manque ' . $champs_vides . ' information(s).</div>';
             }
         }
 

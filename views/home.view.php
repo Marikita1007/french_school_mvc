@@ -3,22 +3,19 @@ ob_start();
 ?>
 
 <section id="welcome" >
-    <div class="container-fluid">
-        <div class="row">
-            <h2 class="col-lg-6 col-md-12 col-sm-11 col-centered">APPRENEZ LE FRANÇAIS AVEC NOUS !</h2>
-            <div class="offset-lg-6 offset-md-0 offset-sm-1"></div>
+    <div class="container">
+        <div class="row" data-aos="fade-down" data-aos-duration="3000">
+            <h1 class="col-lg-12 col-md-12 col-sm-12">APPRENEZ LE FRANÇAIS AVEC NOUS !</h1>
+            <h2 class="col-lg-12 col-md-12 col-sm-12">COURS GRATUITS</h2>
         </div>
-        <div class="row">
-            <h3 class="col-lg-6 col-md-12 col-sm-8">COURS GRATUITS</h3>
-            <div class="offset-lg-6 offset-md-0 offset-sm-4"></div>
-        </div>
-        <div class ="row courses_buttons">
-            <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_debutant"><a href="<?= '?view=beginner' ?>">DÉBUTANT</a></button>
-            <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_intermediaire"><a href="<?= '?view=intermediate' ?>">INTERMÉDIAIRE</a></button>
-            <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_avance"><a href="<?= '?view=advanced' ?>">AVANCÉ</a></button>
-            <div class="offset-lg-6 offset-md-3"></div>
+        <div class ="row courses_buttons" data-aos="fade-up" data-aos-duration="3000">
+            <button type='button' class="col-lg-4 col-md-3 mx-lg-4 mx-md-3 button_debutant"><a href="<?= '?view=beginner' ?>">DÉBUTANT</a></button>
+            <button type='button' class="col-lg-4 col-md-3 mx-lg-4 mx-md-3 button_intermediaire"><a href="<?= '?view=intermediate' ?>">INTERMÉDIAIRE</a></button>
+            <button type='button' class="col-lg-4 col-md-3 mx-lg-4 mx-md-3 button_avance"><a href="<?= '?view=advanced' ?>">AVANCÉ</a></button>
+            <div class="offset-md-3"></div>
         </div>
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave-bottom"><path fill="#E6FFFF" fill-opacity="1" d="M0,192L80,181.3C160,171,320,149,480,170.7C640,192,800,256,960,272C1120,288,1280,256,1360,240L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
 </section>
 
 <section id="introduction">
@@ -32,37 +29,40 @@ ob_start();
     <div class="container introduction_icons">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="p-3 ">
+                <div class="p-3 course-descriptions">
                     <div class="d-flex justify-content-center">
                         <i class="shake_anime fas fa-book fa-7x"></i>
                     </div>
                     <div class="row">
                         <div class="col content-text">
                             <h3 class="text-center">Les Cours de Français</h3>
+                            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="p-3 ">
+                <div class="p-3 course-descriptions">
                     <div class="d-flex justify-content-center">
                         <i class="shake_anime fas fa-graduation-cap fa-7x"></i>
                     </div>
                     <div class="row">
                         <div class="col content-text">
                             <h3 class="text-center">Test ton niveau</h3>
+                            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="p-3 ">
+                <div class="p-3 course-descriptions">
                     <div class="d-flex justify-content-center">
                         <i class="shake_anime fas fa-users fa-7x"></i>
                     </div>
                     <div class="row">
                         <div class="col content-text">
                             <h3 class="text-center">Accent natif</h3>
+                            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                         </div>
                     </div>
                 </div>
@@ -73,25 +73,35 @@ ob_start();
 
 </section>
 
-<section id="instructions">
-    <div class="wave-container">
-        <div data-aos="zoom-in-right" data-aos-duration="3000">
-            <div class="content">
-                <h3 class="text-center mb-5">Une méthode pour chaque type d'apprentissage</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <i class="far fa-check-circle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis voluptatum minima, earum maxime sequi tempora.</i>
-                <i class="far fa-check-circle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci, quisquam.</i>
-                <i class="far fa-check-circle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto explicabo aliquid consequatur quaerat.</i>
-            </div>
-        </div>
-
-        <div data-aos="zoom-in-up"  data-aos-duration="2000"> <img src="public/img/mobile-course.jpg" alt="Online Course"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00008B" fill-opacity="0.3" d="M0,32L60,69.3C120,107,240,181,360,208C480,235,600,213,720,176C840,139,960,85,1080,90.7C1200,96,1320,160,1380,192L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+<section id="mobile-usage">
+    <div class="content" data-aos="zoom-in-right" data-aos-duration="3000">
+        <h3 class="text-center py-3">Une méthode pour chaque type d'apprentissage</h3>
+        <p class="main-text px-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius libero fugit nam dolorem totam numquam, iusto officia asperiores dolore delectus deleniti esse a nostrum, nemo cupiditate consectetur quidem reprehenderit corporis? Sapiente odio dolore blanditiis cum, officiis facilis. Nihil, atque sequi?</p>
     </div>
-    
+    <div class="images-content">
+        <div data-aos="zoom-in-up"  data-aos-duration="2000" class="image-mobile-usage"><img src="public/img/mobile-course.jpg" alt="Online Course On Mobile"></div>
+    </div>
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#184387" fill-opacity="0.9" d="M0,256L80,245.3C160,235,320,213,480,208C640,203,800,213,960,197.3C1120,181,1280,139,1360,117.3L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
 </section>
 
+<section id="hire-teachers" class="d-flex align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h2 class="text-center col-lg-12 col-md-12 col-sm-12">Devenir instructeur</h3>
+            <h3 class="text-center col-lg-12 col-md-12 col-sm-12">Rejoignez des milliers d'instructeurs et ayez un nouveau travail !</h2>
+            <div class="line text-center"></div>
+            <button type="button" class="btn col-lg-12 col-md-12 col-sm-12 rounded-pill">
+                <a href="<?= "?view=contact" ?>">
+                    commencez maintenant
+                </a>
+            </button>
+        </div>
+    </div>
+</section>
+
+
 <section id="temoignages">
+
     <div class="container">
         <div class="row introduction_titles">
             <h2 class="mt-5">Témoignages</h2>

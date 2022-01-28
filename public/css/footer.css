@@ -1,11 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Asap&family=Barlow+Condensed&display=swap');
-
-*{
-    box-sizing: border-box;
-    font-family: 'ABeeZee', sans-serif;
-}
-
-
 .sns-content, .links-content{
     background-color: #f4f0ec !important;
 }

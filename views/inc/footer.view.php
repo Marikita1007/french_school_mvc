@@ -54,10 +54,8 @@
                         TEST DE FRANÇAIS
                     </h6>
                     <p>
-                        <!-- text-decoration-none Bootstrapテキストの下線消去 -->
-                        <a href="?view=test" class="text-reset text-decoration-none" >Test de niveau</a>
+                        <a href="<?= "?view=showMember&op=test" ?>" class="text-reset text-decoration-none" >Test de niveau</a>
                     </p>
-
                 </div>
                 <!-- Grid column -->
 
@@ -103,7 +101,7 @@
     <!-- Copyright -->
 </footer>
 
-<!-- Bootstrap JS  I might need to change the </body> to footer-->
+<!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 <!-- AOS  Animations at the home page telephone section -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

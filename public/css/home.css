@@ -1,34 +1,44 @@
 #welcome{
     background: url(../img/teacher.jpg) no-repeat right 50% bottom 80%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%,rgba(230, 255, 255, 1) 100%), url(../img/teacher.jpg);
     background-size: cover;
-    min-height: 86vh;    
-    width: 100vw;
+    min-height: 70vh;    
+    width: 100%;
 }
 
-#welcome .container-fluid .row  h2{
+#welcome .container .row h1{
     /* APPRENEZ LE FRANÇAIS AVEC NOUS ! */
     font-size: 2.7vw;
-    margin-left: 5vw;
+    padding-left: 8vw;
     margin-top: 15vh;   
+    color: #737373;
+    font-weight: 700;
 }
 
-#welcome .container-fluid .row  h3{
+#welcome .container .row h2{
     /* COURS GRATUITS */
-    color: #1A8CFF;
+    color: #737373;
     font-size: 2.5vw;
-    margin-left: 20vw;
-    margin-top: 15vh;
+    padding-left: 20vw;
 }
 
 #welcome .courses_buttons button{
     font-size: 3vh;
     margin-top: 10vh;
-    min-width: 20vw;
+    max-width: 18.5vw;
 }
 
 #welcome .courses_buttons a{
     text-decoration: none;
     color: #333333;
+}
+
+#welcome .courses_buttons .button_debutant, 
+#welcome .courses_buttons .button_intermediaire, 
+#welcome .courses_buttons .button_avance{
+    border-radius: 15px 50px;
+    border: none;
+    -webkit-box-shadow: 9px 12px 14px 6px #777777;
 }
 
 #welcome .courses_buttons .button_debutant{
@@ -68,26 +78,27 @@
 
     }
 
-    #welcome .container-fluid .row  h2{
+    #welcome .container .row  h1{
         /* APPRENEZ LE FRANÇAIS AVEC NOUS ! */
         font-size: 3vw;
         margin-top: 30vh;
         width: 80vw;
-        padding:20px;
-        width:710px;
+        padding: 20px;
+        width: 710px;
         position:relative;
         background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
         background: rgba(204, 204, 204, 0.5);
     }
 
-    #welcome .container-fluid .row{
+    #welcome .container .row{
         justify-content: center;
     }
 
-    #welcome .container-fluid .row  h3{
+    #welcome .container .row  h2{
         /* COURS GRATUITS */
         font-size: 3vw;
         margin: auto;
+        padding: 0;
     }
 
     #welcome .courses_buttons{
@@ -97,11 +108,16 @@
     #welcome .courses_buttons button{
         font-size: 2vh;
         margin-bottom: 7vh;
+        max-width: 20vw;
+    }
+
+    #welcome .wave-bottom{
+        display: none;
     }
 }
 
 /* iPad */
-@media screen and (max-width: 768px) and (min-width: 575px) {
+@media screen and (max-width: 768px) {
 
     #welcome{
         background: no-repeat 0 0 cover;
@@ -110,21 +126,23 @@
         padding: 1vh;
     }
 
-    #welcome .container-fluid{
+    #welcome .container{
         display: inline;
     }
 
-    #welcome .container-fluid .row  h2{
+    #welcome .container .row  h1{
         /* APPRENEZ LE FRANÇAIS AVEC NOUS ! */
         font-size: 4vw;  
         padding:20px;
-        width:710px;
+        width: 100%;
+        text-align: center;
         position:relative;
         background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
         background: rgba(204, 204, 204, 0.5);
+        margin-top: 15vh;
     }
 
-    #welcome .container-fluid .row  h3{
+    #welcome .container .row  h2{
         /* COURS GRATUITS */
         font-size: 3.5vw;
         margin: auto;
@@ -138,7 +156,7 @@
     #welcome .courses_buttons button{
         font-size: 2.8vw;
         margin-top: 3vh;
-        width: 25vw;
+        max-width: 27vw;
     }
 }
 
@@ -152,21 +170,6 @@
         min-height: 0;
         max-height: 80vh;
         padding: 1vh;
-    }
-
-    #welcome .container-fluid .row  h2{
-        /* APPRENEZ LE FRANÇAIS AVEC NOUS ! */
-        font-size: 4vw;
-        padding:20px;
-        width:710px;
-        position:relative;
-        background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
-        background: rgba(204, 204, 204, 0.5);
-    }
-
-    #welcome .container-fluid .row  h3{
-        /* COURS GRATUITS */
-        font-size: 3.5vw;
     }
 
     #welcome .courses_buttons{
@@ -183,7 +186,12 @@
 #introduction{
     padding: 3vh;
     background-color: #E6FFFF;
-    height: 70vh;
+    height: 75vh;
+}
+
+#introduction .course-descriptions:hover{
+    box-shadow: 0 0 5px #1A8CFF, 0 0 5px #1A8CFF, 0 0 10px #1A8CFF;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 #introduction .introduction_titles{
@@ -222,7 +230,13 @@
         font-size: 2vw;
     }
 
+    #introduction p{
+        font-size: 1.7vw;
+    }
 
+    #introduction .shake_anime{
+        font-size: 10vw;
+    }
 }
 
 /* iPad */
@@ -232,9 +246,16 @@
         height: 100vh;
     }
 
-
     .introduction_icons h3{
         font-size: 4vw;
+    }
+
+    #introduction p{
+        font-size: 2vw;
+    }
+
+    #introduction .shake_anime{
+        font-size: 10vw;
     }
 }
 
@@ -248,79 +269,156 @@
     }
 }
 
-#instructions{
-    margin-top: 0 ;
-    padding: 0 ;
-    color: cornsilk;
-}
-
-#instructions .wave-container{
+#mobile-usage{
+    margin: 0;
+    padding: 0;
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 100px;
     box-sizing: border-box;
-    background: linear-gradient(#c9b8b8, #1A8CFF);
+    background: linear-gradient(180deg, #c9b8b8, #1A8CFF);
     background-blend-mode: screen;
 }
 
-#instructions .wave-container h3{
-    font-size: 2rem;
+#mobile-usage .content{
+    max-width:  1200px;
 }
 
-#instructions .wave-container p{
-    font-size: 1.2rem;
+#mobile-usage .content h3{
+    font-size: 2em;
+    color: #fff;
 }
 
+#mobile-usage .content p{
+    font-size: 1.2em;
+    color: #fff;
+}
 
-#instructions img{
+#mobile-usage .image-mobile-usage img{
+    max-width: 300px;
+    max-height: 700px;
+    border-radius: 5%;
+    filter: drop-shadow(10px 10px 3px rgb(59, 61, 63));
+}
+
+#mobile-usage .image-mobile-usage {
     position: relative;
-    max-width: 20vw;
     z-index: 1000;
 }
 
-#instructions .wave-container svg{
+#mobile-usage .wave{
     position: absolute;
     bottom: 0;
     left: 0;
 }
 
-@media (max-width: 576px){
-
-    #instructions svg{
-        display: none;
-    }
-
-    #instructions .wave-container{
-        position: relative;
-        width: 100%;
-        height: 70vh;
-        padding: 3vw;
-    }
-
-    #instructions h3{
-        font-size: 15px !important;
-        font-weight: bold;
-    }
-
-    #instructions p{
-        max-height: 30vh;
-        font-size: 15px !important;
-    }
-
-    #instructions i{
-        max-height: 30vh;
-    }
-
-    #instructions img{
-        display: none;
-    }
-
+#mobile-usage .images-content{
+    position: relative;
+    top: 0;
+    left: 0;  
 }
 
+@media (max-width: 1200px) {
+    
+    #mobile-usage .content h3{
+        font-size: 1em;
+    }
+
+    #mobile-usage .content p{
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #mobile-usage {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #mobile-usage .content p{
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+
+    #mobile-usage{
+        padding: 10px;
+    }
+
+    #mobile-usage .image-mobile-usage img{
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
+
+#hire-teachers{
+    background: url(../img/hire-teachers.jpg) no-repeat right 50% bottom 80%;
+    background-image: linear-gradient(to bottom, rgba(25, 67, 136, 0.9) 0%, rgba(25, 67, 136, 0.9) 70%), url(../img/hire-teachers.jpg);
+    background-size: cover;
+    min-height: 70vh;    
+    width: 100%;
+}
+
+#hire-teachers .container h3, #hire-teachers .container h2{
+    color: #FFFAF2;
+}
+
+#hire-teachers .container .btn{
+    max-width: 15vw;
+    background-color: #ffffff;
+    color: #1a53ff;
+    opacity: 0.6;
+    transition: 0.3s;
+    font-size: 2vh;
+    top: 0;
+}
+
+#hire-teachers .container .btn:hover{ 
+    transform: translate(0, -10px);
+    opacity: 1
+} 
+
+#hire-teachers .line{
+    color: #FFFAF2;
+    font-size: 2.5rem;
+    display:block;
+    text-transform: none;
+}
+
+#hire-teachers .line::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: #FFFAF2;
+    margin-bottom: .5rem;
+}
+
+@media (max-width: 1200){
+    #hire-teachers .container .btn{
+        max-width : 40vw 
+    }
+}
+
+@media (max-width: 768px){
+    #hire-teachers .container .btn{
+        max-width : 40vw 
+    }
+}
+
+
+@media (max-width: 576px){
+    #hire-teachers .container .btn{
+        max-width : 40vw 
+    }
+}
 
 #temoignages{
     max-height: 120vh;
@@ -456,5 +554,4 @@
     border-radius: 5%;
     display: none;
 }
-
 

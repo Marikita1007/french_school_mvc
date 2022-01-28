@@ -1,12 +1,3 @@
-<?php
-ob_start();
-if(!empty($errors)){
-    foreach ($errors as $error){
-        echo $error;
-    };
-}
-?>
-
 <section id="login">
     <container>
         <row>
@@ -15,6 +6,15 @@ if(!empty($errors)){
                     <form action="?view=showMember&op=login" method="post">
                         <fieldset>
                             <legend class="mt-2 title login-title">CONNEXION</legend>
+
+                            <?php
+                                ob_start();
+                                if(!empty($errors)){
+                                    foreach ($errors as $error){
+                                        echo "<br><hr>" . $error;
+                                    };
+                                }
+                            ?>
 
                             <div class="form-group">
                                 <label for="" class="form-label mt-2">Email address</label>

@@ -54,7 +54,7 @@
                                     </h6>
                                     <p>
                                         <!-- text-decoration-none Bootstrapテキストの下線消去 -->
-                                        <a href="?view=test" class="text-reset text-decoration-none" >Test de niveau</a>
+                                        <a href="<?= "?view=showMember&op=test" ?>" class="text-reset text-decoration-none" >Test de niveau</a>
                                     </p>
 
                                 </div>

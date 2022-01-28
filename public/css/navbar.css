@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Asap&family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Poppins&family=Roboto+Slab:wght@600&display=swap');
+
 *{
     box-sizing: border-box;
-    font-family: 'ABeeZee', sans-serif;
+    font-family: 'Corinthia', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Slab', serif
 }
 
 @media (max-width: 767.98px) {

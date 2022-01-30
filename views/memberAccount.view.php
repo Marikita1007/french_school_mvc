@@ -38,7 +38,7 @@ ob_start();
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-12">
                                     <div class="p-3">
-                                        <a href="logout.php" class="btn btn-info">Se déconnecter</a>
+                                        <a href="<?= '?view=showMember&op=logout' ?>" class="btn btn-info">Se déconnecter</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-4 col-sm-12">

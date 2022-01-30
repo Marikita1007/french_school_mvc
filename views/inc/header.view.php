@@ -62,7 +62,9 @@
                     </li>
                 <?php } ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= '?view=showMember&op=test' ?>">TEST DE NIVEAU</a>
+                        <a class="nav-link" href="<?= '?view=showMember&op=test' ?>">TEST DE NIVEAU
+                            <div class="navigation-small-line"></div>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= '?view=about' ?>">QUI SOMMES-NOUS?</a>
@@ -81,8 +83,8 @@
                     </li>
                     <?php } ?>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            COURS DE FRANÇAIS
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            COURS DE FRANÇAIS <i class="fas fa-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="<?= '?view=beginner' ?>">DÉBUTANT</a>
@@ -103,19 +105,14 @@
                 <a class="navbar-brand" href="#">
                     Administration
                 </a>
-                <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
             </div>
-
-            <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
             
             <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
                 Bonjour, <?= $_SESSION['member']->nom ?>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="logout.php">Se déconnecter</a></li>
+                <li><a class="dropdown-item" href="<?= '?view=showMember&op=logout' ?>">Se déconnecter</a></li>
             </ul>
             </div>
         </nav>

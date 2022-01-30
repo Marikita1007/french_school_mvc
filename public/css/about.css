@@ -99,6 +99,7 @@
 #buttons .courses_buttons a{
     text-decoration: none;
     color: #333333;
+    font-size: 1.5vw;
 }
 
 #buttons .courses_buttons .button_debutant:hover{
@@ -122,6 +123,7 @@
 #buttons .courses_buttons button{
     font-size: 3vh;
     margin-top: 3vh;
+    margin-bottom: 3vh;
     min-width: 15vw;
 }
 
@@ -145,12 +147,24 @@
     background-color: #FF0000;
 }
 
+
+
+
 @media (max-width: 1200px) {
 
-    #buttons .courses_buttons button{
-        font-size: 2vh;
-        min-width: 16vw;
+    #buttons .courses_buttons {
+        justify-content: center;
+        margin-bottom: 3vh;
     }
+
+    #buttons .courses_buttons button{
+        min-width: 20vw;
+    }
+
+    #buttons .courses_buttons a{
+        font-size: 2vw;
+    }
+    
 }
 
 /* iPad */
@@ -160,23 +174,33 @@
         font-size: 3vw !important;
     }
 
+    #buttons .courses_buttons{
+        margin-bottom: 0;
+    }
+
     #buttons .courses_buttons button{
-        font-size: 2vh;
-        min-width: 20vw;
+        font-size: 2.8vw;
+        margin: 0;
+        width: 0;
+        max-width: 20vw;
     }
 }
 
-@media (max-width: 576px){
+@media (max-width: 576px) {
 
     #buttons h2{
         font-size: 4vw !important;
     }
 
     #buttons .courses_buttons button{
-        font-size: 2vh;
+        font-size: 2.2vw;
         min-width: 25vw;
     }
+
 }
+
+
+
 
 #guides h2{
     color: #1A8CFF;

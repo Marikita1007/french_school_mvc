@@ -70,7 +70,7 @@ class QuestionsController
             foreach ($_POST as $key => $value){
                 //Prevent SQL injections
                 $_POST[$key] = htmlspecialchars($value);
-                if(trim($_POST[$questions->id_question]) == '') $empty_fields++;
+                if(trim($_POST[$key]) == '') $empty_fields++;
             }
             if($empty_fields > 0){
                 //Need to call this in the page so it actually shows.

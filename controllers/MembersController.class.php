@@ -136,6 +136,13 @@ class MembersController
         }
     }
 
+    public function  logout(){
+        //Users can logout without leaving session
+        // this is the first page to be called so that I can use header() function
+        session_destroy();
+        header('location:?view=home');
+    }
+
     public function showData(){
         if($_GET['op'] == 'show' && !empty($_SESSION['member']->id_member) && is_numeric($_SESSION['member']->id_member)){
             $testResultDatas = $this->dbtestResults->checkUserHistory($_SESSION["member"]->id_member);

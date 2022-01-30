@@ -15,7 +15,7 @@ ob_start();
             <div class="offset-md-3"></div>
         </div>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave-bottom"><path fill="#E6FFFF" fill-opacity="1" d="M0,192L80,181.3C160,171,320,149,480,170.7C640,192,800,256,960,272C1120,288,1280,256,1360,240L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave-bottom"><path fill="#E6FFFF" fill-opacity="0.9" d="M0,192L80,181.3C160,171,320,149,480,170.7C640,192,800,256,960,272C1120,288,1280,256,1360,240L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
 </section>
 
 <section id="introduction">

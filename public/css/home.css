@@ -1,6 +1,6 @@
 #welcome{
     background: url(../img/teacher.jpg) no-repeat right 50% bottom 80%;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%,rgba(230, 255, 255, 1) 100%), url(../img/teacher.jpg);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%,rgba(230, 255, 255, 0.9) 100%), url(../img/teacher.jpg);
     background-size: cover;
     min-height: 70vh;    
     width: 100%;
@@ -189,9 +189,14 @@
     height: 75vh;
 }
 
+#introduction .course-descriptions{
+    transition: transform 500ms ease-in-out 25ms;
+}
+
 #introduction .course-descriptions:hover{
     box-shadow: 0 0 5px #1A8CFF, 0 0 5px #1A8CFF, 0 0 10px #1A8CFF;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.7s ease-in-out;
+    transform: translate(0, -10px);
 }
 
 #introduction .introduction_titles{
@@ -372,12 +377,15 @@
 
 #hire-teachers .container .btn{
     max-width: 15vw;
-    background-color: #ffffff;
-    color: #1a53ff;
+    background-color: #1A8CFF;
     opacity: 0.6;
     transition: 0.3s;
     font-size: 2vh;
     top: 0;
+}
+
+#hire-teachers .container .btn a{
+    color: #FFFAF2;
 }
 
 #hire-teachers .container .btn:hover{ 
@@ -522,8 +530,8 @@
     }
 
     #temoignages .student-image{
-        height: 10vh;
-        width: 18vw;
+        height: 20vh;
+        width: 35vw;
     }
 
     #temoignages h3{

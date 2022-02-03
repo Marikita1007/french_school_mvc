@@ -13,7 +13,7 @@
         <!-- Left -->
 
         <!-- Right -->
-        <div>
+        <div class="sns-links">
             <a href="" class="me-4 text-reset">
                 <i class="fab fa-facebook-f"></i>
             </a>
@@ -38,7 +38,7 @@
             <!-- Grid row -->
             <div class="row">
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto ">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto">
                     <!-- Content -->
                     <h6 class="text-uppercase fw-bold mb-4">
                         <img src="public/img/school_icon.png" alt="French School" height="100">
@@ -48,7 +48,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 p-0">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4">
                         TEST DE FRANÇAIS
@@ -74,7 +74,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 contact-infos">
                     <!-- Links -->
                     <h6 class="text-uppercase fw-bold mb-4">
                         <a href="<?= "?view=contact" ?>">Contact</a>
@@ -85,6 +85,7 @@
                         french.school@com
                     </p>
                     <p><i class="fas fa-phone me-3"></i> + 06 12 34 56 78</p>
+                    <a href="?view=mentions_legales" class="mentions_legales"><i class="fas fa-balance-scale me-3"></i>Mentions Légales</a>
                 </div>
                 <!-- Grid column -->
             </div>

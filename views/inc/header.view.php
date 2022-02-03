@@ -36,8 +36,9 @@
     <link rel="stylesheet" href="public/css/new-member.css">
     <link rel="stylesheet" href="public/css/errors.css">
     <link rel="stylesheet" href="public/css/delete_check.css">
-    <link rel="stylesheet" href="public/css/beginner_exercice.css">
+    <link rel="stylesheet" href="public/css/exercice.css">
     <link rel="stylesheet" href="public/css/test.css">   
+    <link rel="stylesheet" href="public/css/mentions_legales.css">
 
     <title>French School</title>
 </head>
@@ -87,9 +88,9 @@
                             COURS DE FRANÇAIS <i class="fas fa-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?= '?view=beginner' ?>">DÉBUTANT</a>
-                            <a class="dropdown-item" href="<?= '?view=intermediate' ?>">INTERMÉDIAIRE</a>
-                            <a class="dropdown-item" href="<?= '?view=advanced' ?>">AVANCÉ</a>
+                            <a class="dropdown-item" href="<?= '?view=beginner&op=lesson' ?>">DÉBUTANT</a>
+                            <a class="dropdown-item" href="<?= '?view=intermediate&op=lesson' ?>">INTERMÉDIAIRE</a>
+                            <a class="dropdown-item" href="<?= '?view=advanced&op=lesson' ?>">AVANCÉ</a>
                         </div>
                     </li>
                 </ul>

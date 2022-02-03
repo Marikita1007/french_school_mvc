@@ -5,7 +5,7 @@ ob_start();
     <section id="beginner_exercice">
         <div class="exercice_box">
             <div class="exercice_header">
-                <span>Score: <span id="score">0</span></span>
+                <span>Note: <span id="score">0</span></span>
                 <span id="countdown"></span>
             </div>
             <div class="exercice_body">
@@ -107,12 +107,12 @@ ob_start();
                 </div>
                 <div class="exercice_set">
                     <div class="d-flex align-items-center result">
-                        <h4>Your Total score <span id="totalScore"> 0 </span> out of 100</h4>
-                        <a class="btn1 btn-primary" href="http://localhost/french_school_mvc/?view=beginner" role="button">Cours débutant</a>
+                        <h4>Votre note total était <span id="totalScore"> 0 </span> sur 100</h4>
+                        <a class="btn1 btn-primary" href="?view=beginner" role="button">Cours débutant</a>
                     </div>
                 </div>
                 <div class="exercice_footer">
-                    <button class="btn1" id="skip">Skip</button>
+                    <button class="btn1" id="skip">passer</button>
                 </div>
             </div>
         </div>

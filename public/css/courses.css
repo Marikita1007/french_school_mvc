@@ -1,13 +1,13 @@
 #beginner h2, #intermediate h2, #advanced h2{
     color: #1A8CFF;
-    font-size: 4vw;
+    font-size: 3em;
     margin-top: 10vh;
     font-weight: 700;
 }
 
 #beginner h3, #intermediate h3, #advanced h3{
     color: #1A8CFF;
-    font-size: 2.7vw;
+    font-size: 2em;
     margin-top: 5vh;
     margin-bottom: 5vh;
     font-weight: 700;
@@ -17,7 +17,7 @@
 #intermediate h4, audio,
 #advanced h4, audio {
     color: #1A8CFF;
-    font-size: 2.5vw;
+    font-size: 1.7em;
     font-weight: 700;
 }
 
@@ -59,6 +59,10 @@
     color: #1A8CFF;
 }
 
+
+#button-exercices .button-exercice{
+    color: #fff;
+}
 
 @media (max-width: 1200px) {
 

@@ -1,16 +1,16 @@
-.sns-content, .links-content{
+footer .sns-content, footer .links-content{
     background-color: #f4f0ec !important;
 }
 
-a, a:hover, a:focus {
-    text-decoration: none !important;
+footer a{
+    text-decoration: none;
 }
 
-/* 他のh6はこれでいを変更しているけれどCONTACTの色を変更ができていない */
-h6.text-uppercase{
-    color: #1A8CFF !important;
+/* 他のh6はこれで変更しているけれどCONTACTの色を変更ができていない */
+footer h6.text-uppercase{
+    color: #6c757d;
 }
 
-.copy-right-content{
-    background-color: #C4C4C4;
+footer .contact-infos a{
+    color: #6c757d;
 }

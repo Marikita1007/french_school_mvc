@@ -1,6 +1,5 @@
-#beginner_exercice{
+#beginner_exercice, #intermediate_exercice, #advanced_exercice{
     font-size: 16px;
-    margin-top: 15vh;
     margin-left: 0;
     margin-left: 0;
     margin-bottom: 0;
@@ -13,7 +12,9 @@
     background: linear-gradient(#c9b8b8, #1A8CFF);
 }
 
-#beginner_exercice .exercice_box{
+#beginner_exercice .exercice_box, 
+#intermediate_exercice .exercice_box,
+#advanced_exercice .exercice_box{
     width: 500px;
     padding: 20px;
     min-height: 100px;
@@ -22,7 +23,9 @@
     border-radius: 15px;
 }
 
-#beginner_exercice .exercice_header{
+#beginner_exercice .exercice_header, 
+#intermediate_exercice .exercice_header,
+#advanced_exercice .exercice_header{
     background-color: #0b58a7;
     color: #fff;
     display: flex;
@@ -33,36 +36,50 @@
     font-size: 20px; 
 }
 
-#beginner_exercice .exercice_set{
+#beginner_exercice .exercice_set, 
+#intermediate_exercice .exercice_set,
+#advanced_exercice .exercice_set{
     display: none;
 }
 
-#beginner_exercice .exercice_set .result{
+#beginner_exercice .exercice_set .result, 
+#intermediate_exercice .exercice_set .result,
+#advanced_exercice .exercice_set .result{
     flex-direction: column;
 }
 
-#beginner_exercice .exercice_set.active{
+#beginner_exercice .exercice_set.active, 
+#intermediate_exercice .exercice_set.active,
+#advanced_exercice .exercice_set.active{
     display: block;
 }
 
-#beginner_exercice .exercice_set h4{
+#beginner_exercice .exercice_set h4, 
+#intermediate_exercice .exercice_set h4,
+#advanced_exercice .exercice_set h4{
     margin: relative;
     font-size: 20px;
 }
 
-#beginner_exercice .exercice_set a{
-    max-width: 150px;
+#beginner_exercice .exercice_set a, 
+#intermediate_exercice .exercice_set a,
+#advanced_exercice .exercice_set a{
+    max-width: 200px;
     max-height: 150px;
     font-size: 15px;
     background-color: #0b58a7;
 }
 
-#beginner_exercice .exercice_ans_row{
+#beginner_exercice .exercice_ans_row, 
+#intermediate_exercice .exercice_ans_row,
+#advanced_exercice .exercice_ans_row{
     position: relative;
     margin-bottom: 10px;
 }
 
-#beginner_exercice .exercice_ans_row input{
+#beginner_exercice .exercice_ans_row input, 
+#intermediate_exercice .exercice_ans_row input,
+#advanced_exercice .exercice_ans_row input{
     opacity: 0;
     position: absolute;
     left: 0;
@@ -73,7 +90,9 @@
     cursor: pointer;
 }
 
-#beginner_exercice .exercice_ans_row span{
+#beginner_exercice .exercice_ans_row span, 
+#intermediate_exercice .exercice_ans_row span,
+#advanced_exercice .exercice_ans_row span{
     display: block;
     padding: 8px 15px;
     background-color: #bad0c9;
@@ -81,41 +100,64 @@
     transition: all 0.3s ease-out;
 }
 
-#beginner_exercice .exercice_ans_row:hover span{
+#beginner_exercice .exercice_ans_row:hover span, 
+#intermediate_exercice .exercice_ans_row:hover span,
+#advanced_exercice .exercice_ans_row:hover span{
     background-color: #9ab5ac;
 }
 
-#beginner_exercice .exercice_ans_row input:checked + span{
+#beginner_exercice .exercice_ans_row input:checked + span, 
+#intermediate_exercice .exercice_ans_row input:checked + span,
+#advanced_exercice .exercice_ans_row input:checked + span{
     background-color: #f93c3c;
 }
 
-#beginner_exercice .exercice_ans_row input[valid]:checked + span{
+#beginner_exercice .exercice_ans_row input[valid]:checked + span, 
+#intermediate_exercice .exercice_ans_row input[valid]:checked + span,
+#advanced_exercice .exercice_ans_row input[valid]:checked + span{
     background-color: green;
     color: #fff;
 }
 
-#beginner_exercice .exercice_footer{
+#beginner_exercice .exercice_footer, 
+#intermediate_exercice .exercice_footer,
+#advanced_exercice .exercice_footer{
     padding: 10px 0 0;
     text-align: right;
 }
 
-#beginner_exercice .btn1{
+#beginner_exercice .btn1, 
+#intermediate_exercice .btn1,
+#advanced_exercice .btn1{
     display: inline-block;
     padding: 8px 20px;
-    background-color: #0b58a7;
+    background-color: #0066CC;
     color: #fff;
     border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease-out;
+    text-decoration: none;
 }
 
-.btn1:hover{
-    background-color: #064484;
+#beginner_exercice .btn1:hover, 
+#intermediate_exercice .btn1:hover,
+#advanced_exercice .btn1:hover{
+    background-color: #0369cf;
 }
 
-#beginner_exercice .exercice_footer .btn1:hover{
-    background-color: #064484;
+#beginner_exercice .exercice_footer .btn1:hover, 
+#intermediate_exercice .exercice_footer .btn1:hover,
+#advanced_exercice .exercice_footer .btn1:hover{
+    background-color: #0369cf;
 
 }
 
+@media (max-width: 1200px) {
+    #beginner_exercice .exercice_box, 
+    #intermediate_exercice .exercice_box,
+    #advanced_exercice .exercice_box{
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+}
 

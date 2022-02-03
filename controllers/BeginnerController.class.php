@@ -13,8 +13,19 @@ class BeginnerController
             case 'beginner_exercice':
                 require ('views/beginner_exercice.view.php');
                 break;
+            case 'lesson':
+                $this->showLesson();
+                break;
             default:
                 require ('views/beginner.view.php');
+        }
+    }
+
+    public function showLesson(){
+        if($_GET['op'] == 'lesson' && !empty($_SESSION)){
+            require  ('views/beginner.view.php');
+        }else{
+            header('location:?view=login');
         }
     }
 

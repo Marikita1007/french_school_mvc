@@ -1,5 +1,4 @@
 #welcome{
-    background: url(../img/teacher.jpg) no-repeat right 50% bottom 80%;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%,rgba(230, 255, 255, 0.9) 100%), url(../img/teacher.jpg);
     background-size: cover;
     min-height: 70vh;    
@@ -18,19 +17,18 @@
 #welcome .container .row h2{
     /* COURS GRATUITS */
     color: #737373;
-    font-size: 2.5vw;
-    padding-left: 20vw;
+    font-size: 2em;
+    margin-top: 10vh;
 }
 
 #welcome .courses_buttons button{
-    font-size: 3vh;
-    margin-top: 10vh;
+    font-size: 1.1em;
     max-width: 18.5vw;
 }
 
 #welcome .courses_buttons a{
     text-decoration: none;
-    color: #333333;
+    color: #3b3b3b;
 }
 
 #welcome .courses_buttons .button_debutant, 
@@ -39,10 +37,17 @@
     border-radius: 15px 50px;
     border: none;
     -webkit-box-shadow: 9px 12px 14px 6px #777777;
+    opacity: 0.8;
+    transition: 0.3s;
+    top: 0;
+}
+
+#welcome .courses_buttons a{
+    color: #0f0e0e;
 }
 
 #welcome .courses_buttons .button_debutant{
-    background-color: #0066CC;
+    background-color: #1A8CFF;
 }
 
 #welcome .courses_buttons .button_intermediaire{
@@ -53,16 +58,11 @@
     background-color: #FF0000;
 }
 
-#welcome .courses_buttons .button_debutant:hover{
-    background-color: #1a53ff;
-}
-
-#welcome .courses_buttons .button_intermediaire:hover{
-    background-color: #f2f2f2;
-}
-
+#welcome .courses_buttons .button_debutant:hover, 
+#welcome .courses_buttons .button_intermediaire:hover, 
 #welcome .courses_buttons .button_avance:hover{
-    background-color:#cc0000;
+    transform: translate(0, -10px);
+    opacity: 1
 }
 
 @media (max-width: 1200px) {
@@ -106,10 +106,15 @@
     }
 
     #welcome .courses_buttons button{
-        font-size: 2vh;
+        font-size: 1em;
         margin-bottom: 7vh;
         max-width: 20vw;
     }
+
+    #welcome .courses_buttons button a{
+        font-size: 0.8em;
+    }
+
 
     #welcome .wave-bottom{
         display: none;
@@ -154,7 +159,7 @@
     }
 
     #welcome .courses_buttons button{
-        font-size: 2.8vw;
+        font-size: 1em;
         margin-top: 3vh;
         max-width: 27vw;
     }
@@ -179,6 +184,11 @@
 
     #welcome .courses_buttons button{
         margin: 0;
+        max-width: 50vw;
+    }
+
+    #welcome .courses_buttons button a{
+        font-size: 0.5em;
     }
 
 }
@@ -219,6 +229,9 @@
     color: #1A8CFF;
     font-size: 2vw;
 }
+#introduction .shake_anime{
+    font-size: 4vw;
+}
 
 @media (max-width: 1200px) {
     
@@ -237,10 +250,6 @@
 
     #introduction p{
         font-size: 1.7vw;
-    }
-
-    #introduction .shake_anime{
-        font-size: 10vw;
     }
 }
 
@@ -497,6 +506,10 @@
     #temoignages p{
         font-size: 1.5vh;
     }
+
+    #temoignages .mobile-picture{
+        justify-content: center !important;
+    }
 }
 
 /* iPad */
@@ -563,3 +576,81 @@
     display: none;
 }
 
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+}
+
+/* まだテスト段階の箇所  put #achievements to all */
+
+#achievements {
+   min-height: 60vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(to bottom, #E6FFFF, #c9b8b8) !important; 
+}
+
+#achievements h2{
+    color: #737373;
+}
+
+#achievements .cards-row{
+    width: 98vw;
+}
+
+#achievements .card {
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
+}
+
+#achievements .l-bg-blue-dark {
+    background: linear-gradient(to right, #737373, #1A8CFF) !important;
+    color: #fff;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.6);
+}
+
+
+#achievements .card .card-statistic-3 .card-icon-large .fas, .card .card-statistic-3 .card-icon-large .far, .card .card-statistic-3 .card-icon-large .fab, .card .card-statistic-3 .card-icon-large .fal {
+    font-size: 110px;
+}
+
+#achievements .card .card-statistic-3 .card-icon {
+    text-align: center;
+    line-height: 50px;
+    margin-left: 15px;
+    color: #000;
+    position: absolute;
+    right: -5px;
+    top: 20px;
+    opacity: 0.1;
+}
+
+#achievements .l-bg-blue {
+    background: linear-gradient(135deg, #23bdb8 0%, #0600ad 100%) !important;
+    color: #fff;
+}
+
+#achievements .achivement-number{
+    font-size: 1.7em;
+    color: #fff;
+}
+
+
+@media (max-width: 1200px) {
+    #achievements .l-bg-blue-dark {
+        margin-bottom: 3vh;
+    }
+}

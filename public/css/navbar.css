@@ -13,7 +13,7 @@
 }
 
 .navbar .navbar-nav .nav-link:hover{
-    color: rgba(25, 67, 136);
+    color: #1A8CFF;
 }
  
 .navbar .navbar-nav .nav-link::after {
@@ -22,7 +22,7 @@
     left: 0;
     right: 0;
     margin: auto;
-    background-color:  rgba(25, 67, 136);
+    background-color: #1A8CFF;
     color: transparent;
     width: 0%;
     content: '.';
@@ -34,6 +34,9 @@
     width: 100%;
 }
 
+.dropdown:hover .dropdown-menu {
+    margin-top: 0; 
+}
 
 @media (max-width: 767.98px) {
     .navbar .responsive .nav-link{

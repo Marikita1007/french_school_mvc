@@ -45,8 +45,8 @@ switch ($view){
         $member = new controllers\MembersController;
         $member->run();
         break;
-    case 'myPage' :
-        $myPage = new controllers\myPageController;
+    case 'mentions_legales' :
+        $myPage = new controllers\MentionsLegalesController;
         $myPage->run();
         break;
 }

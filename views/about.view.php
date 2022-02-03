@@ -4,7 +4,7 @@ ob_start();
 <section id="teachers">
     <div class="container">
         <div class="row introduction_titles">
-            <h2 class="text-center"> QUI SOMMES-NOUS?</h2>
+            <h1 class="text-center"> QUI SOMMES-NOUS?</h1>
         </div>
     </div>
 
@@ -12,11 +12,12 @@ ob_start();
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="p-3 ">
-                    <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-center"  data-aos="fade-right" data-aos-duration="2000">
                         <a class="teachers-image teacher2"></a>
                     </div>
-                    <div class="d-flex justify-content-center">
-                        <h3 class="teacher-name">Anne Ogastric</h3>
+                    <div class="d-flex justify-content-center flex-column"  data-aos="fade-right" data-aos-duration="2000">
+                        <h3>Anne Ogastric</h3>
+                        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     </div>
                 </div>
             </div>
@@ -59,11 +60,12 @@ ob_start();
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="p-3 ">
-                        <div class="d-flex justify-content-center ">
+                        <div class="d-flex justify-content-center" data-aos="fade-right" data-aos-duration="2000">
                             <a class="teachers-image teacher1"></a>
                         </div>
-                        <div class="d-flex justify-content-center ">
-                            <h3 class="teacher-name">Pierre Oglyphe</h3>
+                        <div class="d-flex justify-content-center flex-column" data-aos="fade-right" data-aos-duration="2000">
+                            <h3>Pierre Oglyphe</h3>
+                            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                         </div>
                     </div>
                 </div>
@@ -120,17 +122,17 @@ ob_start();
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="d-flex justify-content-center courses_buttons">
-                    <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_debutant"><a href="<?= '?view=beginner' ?>">DÉBUTANT</a></button>
+                    <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_debutant"><a href="<?= '?view=beginner&op=lesson' ?>">DÉBUTANT</a></button>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="d-flex justify-content-center courses_buttons">
-                    <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_intermediaire"><a href="<?= '?view=intermediate' ?>">INTERMÉDIAIRE</a></button>
+                    <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_intermediaire"><a href="<?= '?view=intermediate&op=lesson' ?>">INTERMÉDIAIRE</a></button>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="d-flex justify-content-center courses_buttons">
-                    <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_avance"><a href="<?= '?view=advanced' ?>">AVANCÉ</a></button>
+                    <button type='button' class="col-lg-2 col-md-3 mx-lg-4 mx-md-3 button_avance"><a href="<?= '?view=advanced&op=lesson' ?>">AVANCÉ</a></button>
                 </div>
             </div>
         </div>
@@ -141,7 +143,7 @@ ob_start();
     <div class="container">
         <div class="row">
             <div class="p-3">
-                <h2 class="text-center">LE GUIDE POUR DÉCOUVRIR NOTRE SITE</h2>
+                <h1 class="text-center">LE GUIDE POUR DÉCOUVRIR NOTRE SITE</h2>
             </div>
         </div>
     </div>

@@ -101,10 +101,6 @@
         padding: 0;
     }
 
-    #welcome .courses_buttons{
-        justify-content: center;
-    }
-
     #welcome .courses_buttons button{
         font-size: 1em;
         margin-bottom: 7vh;
@@ -204,7 +200,7 @@
 }
 
 #introduction .course-descriptions:hover{
-    box-shadow: 0 0 5px #1A8CFF, 0 0 5px #1A8CFF, 0 0 10px #1A8CFF;
+    box-shadow: 0 0 10px #1A8CFF;
     transition: box-shadow 0.7s ease-in-out;
     transform: translate(0, -10px);
 }
@@ -339,7 +335,7 @@
 @media (max-width: 1200px) {
     
     #mobile-usage .content h3{
-        font-size: 1em;
+        font-size: 1.3em;
     }
 
     #mobile-usage .content p{
@@ -444,11 +440,12 @@
 
 #temoignages h2{
     color: #1A8CFF;
-    font-size: 3.5vw;
+    font-size: 3vw;
 }
 
 #temoignages h3{
     color: #1A8CFF;
+    font-size: 1.8vw;
 }
 
 #temoignages .student-comment{
@@ -515,12 +512,6 @@
 /* iPad */
 @media screen and (max-width: 768px) {
 
-
-    #temoignages .mobile-picture{
-        justify-content: center !important;
-    }
-
-
     #temoignages p{
         font-size: 2vh;
     }
@@ -556,8 +547,6 @@
         font-size: 3vw;
         text-align: center;
     }
-
-
 }
 
 /* JavaScript Event back-to-top */

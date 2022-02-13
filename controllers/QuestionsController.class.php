@@ -140,7 +140,6 @@ class QuestionsController
                             $wrongInputs .= 'Les mauvaises réponses doivent être différentes !';
                         }
                     }
-                    //HERE !!!!!!!!!!!!!
                     if(empty($wrongInputs)){
                         if($_GET['opAdmin'] == 'new'){
                             //making arrays to separate datas of the table answers and questions
@@ -186,7 +185,8 @@ class QuestionsController
 
     public function deleteQuestionAndAnswers(){
         if (!empty($_GET['id']) && is_numeric($_GET['id']) && $_GET['opAdmin'] == 'delete'){
-                $this->db->deleteAnswers($_GET['id']);
+                $id_target_answers = $this->db->selectDeleteAnswers($_GET['id']);
+                $this->db->deleteAnswers($id_target_answers);
                 $this->db->deleteQuestion($_GET['id']);
         }
         header('location:?view=question&opAdmin=qlist');

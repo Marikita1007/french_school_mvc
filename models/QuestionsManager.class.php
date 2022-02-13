@@ -41,10 +41,22 @@ class QuestionsManager extends Model{
         return $this->idColumName;
     }
 
-    public function deleteAnswers($id_question){
-        $query = Model::getDatabase()->prepare("DELETE FROM answers WHERE id_question =:id_question");
+    public function selectDeleteAnswers($id_question){
+        $query = Model::getDatabase()->prepare("SELECT id_answer FROM answers WHERE id_question =:id_question");
         $query->execute(array(
            ':id_question' => $id_question
+        ));
+        $result = $query->fetchAll(PDO::FETCH_COLUMN);
+        $result = implode(",", $result);
+
+        return $result;
+    }
+
+    public function deleteAnswers($id_target_answers){
+
+        $query = Model::getDataBase()->prepare("DELETE FROM answers WHERE id_answer IN (:id_answer)");
+        $query->execute(array(
+            ':id_answer' => $id_target_answers
         ));
     }
 

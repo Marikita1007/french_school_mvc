@@ -1,3 +1,10 @@
 .member-page-container{
     margin-top: 15vh;
 }
+
+.member-page-container .btn{
+    background-color:  #0066CC;
+    color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow:  10px 5px 5px #C4C4C4;
+}

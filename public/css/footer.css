@@ -4,13 +4,5 @@ footer .sns-content, footer .links-content{
 
 footer a{
     text-decoration: none;
-}
-
-/* 他のh6はこれで変更しているけれどCONTACTの色を変更ができていない */
-footer h6.text-uppercase{
-    color: #6c757d;
-}
-
-footer .contact-infos a{
-    color: #6c757d;
+    color: #6c757d !important;
 }

@@ -25,7 +25,7 @@ ob_start();
                                 <td><?= $_SESSION['member']->prenom ?></td>
                                 <td><?= $_SESSION['member']->nom ?></td>
                                 <td><?= $_SESSION['member']->email ?></td>
-                                <td><a href="?op=list"  class="btn btn-sm btn-primary">La page d'accueil</a></td>
+                                <td><a href="?op=list"  class="btn btn-sm">La page d'accueil</a></td>
                             </tr>
                             </tbody>
                         </table>
@@ -33,17 +33,17 @@ ob_start();
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="p-3">
-                                        <a href="?view=showMember&op=editCheck" class="btn btn-info">Modifier votre Profile</a>
+                                        <a href="?view=showMember&op=editCheck" class="btn">Modifier votre Profile</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-12">
                                     <div class="p-3">
-                                        <a href="<?= '?view=showMember&op=logout' ?>" class="btn btn-info">Se déconnecter</a>
+                                        <a href="<?= '?view=showMember&op=logout' ?>" class="btn">Se déconnecter</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-4 col-sm-12">
                                     <div class="p-3">
-                                        <a href="?view=showMember&op=deleteCheck" class="btn btn-info">Supprimer votre compte</a>
+                                        <a href="?view=showMember&op=deleteCheck" class="btn">Supprimer votre compte</a>
                                     </div>
                                 </div>
                             </div>
@@ -64,16 +64,16 @@ ob_start();
                     }?>
                 </div>
                 <div class="card-body">
-                    <a class="btn btn-info" href="<?= '?view=showMember&op=test' ?>"><div id="traffic-chart">Faire le test de niveau</div></a>
+                    <a class="btn" href="<?= '?view=showMember&op=test' ?>"><div id="traffic-chart">Faire le test de niveau</div></a>
                 </div>
                 <div class="card-body">
-                    <a class="btn btn-info" href="<?= '?view=beginner' ?>"><div id="traffic-chart">DÉBUTANT</div></a>
+                    <a class="btn" href="<?= '?view=beginner' ?>"><div id="traffic-chart">DÉBUTANT</div></a>
                 </div>
                 <div class="card-body">
-                    <a class="btn btn-info" href="<?= '?view=intermediate' ?>"><div id="traffic-chart">INTERMÉDIAIRE</div></a>
+                    <a class="btn" href="<?= '?view=intermediate' ?>"><div id="traffic-chart">INTERMÉDIAIRE</div></a>
                 </div>
                 <div class="card-body">
-                    <a class="btn btn-info" href="<?= '?view=advanced' ?>"><div id="traffic-chart">AVANCÉ</div></a>
+                    <a class="btn" href="<?= '?view=advanced' ?>"><div id="traffic-chart">AVANCÉ</div></a>
                 </div>
             </div>
         </div>

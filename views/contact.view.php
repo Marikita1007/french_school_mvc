@@ -50,10 +50,6 @@ ob_start();
                         </div>
                     </fieldset>
                 </form>
-                <hr>
-                <h3 class="text-center">Mentions Legales</h3>
-                <div>ADD MENTION LEGAL HERE Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium eius, optio asperiores amet sequi aliquam perspiciatis pariatur porro delectus accusantium. Omnis delectus quis dolor molestiae perspiciatis enim officia veritatis accusantium consequatur expedita obcaecati libero mollitia consequuntur in, inventore aliquid doloremque sint molestias eius cum ipsum quas voluptate fugit. Expedita, laudantium!</div>
-                <hr>
             </div>
         </div>
     </div>

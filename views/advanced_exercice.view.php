@@ -24,7 +24,7 @@ ob_start();
                         <span>J'ai eu vingt-huit ans</span>
                     </div>
                     <div class="exercice_ans_row">
-                        <input type="radio" name="a1" valid="valid">
+                        <input type="radio" name="a1">
                         <span>J'aie vingt-huit annees</span>
                     </div>
                 </div>

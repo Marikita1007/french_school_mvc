@@ -80,7 +80,7 @@ ob_start();
 <section id="achievements">
     <div class="col-md-10　d-flex justify-content-center align-item-center mx-3">
         <h2 class="text-center my-5">Nos réalisations</h2>
-        <div class="row cards-row">
+        <div class="row cards-row number-move-start">
             <div class="col-xl-3 col-lg-6">
                 <div class="card l-bg-blue-dark">
                     <div class="card-statistic-3 p-4">
@@ -88,10 +88,8 @@ ob_start();
                         <div class="mb-4">
                             <h5 class="card-title mb-0">Enseignants</h5>
                         </div>
-                        <div class="col-8">
-                            <p class="d-flex align-items-center mb-0 achivement-number">
-                                23
-                            </p>
+                        <div class="col-8" data-count="16">
+                            <span  class="d-flex align-items-center mb-0 achivement-number num-counter">0</span>
                         </div>
                         <div class="progress mt-1" data-height="8" style="height: 8px;">
                             <div class="progress-bar l-bg-blue" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 23%;"></div>
@@ -107,10 +105,8 @@ ob_start();
                             <h5 class="card-title mb-0">Étudiantes</h5>
                         </div>
                         <div class="row align-items-center mb-2 d-flex">
-                            <div class="col-8">
-                                <p class="d-flex align-items-center mb-0 achivement-number">
-                                    +2k
-                                </p>
+                            <div class="col-8" data-count="2125">
+                                <span  class="d-flex align-items-center mb-0 achivement-number num-counter">0</span>
                             </div>
                         </div>
                         <div class="progress mt-1 " data-height="8" style="height: 8px;">
@@ -127,10 +123,8 @@ ob_start();
                             <h5 class="card-title mb-0">Nationalités</h5>
                         </div>
                         <div class="row align-items-center mb-2 d-flex">
-                            <div class="col-8">
-                                <p class="d-flex align-items-center mb-0 achivement-number">
-                                    75 
-                                </p>
+                            <div class="col-8" data-count="160">
+                                <span  class="d-flex align-items-center mb-0 achivement-number num-counter">0</span>
                             </div>
                         </div>
                         <div class="progress mt-1 " data-height="8" style="height: 8px;">
@@ -144,13 +138,11 @@ ob_start();
                     <div class="card-statistic-3 p-4">
                         <div class="card-icon card-icon-large"><i class="fas fa-spinner"></i></div>
                         <div class="mb-4">
-                            <h5 class="card-title mb-0">Expérience</h5>
+                            <h5 class="card-title mb-0">Alliance d'entreprise</h5>
                         </div>
                         <div class="row align-items-center mb-2 d-flex">
-                            <div class="col-8">
-                                <p class="d-flex align-items-center mb-0 achivement-number">
-                                    15 ans
-                                </p>
+                        <div class="col-8" data-count="15">
+                                <span  class="d-flex align-items-center mb-0 achivement-number num-counter">0</span>
                             </div>
                         </div>
                         <div class="progress mt-1 " data-height="8" style="height: 8px;">
@@ -180,11 +172,11 @@ ob_start();
 <section id="hire-teachers" class="d-flex align-items-center">
     <div class="container">
         <div class="row justify-content-center">
-            <h2 class="text-center col-lg-12 col-md-12 col-sm-12">Devenir instructeur</h3>
-                <h3 class="text-center col-lg-12 col-md-12 col-sm-12">Rejoignez des milliers d'instructeurs et ayez un nouveau travail !
+            <h2 class="text-center col-lg-12">Devenir instructeur</h3>
+                <h3 class="text-center col-lg-12">Rejoignez des milliers d'instructeurs et ayez un nouveau travail !
             </h2>
             <div class="line text-center"></div>
-            <button type="button" class="btn col-lg-12 col-md-12 col-sm-12 rounded-pill">
+            <button type="button" class="btn col-lg-12 rounded-pill">
                 <a href="<?= "?view=contact" ?>">
                     commencez maintenant
                 </a>

@@ -86,7 +86,7 @@
                                         french.school@com
                                     </p>
                                     <p><i class="fas fa-phone me-3"></i> + 06 12 34 56 78</p>
-                                    <a href="?view=mentions_legales"><i class="fas fa-balance-scale  me-3"></i>Mentions Légales</a>
+                                    <a href="?view=mentions_legales"><i class="fas fa-balance-scale me-3"></i>Mentions Légales</a>
                                 </div>
                                 <!-- Grid column -->
                             </div>

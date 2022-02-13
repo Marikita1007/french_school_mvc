@@ -14,16 +14,16 @@
 
         <!-- Right -->
         <div class="sns-links">
-            <a href="" class="me-4 text-reset">
+            <a href="https://www.facebook.com" class="me-4 text-reset">
                 <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="" class="me-4 text-reset">
+            <a href="https://twitter.com" class="me-4 text-reset">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a href="" class="me-4 text-reset">
+            <a href="https://www.google.com" class="me-4 text-reset">
                 <i class="fab fa-google"></i>
             </a>
-            <a href="" class="me-4 text-reset">
+            <a href="https://www.instagram.com" class="me-4 text-reset">
                 <i class="fab fa-instagram"></i>
             </a>
 
@@ -102,6 +102,8 @@
     <!-- Copyright -->
 </footer>
 
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 <!-- AOS  Animations at the home page telephone section -->

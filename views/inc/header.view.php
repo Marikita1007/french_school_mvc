@@ -34,7 +34,6 @@
     <link rel="stylesheet" href="public/css/member_page.css">
     <link rel="stylesheet" href="public/css/sign_up.css">
     <link rel="stylesheet" href="public/css/new-member.css">
-    <link rel="stylesheet" href="public/css/errors.css">
     <link rel="stylesheet" href="public/css/delete_check.css">
     <link rel="stylesheet" href="public/css/exercice.css">
     <link rel="stylesheet" href="public/css/test.css">   
@@ -75,7 +74,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?= '?view=showMember&op=show' ?>">MON COMPTE</a>
                     </li>
-                <?php } else { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= '?view=showMember&op=logout' ?>" >SE DÉCONNECTER</a>
+                    </li>
+                    <?php } else { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= '?view=sign' ?>">S'INSCRIRE</a>
                     </li>

@@ -3,8 +3,13 @@
 }
 
 .member-page-container .btn{
-    background-color:  #0066CC;
+    background-color: #0066CC;
     color: #FFFFFF;
     border-radius: 15px;
-    box-shadow:  10px 5px 5px #C4C4C4;
+    box-shadow:  5px 2px 2px #C4C4C4;
+}
+
+.member-page-container .btn:hover{
+    transform: translate(0, -5px);
+    opacity: 1
 }

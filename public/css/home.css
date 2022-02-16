@@ -579,8 +579,6 @@
     }
 }
 
-/* まだテスト段階の箇所  put #achievements to all */
-
 #achievements {
    min-height: 60vh;
    display: flex;

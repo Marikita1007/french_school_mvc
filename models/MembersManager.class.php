@@ -16,6 +16,31 @@ class MembersManager extends Model
         return $result;
     }
 
+    //Get today's number of student registration
+    public function getRegNumToday(){
+        $query = Model::getDataBase()->query("SELECT * FROM `members` WHERE signup_date = CURRENT_DATE");
+        $result = $query->rowCount();
+        return $result;
+    }
+
+    public function getRegNumWeek(){
+        $query = Model::getDataBase()->query("SELECT * FROM `members` WHERE week(signup_date) = week(now())");
+        $result = $query->rowCount();
+        return $result;
+    }
+
+    public function getRegNumMonth(){
+        $query = Model::getDataBase()->query("SELECT * FROM `members` WHERE month(signup_date) = month(now()) and year(signup_date) = year(now());");
+        $result = $query->rowCount();
+        return $result;
+    }
+
+    public function getRegNumYear(){
+        $query = Model::getDataBase()->query("SELECT * FROM `members` WHERE year(signup_date) = year(now());");
+        $result = $query->rowCount();
+        return $result;
+    }
+
     public function getIdColumnName(){
         $query = Model::getDataBase()->query("DESC members");
         $result = $query->fetch();

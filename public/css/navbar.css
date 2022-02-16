@@ -43,6 +43,28 @@
 }
 
 
+a{
+    text-decoration: none;
+}
+
+.bonjour-dropdown{
+    right: 0;
+    left: auto;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+
+@media (max-width: 575.98px) {
+    .bonjour-dropdown{
+        right: none;
+        left: 5px;
+        padding: 5px;
+        min-width: 250px;
+    }
+}
+
+
 
 
 

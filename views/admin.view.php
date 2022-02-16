@@ -25,49 +25,48 @@ ob_start();
                 </div>
             </nav>
             <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?= '?view=home' ?>">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Overview</li>
-                    </ol>
-                </nav>
+
                 <h1 class="h2">Dashboard</h1>
                 <p>Voici un tableau de bord pour les utilisateurs de l'administration</p>
 
                 <div class="card">
-                    <h5 class="card-header">Les élèves des french school</h5>
+                    <h5 class="card-header">Les élèves de French School</h5>
                     <div class="card-body">
                         <div class="row">
+
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">ID Membre</th>
+                                            <th scope="col">Prenom</th>
+                                            <th scope="col">Nom</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Date d'inscription</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php foreach ( $members as $member) : ?>
+                                            <tr>
+                                                <th scope="row"><?= $member->id_member ?></th>
+                                                <td><?= $member->prenom ?></td>
+                                                <td><?= $member->nom ?></td>
+                                                <td><?= $member->email ?></td>
+                                                <td><?= $member->signup_date  ?></td>
+                                            </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
                             <div class="col-12 col-xl-8 mb-4 mb-lg-0">
                                 <div class="card">
-                                    <h5 class="card-header">Coordonnées du membre</h5>
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <?php foreach ( $members as $member) : ?>
-                                            <table class="table">
-                                                <thead>
-                                                <tr>
-                                                    <th scope="col">ID Membre</th>
-                                                    <th scope="col">Prenom</th>
-                                                    <th scope="col">Nom</th>
-                                                    <th scope="col">Email</th>
-                                                    <th scope="col">Date d'inscription</th>
-                                                    <th scope="col"></th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row"><?= $member->id_member ?></th>
-                                                        <td><?= $member->prenom ?></td>
-                                                        <td><?= $member->nom ?></td>
-                                                        <td><?= $member->email ?></td>
-                                                        <td><?= $member->signup_date  ?></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <?php endforeach; ?>
-                                        </div>
-                                    </div>
+                                    <h5 class="card-header">Coordonnées des membres</h5>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -76,43 +75,37 @@ ob_start();
 
                 <div class="row my-4">
                     <h4>Nombre d'inscriptions</h4>
+                    <?php setlocale(LC_TIME, "fr_FR"); ?>
+                    <p>(<?= strftime("%d %B %Y"); ?>)</p>
                     <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
                         <div class="card">
-                            <h5 class="card-header">Aujourd'hui</h5>
+                            <h5 class="card-header text-center">Aujourd'hui</h5>
                             <div class="card-body">
-                                <h5 class="card-title">345k</h5>
-                                <p class="card-text">Feb 1 - Apr 1, United States</p>
-                                <p class="card-text text-success">18.2% increase since last month</p>
+                                <h5 class="card-title text-center"><?= $todayRegister;  ?></h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
                         <div class="card">
-                            <h5 class="card-header">Cette semaine</h5>
+                            <h5 class="card-header text-center">Cette semaine</h5>
                             <div class="card-body">
-                                <h5 class="card-title">$2.4k</h5>
-                                <p class="card-text">Feb 1 - Apr 1, United States</p>
-                                <p class="card-text text-success">4.6% increase since last month</p>
+                                <h5 class="card-title text-center"><?= $weekRegister;  ?></h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
                         <div class="card">
-                            <h5 class="card-header">Ce mois-ci</h5>
+                            <h5 class="card-header text-center">Ce mois-ci</h5>
                             <div class="card-body">
-                                <h5 class="card-title">43</h5>
-                                <p class="card-text">Feb 1 - Apr 1, United States</p>
-                                <p class="card-text text-danger">2.6% decrease since last month</p>
+                                <h5 class="card-title text-center"><?= $monthRegister;  ?></h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
                         <div class="card">
-                            <h5 class="card-header">Cette année</h5>
+                            <h5 class="card-header text-center">Cette année</h5>
                             <div class="card-body">
-                                <h5 class="card-title">64k</h5>
-                                <p class="card-text">Feb 1 - Apr 1, United States</p>
-                                <p class="card-text text-success">2.5% increase since last month</p>
+                                <h5 class="card-title text-center"><?= $yearRegister;  ?></h5>
                             </div>
                             </div>
                         </div>

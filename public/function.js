@@ -52,7 +52,7 @@ if(window.location.href.includes("view=home") == true){
 
     function numCounter (entries) {
 
-        //ページ読み込み時には、「交差の比率」は「0」。これを書くことページをリフレッシュしたとたんにアニメーション発動を回避。
+        //ページ読み込み時には、「交差の比率」は「0」。これを書くことでページをリフレッシュしたとたんにアニメーション発動を回避。
         if (entries[0].intersectionRatio == 0){
             return;
         }else{

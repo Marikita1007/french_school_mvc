@@ -1,11 +1,11 @@
 <?php
 ob_start();
 ?>
-<div style="min-height: 20vh;">
+<div class="d-flex align-items-center justify-content-center flex-column little-text-page">
     <div class="text-center registered-text">Bienvenue dans notre famille !</div>
-    <div class="text-center">
-        <a href="?view=showMember&op=show" class="btn btn-info">Voir votre profil</a>
-    </div>
+    <button class="text-center btn">
+        <a class="shortpage-btn" href="?view=showMember&op=show">Voir votre profil</a>
+    </button>
 </div>
 
 <?php

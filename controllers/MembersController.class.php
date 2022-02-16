@@ -68,6 +68,10 @@ class MembersController
 
     public function goAdmin(){
         $members = $this->db->selectStudents();
+        $todayRegister = $this->db->getRegNumToday();
+        $weekRegister = $this->db->getRegNumWeek();
+        $monthRegister = $this->db->getRegNumMonth();
+        $yearRegister = $this->db->getRegNumYear();
         require ('views/admin.view.php');
     }
 
@@ -76,7 +80,7 @@ class MembersController
         header('location:?view=home');
     }
 
-    //!!!!!!何故か$_GET['id_member']が空
+    //!!!!何故か$_GET['id_member']が空
     public function deleteCheck(){
         require ('views/verify_delete.view.php');
     }
@@ -113,7 +117,12 @@ class MembersController
                 //Admin Check
                 $infosArray = json_decode(json_encode($_SESSION['member']), true);
                 if(!empty($infosArray) && $infosArray['status'] == 1){
+                    //When the admind login to the page, it shows the info.
                     $members = $this->db->selectStudents();
+                    $todayRegister = $this->db->getRegNumToday();
+                    $weekRegister = $this->db->getRegNumWeek();
+                    $monthRegister = $this->db->getRegNumMonth();
+                    $yearRegister = $this->db->getRegNumYear();
                     require('views/admin.view.php');
                     //header('location:?view=home&op=admin');
                 }else{

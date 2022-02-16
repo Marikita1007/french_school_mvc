@@ -77,9 +77,9 @@ ob_start();
 
 </section>
 
-<section id="achievements">
-    <div class="col-md-10　d-flex justify-content-center align-item-center mx-3">
-        <h2 class="text-center my-5">Nos réalisations</h2>
+<section id="achievements" class="flex-column d-flex">
+    <h2 class="text-center my-5">Statistiques</h2>
+    <div class="col-md-10 d-flex justify-content-center align-item-center mx-3">
         <div class="row cards-row number-move-start">
             <div class="col-xl-3 col-lg-6">
                 <div class="card l-bg-blue-dark">
@@ -102,7 +102,7 @@ ob_start();
                     <div class="card-statistic-3 p-4">
                         <div class="card-icon card-icon-large"><i class="fas fa-users"></i></div>
                         <div class="mb-4">
-                            <h5 class="card-title mb-0">Étudiantes</h5>
+                            <h5 class="card-title mb-0">Étudiants</h5>
                         </div>
                         <div class="row align-items-center mb-2 d-flex">
                             <div class="col-8" data-count="2125">
@@ -138,7 +138,7 @@ ob_start();
                     <div class="card-statistic-3 p-4">
                         <div class="card-icon card-icon-large"><i class="fas fa-spinner"></i></div>
                         <div class="mb-4">
-                            <h5 class="card-title mb-0">Alliance d'entreprise</h5>
+                            <h5 class="card-title mb-0">Entreprises partenaires</h5>
                         </div>
                         <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8" data-count="15">

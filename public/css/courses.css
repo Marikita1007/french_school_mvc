@@ -62,6 +62,19 @@
 
 #button-exercices .button-exercice{
     color: #fff;
+    border-radius: 10px;
+}
+
+
+#beginner img, #intermediate img, #advanced img{
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 12px 12px 2px 1px rgba(100, 102, 104, 0.4);
+}
+
+#beginner .dialogue , #intermediate .dialogue, #advanced .dialogue{
+    border: 3px solid #1A8CFF;
+    border-radius: 10px;
 }
 
 @media (max-width: 1200px) {

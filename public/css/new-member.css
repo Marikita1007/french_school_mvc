@@ -1,3 +1,22 @@
 .registered-text{
     margin-top: 10vh;
 }
+
+.little-text-page{
+    min-height: 50vh;
+}
+
+.shortpage-btn{
+    color: white;
+    background-color: #0066CC;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.shortpage-btn button{
+    min-height: 10vh;
+}
+
+.shortpage-btn:hover{
+    color: white;
+}

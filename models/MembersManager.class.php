@@ -2,6 +2,7 @@
 
 namespace models;
 
+use Debug;
 use PDO, PDOException, Exception;
 
 class MembersManager extends Model
@@ -103,6 +104,13 @@ class MembersManager extends Model
         $query = Model::getDataBase()->prepare("UPDATE members SET $newValues WHERE " . $this->getIdColumnName() . "=:id_member");
         $infos['id_member'] = $id_member;
         return $query->execute($infos);
+    }
+
+    public function deleteTestResult($id_member){
+        $query = Model::getDataBase()->prepare("DELETE FROM test_results WHERE ". $this->getIdColumnName() . "=:id_member");
+        return $query->execute(array(
+           ':id_member' => $id_member
+        ));
     }
 
     public function deleteData($id_member){

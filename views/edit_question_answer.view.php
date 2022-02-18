@@ -27,19 +27,20 @@ ob_start();
                 <h1 class="h2">Dashboard</h1>
                 <p>Voici un tableau de bord pour les utilisateurs de l'administration</p>
 
-                    <?php  if(!empty($errors)){ ?>
-                        <div class="alert alert-danger" role="alert"><?= implode($errors); ?></div>
-                    <?php }
-                    if(!empty($empty_difficulty)){ ?>
-                        <div class="alert alert-danger" role="alert"><?= $empty_difficulty; ?></div>
-                    <?php }
-                    if(!empty($wrongInputs)){ ?>
-                        <div class="alert alert-danger" role="alert"><?= $wrongInputs; ?></div>
-                    <?php }?>
-
                 <!-- 問題と解答の入力フォーム -->
                 <div class="container">
                     <div class="row justify-content-center">
+                        
+                        <?php  if(!empty($errors)){ ?>
+                            <div class="alert alert-danger" role="alert"><?= implode($errors); ?></div>
+                        <?php }
+                        if(!empty($empty_difficulty)){ ?>
+                            <div class="alert alert-danger" role="alert"><?= $empty_difficulty; ?></div>
+                        <?php }
+                        if(!empty($wrongInputs)){ ?>
+                            <div class="alert alert-danger" role="alert"><?= $wrongInputs; ?></div>
+                        <?php }?>
+
                         <div class="col-lg-6 col-md-4 col-sm-6">
                             <form action="?view=question&opAdmin=edit&id=<?= $currentQuestion->id_question ?>" method="post" class="">
                                 <div class="form-group">

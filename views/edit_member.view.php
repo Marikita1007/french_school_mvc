@@ -10,6 +10,11 @@ ob_start();
                     <form action="?view=showMember&op=edit" method="POST">
                         <fieldset>
                             <legend class="mt-2 title">MON COMPTE</legend>
+                            <?php
+                            if(isset($errors) && $errors != ""){
+                                echo "<div>" . implode($errors) . "</div>";
+                            }
+                            ?>
                             <div class="form-group">
                                 <label for="" class="form-label mt-2">Prénom</label>
                                 <input type="prenom" name="prenom" class="form-control" id="prenom" value="<?= $_SESSION['member']->prenom?>">
@@ -33,7 +38,7 @@ ob_start();
                             </div>
                             <br>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-info sign-in-button mb-4">MODIFIER</button>
+                                <button type="submit" class="btn sign-in-button mb-4">MODIFIER</button>
                             </div>
                         </fieldset>
                     </form>

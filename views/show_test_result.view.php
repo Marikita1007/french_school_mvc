@@ -9,7 +9,7 @@ ob_start();
             </row>
             <row class = "d-flex justify-content-center">
                 <?php if(isset($_SESSION['member'])){ ?>
-                    <a class="btn btn-info" href="<?= '?view=showMember&op=show' ?>">Allez sur votre page</a>
+                    <a class="btn btn-primary" href="<?= '?view=showMember&op=show' ?>">Allez sur votre page</a>
                 <?php } else {
                     header('location:?view=home');
                 }?>

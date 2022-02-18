@@ -1,8 +1,8 @@
-.member-page-container{
+.member-page-container, #edit{
     margin-top: 15vh;
 }
 
-.member-page-container .btn{
+.member-page-container .btn, #edit .btn{
     background-color: #0066CC;
     color: #FFFFFF;
     border-radius: 15px;

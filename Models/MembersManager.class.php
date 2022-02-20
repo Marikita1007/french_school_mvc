@@ -1,6 +1,6 @@
 <?php
 
-namespace models;
+namespace Models;
 
 use Debug;
 use PDO, PDOException, Exception;

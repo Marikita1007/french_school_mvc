@@ -1,5 +1,5 @@
 <?php
-namespace models;
+namespace Models;
 
 class Questions{
     private $id_question;

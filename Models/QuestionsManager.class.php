@@ -1,6 +1,6 @@
 <?php
 
-namespace models;
+namespace Models;
 //CHECK IF THE DOWN BELOWS ARE USED !!!!!!!!!!!!!!!!!!!!!!
 use http\Encoding\Stream\Debrotli;
 use mysql_xdevapi\DocResult;
@@ -79,10 +79,10 @@ class QuestionsManager extends Model{
         }
     }
 
-    //We did here !!!
     public function addAnswers($id_question, $answersArray){
 
         foreach ($answersArray as $answer){
+
             $query = Model::getDataBase()->prepare("INSERT INTO answers (id_question, answer) VALUES (:id_question, :answer) ");
             $executeQuery= $query->execute(array(
                 ':id_question' => $id_question,

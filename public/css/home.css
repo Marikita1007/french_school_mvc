@@ -1,5 +1,6 @@
 #welcome{
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%,rgba(230, 255, 255, 0.9) 100%), url(../img/teacher.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     min-height: 70vh;    
     width: 100%;

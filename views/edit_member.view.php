@@ -29,7 +29,7 @@ ob_start();
                             </div>
                             <div class="form-group">
                                 <label for="" class="form-label mt-2">Vérifier votre mot de passe</label>
-                                <input type="password" name="password2" class="form-control" id="exampleInputPassword1" placeholder="Vérifier le mot de passe">
+                                <input type="password" name="password2" class="form-control" id="exampleInputPassword2" placeholder="Vérifier le mot de passe">
                             </div>
                             <div class="form-group">
                                 <label for="" class="form-label mt-2">Email</label>

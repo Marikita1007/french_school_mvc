@@ -1,6 +1,10 @@
 <?php
 
 session_start();
+
+//Use it for debuggintg online site
+ini_set('display_errors', 'On');
+
 require_once ('autoload.php');
 
 $view = $_GET['view'] ?? 'home';
@@ -42,11 +46,11 @@ switch ($view){
         $contact->run();
         break;
     case 'showMember':
-        $member = new controllers\MembersController;
+        $member = new Controllers\MembersController;
         $member->run();
         break;
     case 'mentions_legales' :
-        $myPage = new controllers\MentionsLegalesController;
+        $myPage = new Controllers\MentionsLegalesController;
         $myPage->run();
         break;
 }

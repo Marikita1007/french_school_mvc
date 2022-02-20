@@ -1,0 +1,12 @@
+.confirm-contact-sent-container{
+    min-height: 50vh;
+}
+
+.confirm-contact-sent-container btn{
+    color: #1A8CFF;
+
+}
+
+.confirm-contact-sent-container a{
+    color: #FFFAF2;
+}

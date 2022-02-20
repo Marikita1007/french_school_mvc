@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="public/css/exercice.css">
     <link rel="stylesheet" href="public/css/test.css">   
     <link rel="stylesheet" href="public/css/mentions_legales.css">
+    <link rel="stylesheet" href="public/css/confirm_contact_sent.css">
 
     <title>French School</title>
 </head>
@@ -115,10 +116,13 @@
                 Bonjour, <?= $_SESSION['member']->nom ?>
             </button>
             <ul class="dropdown-menu bonjour-dropdown" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="<?= '?view=showMember&op=logout' ?>">Se déconnecter</a></li>
+                <li>
+                    <a class="dropdown-item" href="<?= '?view=showMember&op=logout' ?>">Se déconnecter</a>
+                </li>
                 <li>
                     <a class="dropdown-item" aria-current="page" href="?view=showMember&op=admin">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <i class="fa-solid fa-user"></i>
                         <span class="ml-2 margin-top">Membres</span>
                     </a>
                 </li>

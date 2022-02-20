@@ -23,7 +23,7 @@ ob_start();
                 <?php foreach ($questionsData as $questions) : ?>
                     <row><?= $questionNumber++ ?>.  <?= $questions->question ?><br><br>
                         <?php
-                        $answersList = new \controllers\AnswersController();
+                        $answersList = new \Controllers\AnswersController();
                         $answersData = $answersList->listAnswers($questions->id_question);
                         if(!empty($answersData)){
                             shuffle($answersData);

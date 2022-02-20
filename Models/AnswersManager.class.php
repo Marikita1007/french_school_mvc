@@ -1,6 +1,6 @@
 <?php
 
-namespace models;
+namespace Models;
 use PDO, PDOException, Exception;
 
 class AnswersManager extends Model{

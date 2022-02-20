@@ -1,5 +1,5 @@
 <?php
-namespace models;
+namespace Models;
 
 class Members
 {

@@ -1,10 +1,13 @@
 <?php
 
-namespace controllers;
+namespace Controllers;
 
-use models\Model;
+use Models\Model;
+use Models\MembersManager;
 use PDO, PDOException, Exception;
 use Debug;
+
+
 
 class SignController
 {
@@ -82,6 +85,7 @@ class SignController
             $_POST['password'] = md5($_POST['password']);//password encrypted
             if($_GET['op'] == 'newMember'){
                 $newMemberId = $this->db->insert($_POST);
+                new Debug($newMemberId);
                 if($newMemberId > 0){
                     $_SESSION['member'] = $this->db->selectOne($newMemberId);
                     require('views/register_confirm.view.php');

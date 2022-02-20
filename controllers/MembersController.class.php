@@ -1,12 +1,12 @@
 <?php
-namespace controllers;
+namespace Controllers;
 
 use Debug;
-use models\Model;
-use models\MembersManager;
-use models\QuestionsManager;
-use models\AnswersManager;
-use models\TestResultsManager;
+use Models\Model;
+use Models\MembersManager;
+use Models\QuestionsManager;
+use Models\AnswersManager;
+use Models\TestResultsManager;
 use PDO, PDOException, Exception;
 
 class MembersController
@@ -112,17 +112,15 @@ class MembersController
                 $_SESSION['member'] = $memberInfo;
                 //Admin Check
                 $infosArray = json_decode(json_encode($_SESSION['member']), true);
-                if(!empty($infosArray) && $infosArray['status'] == 1){
-                    //When the admind login to the page, it shows the info.
+                if(!empty($infosArray) && $infosArray['status'] === '1'){
+                    //When the admin login to the page, it shows infos down below.
                     $members = $this->db->selectStudents();
                     $todayRegister = $this->db->getRegNumToday();
                     $weekRegister = $this->db->getRegNumWeek();
                     $monthRegister = $this->db->getRegNumMonth();
                     $yearRegister = $this->db->getRegNumYear();
                     require('views/admin.view.php');
-                    //header('location:?view=home&op=admin');
                 }else{
-                    //header('location:?view=home');
                     $testResultDatas = $this->dbtestResults->checkUserHistory($_SESSION["member"]->id_member);
                     if($testResultDatas){
                         $testResult = $testResultDatas->test_result;
@@ -262,7 +260,7 @@ class MembersController
                 $answersData = $this->dbAnswers->selectAll();
             }
             if(empty($errors)){
-                // models\QuestionManager
+                // Models\QuestionManager
                 // $testScores returns the result score of the user
                 $testScores = $this->dbQuestions->checkTestAnswers($_POST);
                 // this checks the level of the user

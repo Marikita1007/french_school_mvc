@@ -1,8 +1,8 @@
 <?php
 
-namespace controllers;
+namespace Controllers;
 
-use model\Model;
+use Model\Model;
 use PDO, PDOException, Exception;
 
 class AnswersController{

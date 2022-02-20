@@ -1,9 +1,9 @@
 <?php
 
-namespace controllers;
+namespace Controllers;
 
 use Debug;
-use models\Model;
+use Models\Model;
 use PDO, PDOException, Exception;
 
 class ContactController
@@ -67,27 +67,24 @@ class ContactController
 
         if($errors == ""){
 
+            //The guy write down his own email address : im.client@gmail.com
+            // Your website sends the actual email, so the website's email address is contact@marika-abe.fr
+            // The email where the actual message is sent to, is your own email : ishinomaki1007@gmail.com
+
             $lastName = $_POST['last_name'];
             $firstName = $_POST['first_name'];
             $subject = $_POST['subject'];
-            $emailFrom = $_POST['email'];
+            $emailFrom = "contact@marika-abe.fr";
+            $emailUser = $_POST['email'];
             $message = $_POST['message'];
 
             //need to make sure if its possible to send to gmail
-            $mailTo = 'french_school@hotmail.com';
-            $headers = "Expéditeur: " . $emailFrom;
-            $txt = "Vous avez reçu un e-mail de " . $firstName . " " . $lastName . ".\n\n" . $message;
+            $mailTo = 'ishinomaki1007@gmail.com';
+            $headers = $emailFrom;
+            $txt = "Vous avez reçu un e-mail de " . $firstName . " " . $lastName . ".\n\n" . $message . ".\n\n Expéditeur :" . $emailFrom;
 
             mail($mailTo, $subject, $txt, $headers);
 
-            //NEED TO CHECK IF THE EMAIL IF ACTUALLY WORKING ONCE ITS UPLOADED
-            // new Debug($mailTo);
-            // new Debug($headers);
-            // new Debug($txt);
-            // die;
-
-            //Have to edit this header
-            //need to create a new view
             require('views/confirm_contact_sent.view.php');
 
         }else{

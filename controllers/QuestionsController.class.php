@@ -1,9 +1,10 @@
 <?php
 
-namespace controllers;
+namespace Controllers;
 
+use Debug;
 use http\Encoding\Stream\Debrotli;
-use models\QuestionsManager;
+use Models\QuestionsManager;
 use PDO, PDOException, Exception;
 
 class QuestionsController
@@ -94,7 +95,7 @@ class QuestionsController
                         if(strpos($key, "answer_") !== false || strpos($key, "wrong_answer") !== false) {
                             //array_push adds what it's given to $answer_data
                             //Here it's getting only the necessary datas for answer table
-                            //It also create name "id" pour keys and name "answer" for values
+                            //It also create name "id" for keys and name "answer" for values
                             //By doing this, we can get associative arrays of answer datas as values of "id";
                             //This helps to edit names of associative arrays cuz they are not the same as database column's names
                             array_push($answer_data, array( "id" => $key,"answer" => $value));
@@ -163,7 +164,7 @@ class QuestionsController
                             //Get the correct answer from the addAnswers function and input into "questions" column "id_answer"
                             $this->db->addGoodAnswerToQuestion($id_question, $id_good_answer);
                             // Is it good ?
-                            $answersInfo = $this->db->selectAnswers($_GET['id']);
+                            $answersInfo = $this->db->selectAnswers($id_question);
                         }
                         header('location:?view=question&opAdmin=qlist');
                     }

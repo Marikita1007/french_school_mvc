@@ -50,7 +50,7 @@ ob_start();
                                         <tbody>
                                         <?php foreach ( $members as $member) : ?>
                                             <tr>
-                                                <th scope="row"><?= $member->id_member ?></th>
+                                                <td><?= $member->id_member ?></th>
                                                 <td><?= $member->prenom ?></td>
                                                 <td><?= $member->nom ?></td>
                                                 <td><?= $member->email ?></td>
@@ -59,14 +59,6 @@ ob_start();
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
-                                </div>
-                            </div>
-
-
-                            <div class="col-12 col-xl-8 mb-4 mb-lg-0">
-                                <div class="card">
-                                    <h5 class="card-header">Coordonnées des membres</h5>
-                                    
                                 </div>
                             </div>
                         </div>

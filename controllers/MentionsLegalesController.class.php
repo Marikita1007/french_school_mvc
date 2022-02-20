@@ -1,8 +1,8 @@
 <?php
 
-namespace controllers;
+namespace Controllers;
 
-use models\Model;
+use Models\Model;
 use PDO, PDOException, Exception;
 
 class MentionsLegalesController

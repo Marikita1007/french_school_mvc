@@ -83,7 +83,7 @@
                                     <p><i class="fas fa-home me-3"></i> Marseille, Route Keas 12345, FR</p>
                                     <p>
                                         <i class="fas fa-envelope me-3"></i>
-                                        french.school@com
+                                        french.school@fictif.fr
                                     </p>
                                     <p><i class="fas fa-phone me-3"></i> + 06 12 34 56 78</p>
                                     <a href="?view=mentions_legales"><i class="fas fa-balance-scale me-3"></i>Mentions Légales</a>
@@ -96,9 +96,9 @@
                     <!-- Section: Links  -->
 
                     <!-- Copyright -->
-                    <div class="text-center p-4 copy-right-content" style="background-color: rgba(0, 0, 0, 0.05);">
-                        © 2021 Copyright:
-                        <a class="text-reset fw-bold" href="https://french.school@com/">french.school@com</a>
+                    <div class="text-center p-4 copy-right-content copyright">
+                        © <script>document.write(new Date().getFullYear())</script> Copyright:
+                        <a class="text-reset fw-bold" href="https://french.school@fictif.fr/">french.school@fictif.fr</a>
                     </div>
                     <!-- Copyright -->
                 </footer>

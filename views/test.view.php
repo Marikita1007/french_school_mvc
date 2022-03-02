@@ -17,7 +17,7 @@ ob_start();
         ?>
 
         <div class="row my-3">
-            <div class="class=">
+            <div class="class">
                 <form action="?view=showMember&op=testResult" method="post">
                 <?php $questionNumber = 1; ?>
                 <?php foreach ($questionsData as $questions) : ?>
@@ -28,8 +28,11 @@ ob_start();
                         if(!empty($answersData)){
                             shuffle($answersData);
                             foreach ($answersData as $answer) : ?>
+                            <div>
                                 <input class="form-check-input" type="radio" id="answer" name="<?= $questions->id_question ?>" value="<?= $answer->id_answer ?>">
-                                <?=  $answer->answer;
+                                <?=  $answer->answer; ?>
+                            </div>
+                            <?php
                             endforeach;
                         }
                         if(!empty($answersData)) {} ?><br><br>
@@ -37,7 +40,7 @@ ob_start();
                 <?php endforeach; ?>
                     <!-- Here its counting the number of questions  -->
                     <input type="hidden" name="questions_amount" value="<?= count($questionsData) ?>" >
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn test_submit_button">Soumettre</button>
             </form>
             </div>
         </div>

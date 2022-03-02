@@ -2,7 +2,22 @@
     margin-top: 10vh;
 }
 
-.test_submit_button{
-    color: #FFFAF2 !important;
+.test_container{
+    color: #737373;
 }
+
+.test_submit_button{
+    color: black;
+    max-width: 15vw;
+    background-color: #1A8CFF;
+    opacity: 1;
+    transition: 0.3s;
+    font-size: 2vh;
+    top: 0;
+}
+
+.test_submit_button:hover{ 
+    transform: translate(0, -10px);
+    opacity: 0.8
+} 
 

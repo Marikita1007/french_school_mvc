@@ -1,15 +1,24 @@
+.member-page-container, .member-page-container table{
+    color: #737373;
+}
+
 .member-page-container, #edit{
     margin-top: 15vh;
 }
 
 .member-page-container .btn, #edit .btn{
-    background-color: #0066CC;
+    background-color: #1A8CFF;
     color: #FFFFFF;
     border-radius: 15px;
-    box-shadow:  5px 2px 2px #C4C4C4;
+    opacity: 1;
+    transition: 0.3s;
+    border: transparent;
+    font-size: 2.5vh;
+    border-radius: 10px;
 }
 
 .member-page-container .btn:hover{
-    transform: translate(0, -5px);
-    opacity: 1
+    transform: translate(0, -10px);
+    opacity: 0.8
 }
+

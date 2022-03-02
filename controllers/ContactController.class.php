@@ -78,7 +78,7 @@ class ContactController
             $emailUser = $_POST['email'];
             $message = $_POST['message'];
 
-            //need to make sure if its possible to send to gmail
+            //I received en email to my google account
             $mailTo = 'ishinomaki1007@gmail.com';
             $headers = $emailFrom;
             $txt = "Vous avez reçu un e-mail de " . $firstName . " " . $lastName . ".\n\n" . $message . ".\n\n Expéditeur :" . $emailFrom;

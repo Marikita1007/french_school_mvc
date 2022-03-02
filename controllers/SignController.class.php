@@ -85,7 +85,6 @@ class SignController
             $_POST['password'] = md5($_POST['password']);//password encrypted
             if($_GET['op'] == 'newMember'){
                 $newMemberId = $this->db->insert($_POST);
-                new Debug($newMemberId);
                 if($newMemberId > 0){
                     $_SESSION['member'] = $this->db->selectOne($newMemberId);
                     require('views/register_confirm.view.php');

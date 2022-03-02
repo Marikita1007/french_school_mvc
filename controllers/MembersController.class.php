@@ -255,7 +255,7 @@ class MembersController
             //We don't need the questions_amount anymore so unset it
             unset($_POST["questions_amount"]);
             if($empty_answers > 0){
-                $errors[] = '<div class="alert alert-danger">Vous avez oublié ' . $empty_answers .'réponse(s)</div>';
+                $errors[] = '<div class="alert alert-danger">Vous avez oublié ' . $empty_answers .' réponse(s)</div>';
                 $questionsData = $this->dbQuestions->selectQuestions();
                 $answersData = $this->dbAnswers->selectAll();
             }

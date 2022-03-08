@@ -3,8 +3,7 @@
 session_start();
 
 //Use it for debuggintg online site
-ini_set('display_errors', 'On');
-
+//ini_set('display_errors', 'On');
 require_once ('autoload.php');
 
 $view = $_GET['view'] ?? 'home';
@@ -18,7 +17,7 @@ switch ($view){
         $about->run();
         break;
     case 'question' :
-        $test = new Controllers\QuestionsController();
+        $test = new Controllers\QuestionsController;
         $test->run();
         break;
     case 'sign' :

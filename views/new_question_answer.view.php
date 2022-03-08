@@ -1,7 +1,6 @@
 <?php
 ob_start();
 ?>
-
 <section id="admin">
     <div class="container-fluid">
         <div class="row">

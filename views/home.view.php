@@ -6,7 +6,7 @@ ob_start();
     <section id="welcome">
         <div class="container">
             <div class="row" data-aos="fade-down" data-aos-duration="3000">
-                <h1 class="col-lg-12">APPRENEZ LE FRANÇAIS AVEC NOUS !</h1>
+                <h1 class="col-lg-12 text-center">APPRENEZ LE FRANÇAIS AVEC NOUS !</h1>
             </div>
             <div class="row d-flex justify-content-center" data-aos="fade-up" data-aos-duration="2000">
                 <h2 class="col-lg-12 text-center">COURS GRATUITS</h2>
@@ -88,8 +88,8 @@ ob_start();
                             <div class="col-8" data-count="16">
                                 <span class="d-flex align-items-center mb-0 achivement-number num-counter">0</span>
                             </div>
-                            <div class="progress mt-1" data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-blue" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 23%;"></div>
+                            <div class="progress mt-1">
+                                <div class="progress-bar l-bg-blue teachers" role="progressbar"></div>
                             </div>
                         </div>
                     </div>
@@ -106,8 +106,8 @@ ob_start();
                                     <span class="d-flex align-items-center mb-0 achivement-number num-counter">0</span>
                                 </div>
                             </div>
-                            <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-blue" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                            <div class="progress mt-1">
+                                <div class="progress-bar l-bg-blue students" role="progressbar"></div>
                             </div>
                         </div>
                     </div>
@@ -124,8 +124,8 @@ ob_start();
                                     <span class="d-flex align-items-center mb-0 achivement-number num-counter">0</span>
                                 </div>
                             </div>
-                            <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-blue" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+                            <div class="progress mt-1">
+                                <div class="progress-bar l-bg-blue nationalities" role="progressbar"></div>
                             </div>
                         </div>
                     </div>
@@ -142,8 +142,8 @@ ob_start();
                                     <span class="d-flex align-items-center mb-0 achivement-number num-counter">0</span>
                                 </div>
                             </div>
-                            <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-blue" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 45%;"></div>
+                            <div class="progress mt-1">
+                                <div class="progress-bar l-bg-blue partners" role="progressbar"></div>
                             </div>
                         </div>
                     </div>
@@ -185,8 +185,8 @@ ob_start();
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 student-comment">
-                    <div class="p-3 ">
-                        <div class="d-flex justify-content-between mobile-picture">
+                    <div class="p-3">
+                        <div class="d-flex justify-content-center align-items-center mobile-picture">
                             <a class="student-image student1"></a>
                         </div>
                         <div class="row">
@@ -199,7 +199,7 @@ ob_start();
                 </div>
                 <div class="col-lg-3 col-md-6 student-comment">
                     <div class="p-3 ">
-                        <div class="d-flex justify-content-between mobile-picture">
+                        <div class="d-flex justify-content-center align-items-center mobile-picture">
                             <a class="student-image student2"></a>
                         </div>
                         <div class="row">
@@ -212,7 +212,7 @@ ob_start();
                 </div>
                 <div class="col-lg-3 col-md-6 student-comment">
                     <div class="p-3 ">
-                        <div class="d-flex justify-content-between mobile-picture">
+                        <div class="d-flex justify-content-center align-items-center mobile-picture">
                             <a class="student-image student3"></a>
                         </div>
                         <div class="row">
@@ -225,7 +225,7 @@ ob_start();
                 </div>
                 <div class="col-lg-3 col-md-6 student-comment">
                     <div class="p-3 ">
-                        <div class="d-flex justify-content-between mobile-picture">
+                        <div class="d-flex justify-content-center align-items-center mobile-picture">
                             <a class="student-image student4"></a>
                         </div>
                         <div class="row">

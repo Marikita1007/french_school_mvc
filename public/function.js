@@ -1,4 +1,4 @@
-//AOS
+//Initialiser AOS AOSを初期化する
 AOS.init();
 
 var nav = document.querySelector('nav');
@@ -23,7 +23,7 @@ window.addEventListener('scroll', function(){
 
 });
 
-//URLがview=homeじゃない時も起動するようにする
+//These js works on exercices pages
 if(window.location.href.includes("op=beginner_exercice") == true || window.location.href.includes("op=intermediate_exercice") == true || window.location.href.includes("op=advanced_exercice") == true){
 
     //ここからエクササイズのクイズ用のJS
@@ -38,10 +38,6 @@ if(window.location.href.includes("op=beginner_exercice") == true || window.locat
     var exerciceSet = document.querySelectorAll('.exercice_set');
     var exerciceAnsRow = document.querySelectorAll('.exercice_set .exercice_ans_row input');
 
-    skip.addEventListener('click', function () {
-        step();
-        duration = 60
-    });
     skip.addEventListener('click', function () {
         step();
         duration = 60
@@ -75,13 +71,13 @@ if(window.location.href.includes("op=beginner_exercice") == true || window.locat
         }
 
         exerciceSet[count].className = 'exercice_set active';
+        // This is because their are 5 questions to each level of exercises.
         if (count == 5) {
             skip.style.display = 'none';
-            clearInterval(duration);
         }
     }
     
-}else if(document.querySelector('.home-page-container') ){
+}else if(document.querySelector('.home-page-container') ){ // these js works on home page only
 
     //introduction fontawesome shakes
     let shake = document.querySelectorAll('.shake_anime')

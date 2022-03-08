@@ -1,7 +1,7 @@
 <?php
 
 namespace Models;
-//CHECK IF THE DOWN BELOWS ARE USED !!!!!!!!!!!!!!!!!!!!!!
+use Debug;
 use http\Encoding\Stream\Debrotli;
 use mysql_xdevapi\DocResult;
 use PDO, PDOException, Exception;
@@ -48,16 +48,13 @@ class QuestionsManager extends Model{
         ));
         $result = $query->fetchAll(PDO::FETCH_COLUMN);
         $result = implode(",", $result);
-
         return $result;
     }
 
-    public function deleteAnswers($id_target_answers){
-
-        $query = Model::getDataBase()->prepare("DELETE FROM answers WHERE id_answer IN (:id_answer)");
-        $query->execute(array(
-            ':id_answer' => $id_target_answers
-        ));
+    //This function delete not only the correct answer ,but also the wrong answers.
+    public function deleteAnswers($id_target_answers){ //$id_target_answers has 4 target id_answer. $id_target_answers is string.
+        $query = Model::getDataBase()->prepare("DELETE FROM answers WHERE id_answer IN (". $id_target_answers .")");//this query target one correct and 3 wrong id_answer by using  IN (". $id_target_answers .")
+        $query->execute();
     }
 
     public function deleteQuestion($id){
@@ -123,7 +120,7 @@ class QuestionsManager extends Model{
 
     //its getting $answerArray which contains an array of $answer_data.
     // This array has 2 values.
-    // Ons is associative arrays which has  "id" as key name, second is user inputs answers which has "answer" as key name
+    // One is associative arrays which has  "id" as key name, second is user inputs answers which has "answer" as key name
     public function updateAnswers($answerArray){
         foreach($answerArray as $answer){
             //explode separate key name. ex : correct_answer_id of key name "id"

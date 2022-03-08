@@ -37,7 +37,7 @@ class MembersManager extends Model
     }
 
     public function getRegNumYear(){
-        $query = Model::getDataBase()->query("SELECT * FROM `members` WHERE year(signup_date) = year(now());");
+        $query = Model::getDataBase()->query("SELECT * FROM `members` WHERE year(signup_date) = year(now()) and  status = 0");
         $result = $query->rowCount();
         return $result;
     }

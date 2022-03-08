@@ -14,7 +14,6 @@ class Answers{
         $this->id_question = $id_question;
         $this->answer = $answer;
         $this->correct = $correct;
-
     }
 
     public function getIdAnswer()

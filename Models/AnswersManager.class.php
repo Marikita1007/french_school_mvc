@@ -22,16 +22,4 @@ class AnswersManager extends Model{
         return $result;
     }
 
-//    public function getIdColumName(){
-//        $result = $query = Model::getBdd()->query("DESC answers;");
-////        $result = Model::array_column($a, 'id_question');
-////
-///       new \Debug($result);
-////        die;
-//        $result = $query->fetch();
-//        new \Debug($result);
-//        die;
-//        $this->idQuestion = $result;
-//        return $this->idQuestion;
-//    }
 }

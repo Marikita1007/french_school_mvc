@@ -44,7 +44,9 @@ abstract class Model
         return self::$pdo;
     }
 
+    //This code checks if its localhost or not by localhost URL numbers  ['127.0.0.1', '::1']  '::1' is for Linux or certain computers
     private static function isLocalhost($whitelist = ['127.0.0.1', '::1']) {
+        //this checks if inside $whitelist, $_SERVER['REMOTE_ADDR' exist or not. like fiding a needle inside a hay glass.
         return in_array($_SERVER['REMOTE_ADDR'], $whitelist);
     }
 }

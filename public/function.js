@@ -4,6 +4,7 @@ AOS.init();
 var nav = document.querySelector('nav');
 //navbar color change
 window.addEventListener('scroll', function(){
+    //Faire défiler le contenu de 100 pixels, cette animation commence
     if(window.pageYOffset > 100){
         nav.classList.add('bg-light','shadow');
     }else{
@@ -28,10 +29,8 @@ if(window.location.href.includes("op=beginner_exercice") == true || window.locat
 
     //ここからエクササイズのクイズ用のJS
     var skip = document.getElementById('skip');
-    var next = document.getElementById('next');
     var score = document.getElementById('score');
     var totalScore = document.getElementById('totalScore');
-    var countdown = document.getElementById('countdown');
     var count = 0;
     var scoreCount = 0;
     var duration = 0;
@@ -71,7 +70,7 @@ if(window.location.href.includes("op=beginner_exercice") == true || window.locat
         }
 
         exerciceSet[count].className = 'exercice_set active';
-        // This is because their are 5 questions to each level of exercises.
+        // This is because there are 5 questions to each level of exercises.
         if (count == 5) {
             skip.style.display = 'none';
         }
@@ -96,16 +95,19 @@ if(window.location.href.includes("op=beginner_exercice") == true || window.locat
         });
     }
 
-    //ここからナンバーカウンターを発動させる場所
+    //Où activer le compteur de numéros à partir d'ici. ここからナンバーカウンターを発動させる場所
     var achievements = document.getElementById("achievements");
-    //IntersectionObserverというAPI。これが要素が画面に表示されたタイミングでアニメーションを発火させる
+    //IntersectionObserverというAPI。この要素が画面に表示されたタイミングでアニメーションを発火させる
+    //API appelée IntersectionObserver, qui déclenche une animation lorsque cet élément est affiché à l'écran.
     var observer = new IntersectionObserver(numCounter);
     //呼び出したい関数を指定。この場合はachievements
+    // Spécifie la fonction à appeler. Dans ce cas, achievement (l'id de la parti Statistiques)
     observer.observe(achievements);
 
     function numCounter (entries) {
 
         //ページ読み込み時には、「交差の比率」は「0」。これを書くことでページをリフレッシュしたとたんにアニメーション発動を回避。
+        //En écrivant cela, on évite de déclencher l'animation dès que la page est rafraîchie.
         if (entries[0].intersectionRatio == 0){
             return;
         }else{

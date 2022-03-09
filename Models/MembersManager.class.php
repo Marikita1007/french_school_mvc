@@ -83,10 +83,20 @@ class MembersManager extends Model
         return $result;
     }
 
-    public function loginCheck($password, $email){
-        $query = Model::getDataBase()->prepare("SELECT * FROM members WHERE password=:password AND email=:email");
+    //emailCheck function returns all the table columns to verify password in MembersController
+    public function emailCheck($email){
+        $query = Model::getDataBase()->prepare("SELECT * FROM members WHERE email=:email");
         $query->execute(array(
-            ':password' => md5($password),
+            ':email' => $email
+        ));
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    //if the password password_verify() returns true, this function will get the table info.
+    public function loginCheck($email){
+        $query = Model::getDataBase()->prepare("SELECT * FROM members WHERE email=:email");
+        $query->execute(array(
             ':email' => $email
         ));
         $result = $query->fetch();
@@ -94,7 +104,6 @@ class MembersManager extends Model
     }
 
     public function update($id_member, $infos){
-
         $setList = array();
         foreach(array_keys($infos) as $key){
             $setList[] = "$key = :$key";

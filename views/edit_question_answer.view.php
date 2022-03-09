@@ -75,7 +75,7 @@ ob_start();
                                 </select>
 
                                 <input type="submit" value="Modifier la question et les réponses" class="btn btn-primary my-3">
-                                <button class="btn"><a href="?view=question&opAdmin=qlist">Retourner</a></button>
+                                <button class="btn"><a href="?view=question&opAdm in=qlist">Retourner</a></button>
 
                             </form>
                         </div>

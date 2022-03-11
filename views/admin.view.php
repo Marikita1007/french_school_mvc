@@ -67,8 +67,7 @@ ob_start();
 
                 <div class="row my-4">
                     <h4>Nombre d'inscriptions</h4>
-                    <?php setlocale(LC_TIME, "fr_FR"); ?>
-                    <p>(<?= strftime("%d %B %Y"); ?>)</p>
+                    <p>(<?= date("j/n/Y") ?>)</p>
                     <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
                         <div class="card">
                             <h5 class="card-header text-center">Aujourd'hui</h5>

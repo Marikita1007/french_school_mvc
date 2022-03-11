@@ -82,7 +82,7 @@ class SignController
         if($errors == ""){
             $showPage = "";
             unset($_POST['password2']);
-            $_POST['password'] = md5($_POST['password']);//password encrypted
+            $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT); //Crée une clé de hachage pour un mot de passe
             if($_GET['op'] == 'newMember'){
                 $newMemberId = $this->db->insert($_POST);
                 if($newMemberId > 0){

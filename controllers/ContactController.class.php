@@ -68,8 +68,8 @@ class ContactController
         if($errors == ""){
 
             //The guy write down his own email address : im.client@gmail.com
-            // Your website sends the actual email, so the website's email address is contact@marika-abe.fr
-            // The email where the actual message is sent to, is your own email : ishinomaki1007@gmail.com
+            //Your website sends the actual email, so the website's email address is contact@marika-abe.fr
+            //The email where the actual message is sent to, is your own email : ishinomaki1007@gmail.com
 
             $lastName = $_POST['last_name'];
             $firstName = $_POST['first_name'];

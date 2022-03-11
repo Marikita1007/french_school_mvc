@@ -65,11 +65,12 @@ class QuestionsController
     public function editQuestion(){
 
         if(!empty($_POST)){
+
             $errors = array();
             $empty_fields = 0;
             $empty_difficulty = '';
             foreach ($_POST as $key => $value){
-                //Prevent SQL injections
+                //Prevent XSS
                 $_POST[$key] = htmlspecialchars($value);
                 if(trim($_POST[$key]) == '') $empty_fields++;
             }
@@ -186,7 +187,7 @@ class QuestionsController
 
     public function deleteQuestionAndAnswers(){
         if (!empty($_GET['id']) && is_numeric($_GET['id']) && $_GET['opAdmin'] == 'delete'){
-                $id_target_answers = $this->db->selectDeleteAnswers($_GET['id']);
+                $id_target_answers = $this->db->selectDeleteAnswers($_GET['id']); //This returns all the answers which has the target id_question.
                 $this->db->deleteAnswers($id_target_answers);
                 $this->db->deleteQuestion($_GET['id']);
         }

@@ -1,6 +1,10 @@
 <?php
 namespace Controllers;
+//namespaceは名前空間とも呼ばれ、項目をカプセル化するときに使用します。
+//namespace : Utilisé lors de l'encapsulation d'éléments.
+//名前空間とは、例えば通常同じファイルに同じクラスや関数名、定数名が存在することはできませんが、名前空間を使用することにより、関連するクラスや、インターフェイス、関数、定数などをグループ化することが可能です。
 
+//どのコントローラーをこのクラスファイルで使うか。
 use Debug;
 use Models\Model;
 use Models\MembersManager;
@@ -104,10 +108,13 @@ class MembersController
         if(empty($errors)){
 
             if(!empty($_POST['password']) && !empty($_POST['email'])){
-                $memberInfo = $this->db->loginCheck($_POST['password'], $_POST['email']);
+                $emailVerify =$this->db->emailCheck($_POST['email']);
+                if(password_verify($_POST['password'], $emailVerify['password'])){
+                    $memberInfo = $this->db->loginCheck($_POST['email']);
+                }
             }
 
-            if($memberInfo){
+            if(!empty($memberInfo)){
                 unset($_SESSION['member']);
                 $_SESSION['member'] = $memberInfo;
                 //Admin Check
@@ -215,7 +222,7 @@ class MembersController
             foreach ($_POST as $key => $value) {
                 $_POST[$key] = htmlspecialchars($value);
                 if($key == "password" || $key == "password2"){
-                    $_POST[$key] = md5($_POST[$key]);
+                    $_POST[$key] = password_hash($_POST[$key], PASSWORD_DEFAULT);
                 }
             }
 

@@ -36,6 +36,7 @@
 #welcome .courses_buttons .button_avance{
     border-radius: 15px 50px;
     border: none;
+    box-shadow: none;
     -webkit-box-shadow: 9px 12px 14px 6px #777777;
     opacity: 0.8;
     transition: 0.3s;

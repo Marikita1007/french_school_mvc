@@ -104,6 +104,7 @@ if(window.location.href.includes("op=beginner_exercice") == true || window.locat
     // Spécifie la fonction à appeler. Dans ce cas, achievement (l'id de la parti Statistiques)
     observer.observe(achievements);
 
+    //In the html there are data-count and this number will show up in the end.
     function numCounter (entries) {
 
         //ページ読み込み時には、「交差の比率」は「0」。これを書くことでページをリフレッシュしたとたんにアニメーション発動を回避。

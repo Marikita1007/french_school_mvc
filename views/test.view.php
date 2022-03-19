@@ -3,7 +3,6 @@ ob_start();
 
 ?>
 
-    <!-- 表示場所 -->
     <div class="container test_container">
 
         <h2>Faites le test et vérifiez votre niveau de français</h2>

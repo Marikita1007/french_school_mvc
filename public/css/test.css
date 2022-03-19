@@ -21,3 +21,11 @@
     opacity: 0.8
 } 
 
+
+@media (max-width: 650px) {
+    .test_submit_button{
+        max-width : none;
+        display: inline-block;
+        text-align: center;
+    }
+}

@@ -86,7 +86,7 @@ ob_start();
                     <source src="public/audio/audio1.mp3" type="audio/mpeg">
                     Votre navigateur ne prend pas en charge l'élément audio.
                 </audio>
-                <img class="m-3" src="public/img/fireworks.jpg" alt="les feux d'artifices">
+                <img class="m-3" src="public/img/conversation.jpg" alt="Deux personnes">
                 <img class="m-3" src="public/img/airplanes.jpg" alt="Avions dessinant le drapeau français">
             </div>
         </div>

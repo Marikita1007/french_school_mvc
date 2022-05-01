@@ -6,7 +6,7 @@ ob_start();
     <div class="row m-3">
         <h1>Mentions légales</h1>
 
-        <p>Merci de lire avec attention les différentes modalités d’utilisation du présent site avant d’y parcourir ses pages. En vous connectant sur ce site, vous acceptez sans réserves les présentes modalités. Aussi, conformément à l’article n°6 de la Loi n°2004-575 du 21 Juin 2004 pour la confiance dans l’économie numérique, les responsables du présent site internet <a href="https://marika-abe.fr">www.frenchschool.com</a> sont :
+        <p>Merci de lire avec attention les différentes modalités d’utilisation du présent site avant d’y parcourir ses pages. En vous connectant sur ce site, vous acceptez sans réserves les présentes modalités. Aussi, conformément à l’article n°6 de la Loi n°2004-575 du 21 Juin 2004 pour la confiance dans l’économie numérique, les responsables du présent site internet <a href="https://marika-abe.fr">https://marika-abe.fr</a> sont :
         </p>
 
         <span>Editeur du Site : Ecole de français</span>
@@ -17,7 +17,7 @@ ob_start();
         <span>Email : frenchl@frenchschool.com</span>
 
         <span>
-            Site Web : <a href="https://marika-abe.fr">www.frenchschool.com</a><br><br>
+            Site Web : <a href="https://marika-abe.fr">https://marika-abe.fr</a><br><br>
             Hébergement :
             Hébergeur : tarou
             123 rue tarou
@@ -31,7 +31,7 @@ ob_start();
         <h2><b>Conditions d’utilisation : </b></h2><br>
 
         <p>
-            Ce site (<a href="https://marika-abe.fr">www.frenchschool.com</a>) est proposé en différents langages web (HTML, HTML5, Javascript, CSS, etc…) pour un meilleur confort d'utilisation et un graphisme plus agréable, nous vous recommandons de recourir à des navigateurs modernes comme Internet explorer, Safari, Firefox, Google Chrome, etc…
+            Ce site (<a href="https://marika-abe.fr">https://marika-abe.fr</a>) est proposé en différents langages web (HTML, HTML5, Javascript, CSS, etc…) pour un meilleur confort d'utilisation et un graphisme plus agréable, nous vous recommandons de recourir à des navigateurs modernes comme Internet explorer, Safari, Firefox, Google Chrome, etc…
             Les mentions légales ont été générées sur le site <a title="générateur de mentions légales pour site internet gratuit" href="http://www.generateur-de-mentions-legales.com">Générateur de mentions légales</a>, offert par <a title="imprimerie paris, imprimeur paris" href="http://welye.com">Welye</a>.
         </p>
 
@@ -43,7 +43,7 @@ ob_start();
 
         <h2><b>Cookiess : </b></h2><br>
         <p>
-            Le site <a href="https://marika-abe.fr">www.frenchschool.com</a> peut-être amené à vous demander l’acceptation des cookies pour des besoins de statistiques et d'affichage. Un cookies est une information déposée sur votre disque dur par le serveur du site que vous visitez. Il contient plusieurs données qui sont stockées sur votre ordinateur dans un simple fichier texte auquel un serveur accède pour lire et enregistrer des informations . Certaines parties de ce site ne peuvent être fonctionnelles sans l’acceptation de cookies.
+            Le site <a href="https://marika-abe.fr">https://marika-abe.fr</a> peut-être amené à vous demander l’acceptation des cookies pour des besoins de statistiques et d'affichage. Un cookies est une information déposée sur votre disque dur par le serveur du site que vous visitez. Il contient plusieurs données qui sont stockées sur votre ordinateur dans un simple fichier texte auquel un serveur accède pour lire et enregistrer des informations . Certaines parties de ce site ne peuvent être fonctionnelles sans l’acceptation de cookies.
         </p>
 
         <h2><b>Cookiess : </b></h2><br>
@@ -57,9 +57,9 @@ ob_start();
 
         <h2><b>Services fournis : </b></h2><br>
 
-        <p>L'ensemble des activités de la société ainsi que ses informations sont présentés sur notre site <a href="https://marika-abe.fr">www.frenchschool.com</a>.</p>
+        <p>L'ensemble des activités de la société ainsi que ses informations sont présentés sur notre site <a href="https://marika-abe.fr">https://marika-abe.fr</a>.</p>
 
-        <p>Ecole de français s’efforce de fournir sur le site www.frenchschool.com des informations aussi précises que possible. les renseignements figurant sur le site <a href="https://marika-abe.fr">www.frenchschool.com</a> ne sont pas exhaustifs et les photos non contractuelles. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne. Par ailleurs, tous les informations indiquées sur le site www.frenchschool.com sont données à titre indicatif, et sont susceptibles de changer ou d’évoluer sans préavis. </p>
+        <p>Ecole de français s’efforce de fournir sur le site https://marika-abe.fr des informations aussi précises que possible. les renseignements figurant sur le site <a href="https://marika-abe.fr">https://marika-abe.fr</a> ne sont pas exhaustifs et les photos non contractuelles. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne. Par ailleurs, tous les informations indiquées sur le site https://marika-abe.fr sont données à titre indicatif, et sont susceptibles de changer ou d’évoluer sans préavis. </p>
 
         <h2><b>Limitation contractuelles sur les données : </b></h2><br>
         <p>
@@ -73,7 +73,7 @@ ob_start();
         <h2><b>Propriété intellectuelle : </b></h2><br>
 
         <p>
-        Tout le contenu du présent sur le site <a href="https://marika-abe.fr">www.frenchschool.com</a>, incluant, de façon non limitative, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de la société à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs. <br><br>
+        Tout le contenu du présent sur le site <a href="https://marika-abe.fr">https://marika-abe.fr</a>, incluant, de façon non limitative, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de la société à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs. <br><br>
 
         Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord exprès par écrit de Ecole de français. Cette représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle. Le non-respect de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur. En outre, les propriétaires des Contenus copiés pourraient intenter une action en justice à votre encontre. <br><br>
         </p>
@@ -87,12 +87,12 @@ ob_start();
         <h2><b>Litiges :  </b></h2><br>
         
         <p>
-            Les présentes conditions du site <a href="https://marika-abe.fr">www.frenchschool.com</a> sont régies par les lois françaises et toute contestation ou litiges qui pourraient naître de l'interprétation ou de l'exécution de celles-ci seront de la compétence exclusive des tribunaux dont dépend le siège social de la société. La langue de référence, pour le règlement de contentieux éventuels, est le français.
+            Les présentes conditions du site <a href="https://marika-abe.fr">https://marika-abe.fr</a> sont régies par les lois françaises et toute contestation ou litiges qui pourraient naître de l'interprétation ou de l'exécution de celles-ci seront de la compétence exclusive des tribunaux dont dépend le siège social de la société. La langue de référence, pour le règlement de contentieux éventuels, est le français.
         </p>
 
         <h2><b>Données personnelles :</b></h2><br>
         <p>
-            De manière générale, vous n’êtes pas tenu de nous communiquer vos données personnelles lorsque vous visitez notre site Internet <a href="https://marika-abe.fr">www.frenchschool.com</a> <br><br>
+            De manière générale, vous n’êtes pas tenu de nous communiquer vos données personnelles lorsque vous visitez notre site Internet <a href="https://marika-abe.fr">https://marika-abe.fr</a> <br><br>
 
             Cependant, ce principe comporte certaines exceptions. En effet, pour certains services proposés par notre site, vous pouvez être amenés à nous communiquer certaines données telles que : votre nom, votre fonction, le nom de votre société, votre adresse électronique, et votre numéro de téléphone. Tel est le cas lorsque vous remplissez le formulaire qui vous est proposé en ligne, dans la rubrique « contact ». Dans tous les cas, vous pouvez refuser de fournir vos données personnelles. Dans ce cas, vous ne pourrez pas utiliser les services du site, notamment celui de solliciter des renseignements sur notre société, ou de recevoir les lettres d’information.
 

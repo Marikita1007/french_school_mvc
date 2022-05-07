@@ -109,7 +109,8 @@ class MembersController
 
             if(!empty($_POST['password']) && !empty($_POST['email'])){
                 $emailVerify =$this->db->emailCheck($_POST['email']);
-                if(password_verify($_POST['password'], $emailVerify['password'])){
+                //!empty($emailVerify['password'])checks if this email account have the array info[psw] and adding this avoid error 'Trying to access array offset on value of type bool' 
+                if(!empty($emailVerify['password']) && !empty(password_verify($_POST['password'], $emailVerify['password']))){
                     $memberInfo = $this->db->loginCheck($_POST['email']);
                 }
             }
@@ -222,6 +223,9 @@ class MembersController
             foreach ($_POST as $key => $value) {
                 $_POST[$key] = htmlspecialchars($value);
                 if($key == "password" || $key == "password2"){
+                    //MD5 est beaucoup trop rapide pour hacher les mots de passe. Cela rend la force brute trop facile. Donc on utilise password_hash
+                    //MD5は、パスワードをハッシュするには速すぎます。 そのため、ブルートフォース攻撃が簡単になりすぎます。
+                    //ブルートフォース攻撃:4桁の暗証番号に対して「0000」から「9999」までを試すように、可能性のあるやつを片っ端から試していくやり方
                     $_POST[$key] = password_hash($_POST[$key], PASSWORD_DEFAULT);
                 }
             }

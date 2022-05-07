@@ -39,6 +39,7 @@ class SignController
     
             $champs_vides = 0;
             foreach ($_POST as $key => $value){
+                //Les attaque XSS(cross site scripting)
                 $_POST[$key] = htmlspecialchars($value);
                 if (trim($_POST[$key]) == '') $champs_vides++;
             }
@@ -48,7 +49,7 @@ class SignController
         }
     
         if(!isset($_POST['nom']) || strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 30 ){
-            $errors .= '<div class="alert alert-danger">Le prenom doit contenir entre 2 et 30 caractères. </div>';
+            $errors .= '<div class="alert alert-danger">Le nom doit contenir entre 2 et 30 caractères. </div>';
         }
     
         if(!isset($_POST['prenom']) || strlen($_POST['prenom']) < 2 || strlen($_POST['nom']) > 30 ){
@@ -82,6 +83,9 @@ class SignController
         if($errors == ""){
             $showPage = "";
             unset($_POST['password2']);
+            //MD5 est beaucoup trop rapide pour hacher les mots de passe. Cela rend la force brute trop facile. Donc on utilise password_hash
+            //MD5は、パスワードをハッシュするには速すぎます。 そのため、ブルートフォース攻撃が簡単になりすぎます。
+            //ブルートフォース攻撃:4桁の暗証番号に対して「0000」から「9999」までを試すように、可能性のあるやつを片っ端から試していくやり方
             $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT); //Crée une clé de hachage pour un mot de passe
             if($_GET['op'] == 'newMember'){
                 $newMemberId = $this->db->insert($_POST);

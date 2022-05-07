@@ -83,7 +83,7 @@ class SignController
         if($errors == ""){
             $showPage = "";
             unset($_POST['password2']);
-            //MD5 est beaucoup trop rapide pour hacher les mots de passe. Cela rend la force brute trop facile. Donc on utilise password_hash
+            //MD5 est beaucoup trop rapide pour hacher les mots de passe. Cela rend la force brute trop facile. Donc j'utilise password_hash
             //MD5は、パスワードをハッシュするには速すぎます。 そのため、ブルートフォース攻撃が簡単になりすぎます。
             //ブルートフォース攻撃:4桁の暗証番号に対して「0000」から「9999」までを試すように、可能性のあるやつを片っ端から試していくやり方
             $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT); //Crée une clé de hachage pour un mot de passe

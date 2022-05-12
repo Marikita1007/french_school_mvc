@@ -8,6 +8,8 @@ require_once ('autoload.php');
 
 $view = $_GET['view'] ?? 'home';
 switch ($view){
+    //Instance of all the Controllers
+    //routeur en fonction des 'cases' je lance la méthode correspondante dans mon controller
     case 'home' :
         $home = new Controllers\HomeController;
         $home->run();

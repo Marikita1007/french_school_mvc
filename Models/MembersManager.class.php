@@ -19,7 +19,7 @@ class MembersManager extends Model
 
     //Get today's number of student registration
     public function getRegNumToday(){
-        $query = Model::getDataBase()->query("SELECT * FROM `members` WHERE signup_date = CURRENT_DATE");
+        $query = Model::getDataBase()->query("SELECT * FROM `members` WHERE day(signup_date) = day(now());");
         $result = $query->rowCount();
         return $result;
     }
